@@ -1,0 +1,7 @@
+4.2 Darken That Icing's Fill!
+The swing animation is looking good! Let's change the color of the icing now!
+
+	- The darken keyframe animation has been started. Complete the steps so that it starts and ends with a fill of auto.
+	- Now have the darken keyframe change at 50% to a Tapestry Pink #BD6C8C.
+	- Now assign the darken animation to the #icing-fill. Make the darken duration the same length as the swing animation (3 seconds), and have it loop infinitely.
+	- Apply the #icing-shadow selector to the animation declaration to make it darken along with the icing!

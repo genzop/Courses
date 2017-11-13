@@ -1,0 +1,7 @@
+3.10 Animate the Modal Innards
+The slideUpSmall animation has been created to create more of a fun and off-kilter feel. Apply it to the modal's header and content.
+
+	- Apply the slideUpSmall animation to the modal's header using a 0.25 second duration.
+	- Give the slideUpSmall animation a 0.75 second delay and a fill-mode of forwards.
+	- Nice job! Now apply the slideUpSmall animation to the modal's content using the same duration as before.
+	- Give the slideUpSmall animation for the modal's content a 0.8 second delay and a fill-mode of forwards.

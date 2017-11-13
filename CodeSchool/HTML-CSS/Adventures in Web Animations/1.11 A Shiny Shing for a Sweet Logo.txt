@@ -1,0 +1,5 @@
+1.11 A Shiny Shing for a Sweet Logo 
+We've built a shing animation on the Sweet Lands logo. It uses some pretty advanced CSS to make an animation that looks as if the logo has a shine roll across it on hover. Use your knowledge of transitions to make it animate across the logo on hover.
+
+	- The shing effect jumps directly from its initial state to its hover state. Transition the background-position for 0.07s.
+	- In order to smooth out the animation and not cause a jitter if the user quickly glides on and off the logo, give the transition a 0.4s delay.

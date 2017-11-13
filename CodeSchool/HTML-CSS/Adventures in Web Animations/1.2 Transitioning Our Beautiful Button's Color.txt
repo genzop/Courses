@@ -1,0 +1,6 @@
+1.2 Transitioning Our Beautiful Button's Color
+Draw attention to the main call to action, the "Register Now!" button at the bottom of the preview, using CSS transitions.
+
+	- Transition the background-color of the button over 1s or less.
+	- Transition the font color of the button with a slightly longer transition duration than the background-color.
+	- Our animation looks weird with different times. Refactor these to transition all properties with the same time duration of 0.4s. For this, refactor your transition declaration to use the all property.

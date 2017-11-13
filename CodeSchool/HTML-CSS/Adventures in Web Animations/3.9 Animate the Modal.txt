@@ -1,0 +1,9 @@
+3.9 Animate the Modal 
+Our modal is fading in, which is cool, but you know what would be even cooler? If it fades in AND slides up! Follow the tasks below to add this new slide ability.
+
+	- Create a slideUp keyframe animation.
+	- Have the slideUp animation start by moving down (translating Y) by 400px.
+	- End the animation by moving up (translating Y) by -300px up the page.
+	- The fadeIn animation has already been applied for you to the modal when active. Now apply the newly created slideUp animation. Give the animation a 0.65s duration with a 0.5s delay.
+	- Give the slideUp animation a custom cubic bezier with these values 0.175, 0.885, 0.32, 1.275. This will cause the modal to slideUp, overshoot the -300px, and then slide back down to its resting spot at -300px. Neat, right?!
+	- Finally, have the modal stay at its final resting state on the page, by giving the slideUp animation a fill-mode of forwards.

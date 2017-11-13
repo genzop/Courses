@@ -1,0 +1,19 @@
+.btn {
+  transition: all 0.4s;
+}
+
+.top.content {
+  top: 0px;
+}
+.bottom.content {
+  top: -50px;
+}
+.btn:hover .top {
+  top: -50px;
+}
+.btn:hover .bottom {
+  top: 0px;
+}
+.btn .content {
+  transition: top  0.5s;
+}

@@ -1,0 +1,5 @@
+3.6 Don't Just Swing, But Shrink Too! 
+Let's add a bit more fun to our swing keyframe! It would be neat to have the logo shrink, just a little, between swings.
+
+	- Update the swing animation to have it scale to 0.95 at 20%, causing the element to shrink just a bit.
+	- Now, in order for it to shrink at the other side of the swing, do the same scale at 80%.

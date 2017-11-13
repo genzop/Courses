@@ -1,0 +1,8 @@
+1.7 Button Content Gets Transitions Too!
+Provide Sweet Lands users with extra information about the next cosplay event. Position and transition 2 content spans inside the "Register Now" button.
+
+	- In style.css, use the .top.content selector to set the initial state of the "Register Now!" span so that it will show up at the very top of the button.
+	- When the .btn is hovered over, move the .top span to 50px higher than the initial state. This will cause it to not be shown. To do this, you can use the .btn:hover .top selector.
+	- Position the initial state of the "Hurry" span, so that it will not be visible using the .bottom.content selector. Do this by making it show up beneath the "Register Now!" span which is 50px high. That way when we do our transition later it will appear to be moving up.
+	- When the button is hovered over, move the .bottom span to be at the top of the button using the .btn:hover .bottom selector. This will cause it to show up where "Register Now!" is initially.
+	- Lastly, find the .btn .content selector which will target all content elements within a button. Make these transition their top property over whatever duration you want.

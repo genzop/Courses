@@ -1,0 +1,5 @@
+3.5 More Steps for a More Natural Swing
+Our rotating sweetlandia logo, using the swing animation, does not quite look natural. Create more steps inside the swing keyframe to give it a more even-looking rotation.
+
+	- Our logo should end at the same rotation it starts at, making for a seamless animation loop. Change the start step to rotate -30deg.
+	- Add a middle state at 50% to rotate the logo at 30deg.

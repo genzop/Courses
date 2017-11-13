@@ -1,0 +1,8 @@
+.form-input + .form-label {
+  color: #6A7989;
+  transition: all 0.3s;
+}
+.form-input:focus + .form-label {
+  color: #333333;   
+  transform: translateY(-40px) scale(0.8);
+}

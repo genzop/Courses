@@ -1,0 +1,4 @@
+2.7 Tangy Transitioned Properties
+Sometimes you need to transition elements at different speeds. Transition the transforming properties at 2 different speeds.
+
+	- Change the transform to transition over 0.3s and the color over 0.5s.

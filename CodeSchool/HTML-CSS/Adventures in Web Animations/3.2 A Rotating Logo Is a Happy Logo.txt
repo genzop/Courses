@@ -1,0 +1,8 @@
+3.2 A Rotating Logo Is a Happy Logo
+Rotate the Sweetlandia Event Logo using a keyframe animation.
+
+	- Create a keyframe animation and name it swing.
+	- Define the starting state with a 0deg rotation.
+	- At 100%, rotate by -30 degrees.
+	- Add the swing animation to the #sweetlandia event logo. Loop the animation infinitely every 2 seconds.
+	- Change the timing function to ease in and out, creating a more natural look.

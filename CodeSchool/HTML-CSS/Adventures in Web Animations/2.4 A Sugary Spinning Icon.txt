@@ -1,0 +1,6 @@
+2.4 A Sugary Spinning Icon 
+Rotating objects is fun and eye-catching! Try using transforms to rotate the modal-close icon on hover to give our site a little more character.
+
+	- Rotate the modal-close icon once, when hovered on, using transform.
+	- Our close button spins in a circle instantly when we hover over it, which we can’t really see. Add a transition that will animate our spin over 2s.
+	- There are so many options when it comes to timing functions! Go ahead and try out a different timing-function other than the default ease for the transition.

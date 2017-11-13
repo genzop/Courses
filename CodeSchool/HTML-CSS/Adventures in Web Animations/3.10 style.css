@@ -1,0 +1,44 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.modal-overlay.active {
+  animation: fadeIn 0.25s forwards ;
+}
+@keyframes slideUp {
+  from {transform: translateY(50%);}
+  to   {transform: translateY(0);}
+}
+.modal.active {
+  animation: fadeIn 0.25s 0.5s forwards,
+    slideUp 0.65s 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes slideUpSmall {
+  from {transform: translateY(80px);}
+  to   {transform: translateY(0px);}
+}
+
+.modal.active  > div.modal-header h3 {
+  animation: fadeIn 0.25s 0.8s forwards;
+}
+
+.modal.active .form-field {            
+  animation: fadeIn 0.25s 0.85s forwards;
+}
+
+.modal.active .modal-header {
+  animation: fadeIn 0.25s 0.85s forwards,
+             slideUpSmall 0.25s 0.75s forwards;
+}
+
+.modal.active .modal-content {            
+  animation: fadeIn 0.25s 0.85s forwards,
+             slideUpSmall 0.25s 0.8s forwards;
+}

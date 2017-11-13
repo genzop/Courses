@@ -1,0 +1,8 @@
+2.6 Label Color and Position and Size — Oh My! 
+Give the labels flair by animating their color, position, and size!
+
+	- When the input is focused, change its label color to a darker gray of #333333 to catch the user's eye.
+	- Make the changing label color a smooth change, using a transition over 0.3 seconds. Make sure to only transition the color.
+	- When we type right now, we're typing right over the label! Change this so that when the input is focused on, the label moves up to where form labels usually reside – 40 pixels above the input. To do this, use a transform on the label.
+	- It works! The label moves up when the input is focused. It's a little too large though. When the input is focused, scale the label to 80% of its original size. This will cause it to look the same as a normal input label!
+	- The label jumps to its position when we focus on the input. Transition the translating and scaling by 0.3s so the label animates smoothly. You can transition these properties separately or use the all keyword.

@@ -1,0 +1,8 @@
+3.8 Animate the Modal Overlay
+Our first step to animating the modal and modal overlay is to create a fadeIn keyframe. Finish the animation and assign it to the overlay.
+
+	- A fadeIn keyframe animation has been started. Style the element to be completely hidden in its starting state. Hide it in a way that will allow us to fade it in.
+	- Complete the animation by making the end state visible.
+	- Apply the fadeIn animation to the .modal-overlay when it is .active.
+	- Give the animation a fast duration, let's say 0.25 seconds.
+	- Finally, in order to make the overlay stay visible after it is done animating, give the animation a fill-mode of forwards.

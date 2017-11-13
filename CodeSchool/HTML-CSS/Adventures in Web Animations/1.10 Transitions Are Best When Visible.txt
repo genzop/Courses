@@ -1,0 +1,6 @@
+1.10 Transitions Are Best When Visible
+We've created a modal window that contains a form, as well as an overlay that covers the entire rest of the screen. We want that modal to animate in when a button is clicked, and animate out when we are done using it.
+
+	- Make the initial state of the modal and modal overlay hidden using a technique that will allow them to be transitioned in.
+	- Next, make the modal and modal overlay visible when they have the class of .active. Make sure to only apply these styles directly to the active modal and modal overlay.
+	- We set up some JavaScript already so that when the "Register Now!" button is clicked, the modal and overlay are getting a class of active to make them appear, but we'd like them to animate in. Make the modal and modal overlay animate in using a transition and any duration you choose.

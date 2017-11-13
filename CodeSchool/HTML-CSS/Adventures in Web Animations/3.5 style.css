@@ -1,0 +1,15 @@
+@keyframes swing {
+  0% {
+    transform: rotate(-30deg);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(-30deg);
+  }
+}
+
+#sweetlandia {
+  animation: swing 2s infinite ease-in-out;
+}
