@@ -1,0 +1,7 @@
+.factory {
+  width: 100%;
+  @media (min-width: 960px) { 	
+    width: percentage(600px / 960px);
+  }
+}
+

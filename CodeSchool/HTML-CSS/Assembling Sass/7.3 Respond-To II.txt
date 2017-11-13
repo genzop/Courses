@@ -1,0 +1,2 @@
+7.3 Respond-To II
+Let's make our respond-to more flexible by allowing it to accept query values rather than fixed breakpoints. Rewrite the mixin to output a media query with a min-width of the $query argument, which contains the @content block.

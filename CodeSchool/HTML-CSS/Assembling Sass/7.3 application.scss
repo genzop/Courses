@@ -1,0 +1,15 @@
+@mixin respond-to($query) {
+	@media (min-width: $query) {
+  	@content
+  }
+}
+
+.factory {
+  width: 100%;
+  @include respond-to(960px) {
+    width: percentage(600px / 960px);
+  }
+  @include respond-to(768px) {
+    width: 50%;
+  }
+}

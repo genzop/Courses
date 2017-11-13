@@ -1,0 +1,2 @@
+6.9 Color Functions II
+Our newly-added hover state isn't bad, but we'd like to up the intensity a bit. Keeping the lighter value, increase the saturation by 20%. Note: look to the :active state to see an example of nested color functions.

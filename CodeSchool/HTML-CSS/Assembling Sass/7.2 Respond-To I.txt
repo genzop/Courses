@@ -1,0 +1,2 @@
+7.2 Respond-To I
+Media query handling has now been moved to a respond-to mixin, which has a fixed breakpoint for when desktop is passed as an argument. Use @else if to add a second condition that checks for an argument of tablet. tablet should output a media query with a min-width of 768px containing the @content block.

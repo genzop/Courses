@@ -1,0 +1,2 @@
+3.6 Interpolating Arguments
+A change request just came in: the border should only apply to one side of these elements. Add a required argument $side to the mixin and interpolate that value to the border property (passing left as $side should create border-left: 1px solid #ccc, for instance). .factory borders should be on the left side, .highrise borders on the right. As a reminder, arguments without default values need to come before arguments with default values.

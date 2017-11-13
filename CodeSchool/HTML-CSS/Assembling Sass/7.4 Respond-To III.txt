@@ -1,0 +1,2 @@
+7.4 Respond-To III
+We should further expand our mixin to allow for queries beyond min-width. Add $type as the first argument to respond-to, which will be used in place of min-width when passed in.

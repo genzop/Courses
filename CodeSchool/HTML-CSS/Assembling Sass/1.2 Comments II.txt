@@ -1,0 +1,2 @@
+1.2 Comments II
+Our document has a few remaining CSS-style comments for organization. Since these comments are only useful to us, let's alter them so they aren't output after compiling.

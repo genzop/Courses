@@ -1,0 +1,2 @@
+1.8 Nesting Pitfalls
+Someone was a bit overzealous in their nesting: the a styles should apply to any anchors in .notice rather than anchors in .notice.alert. Adjust the nesting below to compensate.

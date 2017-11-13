@@ -1,0 +1,2 @@
+6.8 Color Functions I
+Anchor elements are currently missing a hover state - add one via nesting which sets a color 15% lighter than $color-link.

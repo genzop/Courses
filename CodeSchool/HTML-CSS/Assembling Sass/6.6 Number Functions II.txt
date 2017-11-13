@@ -1,0 +1,2 @@
+6.6 Number Functions II
+Our .factory and .highrise declarations are lacking responsiveness: using the target / context formula, the given $context variable, and percentage(), give each declaration a fluid width. No need to refactor this into a separate function, just add your percentage() calls within .factory and .highrise.

@@ -1,0 +1,2 @@
+4.5 Placeholder Selector II
+Whoops - we've discovered an alteration to .blueprint later in our stylesheet, and extending .blueprint with .surveyor is creating extra selectors in .factory that aren't needed. Create a placeholder selector called container to hold the shared properties and extend it with .blueprint and .surveyor to remove the extra .factory .surveyor selector.

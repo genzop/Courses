@@ -1,0 +1,2 @@
+1.4 Nesting
+With the comments out of the way, now it's time to refactor the .surveyor class to take advantage of nesting.

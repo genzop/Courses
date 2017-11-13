@@ -1,0 +1,2 @@
+7.5 Respond-To IV
+We've noticed that our most common call to respond-to passes in min-width for $type and 960px for $query: create default values out of each so that our simplified @include works correctly.

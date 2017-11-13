@@ -1,0 +1,2 @@
+2.1 Variables
+çThe color hex value #797979 has been popping up quite a bit throughout our stylesheet. Let's store the color in a variable and replace all instances of it with that variable.

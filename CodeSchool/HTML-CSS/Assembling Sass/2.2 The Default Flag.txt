@@ -1,0 +1,2 @@
+2.2 The Default Flag
+A coworker has been asking to see our modals partial for another project. Before we hand it over, let's clean up the repeated padding declarations to use a variable. To keep it modular, that variable definition should ensure it doesn't override a variable of the same name set elsewhere.

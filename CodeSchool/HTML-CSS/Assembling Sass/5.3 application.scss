@@ -1,0 +1,12 @@
+$size: 18px;
+
+.switch {
+  font-size: $size;
+  @if $size <= 16px {
+    font-family: Arial, sans-serif;
+  } @else if $size <= 24px {
+		font-family: Georgia, serif;
+	} @else {
+    font-family: Helvetica, sans-serif;
+  }
+}

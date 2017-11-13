@@ -1,0 +1,10 @@
+$context: 960px;
+
+.factory {
+  background: #fff;
+  width: percentage(600px/$context);
+}
+.highrise {
+  background: #797979;
+  width: percentage(300px/$context);
+}

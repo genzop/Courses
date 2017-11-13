@@ -1,0 +1,2 @@
+2.4 Variable Nesting
+Our $font-base variable comes in handy when setting the font family in body, but we're getting an error when trying to use it elsewhere. Refactor the styles below so that $font-base is usable throughout.

@@ -1,0 +1,2 @@
+1.6 Parent Selector II
+Now that we have the parent selector, let's use it to add a :hover state to .notice a with a color: #313131; property. While we're at it, we should nest a inside of .notice properly.

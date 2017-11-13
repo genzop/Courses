@@ -1,0 +1,2 @@
+2.5 Interpolation
+We'd like to add a simple way to set which side borders appear on. Create a variable with the current value (left) and interpolate that value into each border property occurance.

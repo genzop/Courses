@@ -1,0 +1,2 @@
+4.2 Nested Extend
+The developers are using .notice in some places of the application, .error in others, and are unable to only use one or the other. Extend the .notice styles into an .error declaration.

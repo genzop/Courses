@@ -1,0 +1,2 @@
+3.4 Multiple Arguments
+Some elements also need a nonstandard amount of padding. Create a second argument, $pad, with a default value of 10px. .factory uses the default value, but .highrise should have 20px of padding on all sides.

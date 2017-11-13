@@ -1,0 +1,12 @@
+@mixin assemble {
+	background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.factory {
+	@include assemble;
+}
+.highrise {
+	@include assemble;
+}

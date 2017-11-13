@@ -1,0 +1,2 @@
+6.1 Arithmetic I
+To ensure consistent spacing between columns, our stylesheet has a reusable $gutter variable. Subtract the width values in .factory and .highrise by $gutter to account for the margin.

@@ -1,0 +1,2 @@
+3.2 Argument
+That's a good start, but we need the ability to change the background color. Alter the mixin to take an argument called $bg, which should then be set as the value of the background property. Pass #fff in for .factory and #797979 in for .highrise.

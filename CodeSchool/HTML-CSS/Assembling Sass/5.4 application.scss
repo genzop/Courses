@@ -1,0 +1,14 @@
+@mixin family ($size) {
+  font-size: $size;
+  @if $size <= 16px {
+    font-family: Arial, sans-serif;
+  } @else if $size <= 24px {
+    font-family: Georgia, serif;
+  } @else {
+    font-family: Helvetica, sans-serif;
+  }
+}
+
+.switch {  
+	@include family(18px);  
+}

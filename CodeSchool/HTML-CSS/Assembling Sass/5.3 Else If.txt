@@ -1,0 +1,2 @@
+5.3 Else If
+On the same conditional, use @else if to add a condition between the existing @if and @else: if $size is less than or equal to 24px, font-family: Georgia, serif; is output.

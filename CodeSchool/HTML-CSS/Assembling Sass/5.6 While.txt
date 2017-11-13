@@ -1,0 +1,2 @@
+5.6 While
+Technically, it works - but this @for with a nested @if is more complicated than necessary to target odd numbers from 1 to 7. Remove the @if statement and refactor the @for using @while instead to achieve the same result. Note: if you aren't familiar with the % operator, don't worry - it's covered in the next level.

@@ -1,0 +1,2 @@
+5.2 If
+A number stored in $size is being used to set the font size for our .switch. Based on $size, create a conditional statement with @if inside .switch: if $size is less than or equal to 16px, font-family: Arial, sans-serif; is output. Otherwise, font-family: Helvetica, sans-serif; is output.

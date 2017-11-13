@@ -1,0 +1,2 @@
+4.1 Extend I
+It looks like .blueprint and .surveyor have a number of matching properties. Add an @extend to .surveyor to make this section more efficient.

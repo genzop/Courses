@@ -1,0 +1,9 @@
+$fontSize: 3.75em;
+.sign {
+  font-size: $fontSize;
+  font-weight: bold;
+  padding: 20px 40px;
+  span {
+    font-size: $fontSize / 2;
+  }
+}

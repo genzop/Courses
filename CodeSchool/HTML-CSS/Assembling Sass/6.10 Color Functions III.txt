@@ -1,0 +1,2 @@
+6.10 Color Functions III
+Unfortunately, our hover state just isn't obvious enough. Remove the saturate() and lighten() additions, and use a color function to invert the value.

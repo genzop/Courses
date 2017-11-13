@@ -1,0 +1,2 @@
+5.5 Each
+Someone left us a to-do above this segment - we can clean it up for future expansion by generating the selectors and background with @each. Start by creating a list variable named $tools to store socket, wrench, and bolt.

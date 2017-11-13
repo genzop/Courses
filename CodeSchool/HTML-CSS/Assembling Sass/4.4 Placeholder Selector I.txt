@@ -1,0 +1,2 @@
+4.4 Placeholder Selector I
+.group (commonly referred to as clearfix) is used throughout our application for clearing floats. To keep use of this relegated to our styles rather than allowing .group to be added as a class, convert .group over to a placeholder selector and update the extend inside .factory.

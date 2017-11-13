@@ -1,0 +1,9 @@
+@function aspect($width) {
+  @return $width * 9 / 16;
+}
+
+.intro {
+  background: #000;
+  width: 500px;
+  height: aspect(500px);
+}

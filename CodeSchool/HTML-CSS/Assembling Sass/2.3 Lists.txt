@@ -1,0 +1,2 @@
+2.3 Lists
+A last-minute change from the designer just came through: the padding value for the various modal components should be 20px 10px 15px instead of 10px. Knowing we can have lists stored in variables, alter $modal-padding to reflect this revision.

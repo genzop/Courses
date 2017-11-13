@@ -1,0 +1,21 @@
+@mixin respond-to($media) {
+  @if $media == desktop {
+    @media (min-width: 960px) {
+      @content;
+    }
+  } @else if $media == tablet {
+  	@media (min-width: 768px) {
+    	@content;
+    }
+  }
+}
+
+.factory {
+  width: 100%;
+  @include respond-to(desktop) {
+    width: percentage(600px / 960px);
+  }
+  @include respond-to(tablet) {
+    width: 50%;
+  }
+}

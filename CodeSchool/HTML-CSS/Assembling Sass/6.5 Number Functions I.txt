@@ -1,0 +1,2 @@
+6.5 Number Functions I
+On reflection, it'd be nice to have a cleaner font size to work with after performing arithmetic inside our span. Use the appropriate built-in function to round the span's font size to the nearest whole number.

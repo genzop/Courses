@@ -1,0 +1,2 @@
+6.2 Arithmetic II
+Your coworker has been attempting to set the font size of span elements inside .sign to half the .sign font size, without success. Knowing what you do about triggering division, utilize parentheses to fix the problem.
