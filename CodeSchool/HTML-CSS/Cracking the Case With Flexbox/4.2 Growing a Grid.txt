@@ -1,0 +1,5 @@
+4.2 Growing a Grid 
+Let's finish off our grid! All it takes is making each .grid-item fill as much space as possible. Instead of adjusting to the size of the content, we want each one to grow.
+
+	- Use the flexbox property and value to have all of the grid items grow.
+

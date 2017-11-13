@@ -1,0 +1,6 @@
+3.4 Aligning Nested Items
+Our form has icons that we'd like to have aligned to the left of the input and centered vertically. This will take a combination of nested flex containers to achieve.
+
+	- Make the div that contains the icon div and the input a flex container.
+	- Make all divs that contain the icon images flex containers.
+	- Override the default value of stretch to align the icons to the center.

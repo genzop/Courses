@@ -1,0 +1,7 @@
+1.5 Flexing Form Elements 
+Flexbox will help us align form elements for our UI, but it would impact too many inputs if we make the form a flex container. Let's group some items to have them display on a single flex line.
+
+To start, we have .fieldsets-group set to display: flex; in the forms.css file.
+
+	- Add the fieldsets-group flex container class to the div containing the location fieldsets.
+	- Wrap the two name items in a div container with our fieldsets-group flex container class.

@@ -1,0 +1,4 @@
+4.4 Avoiding Shrinking 
+We want the city input in our form to have as much space as possible for people to read what they are inputting. So, let's make sure it doesn't get smaller.
+
+	- Use the flexbox property and value to set .fieldset-city to not shrink.

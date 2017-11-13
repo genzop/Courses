@@ -1,0 +1,6 @@
+2.4 Justifying Column Content 
+There are three promo components that we want to modify to display the content vertically at the flex-start, center, and flex-end positions. We'll skip flex-start because it's the default.
+
+	- For the .promo selector, use a property and value that will set the container to display content in a column.
+	- For the .promo--center selector, use the property and value that will justify the content to the center.
+	- For the .promo--end selector, use the property and value that will justify the content to the flex-end.

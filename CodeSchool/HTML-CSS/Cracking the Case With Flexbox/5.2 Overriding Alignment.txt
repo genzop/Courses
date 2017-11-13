@@ -1,0 +1,5 @@
+5.2 Overriding Alignment 
+We want the Sign In button to be positioned to the right side of the form. To achieve this in a flex container, we'll have to override the default style.
+
+	- Make .form-signIn a flex container with a column direction.
+	- Use the flexbox property and value to align .btn-signIn to the right of the form.

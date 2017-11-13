@@ -1,0 +1,4 @@
+5.4 Aligning Wrapped Items 
+We set up a base layout structure for the site by wrapping our header, main, and footer sections. We want the items to have space between them, but at the moment they are stretching to fill the container.
+
+	- Use the flexbox property and value to align wrapped items to have space between them.

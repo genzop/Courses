@@ -1,0 +1,5 @@
+4.6 Basis Split 
+We're going to refactor our media component to use flex-basis for the widths. We started by removing the CSS widths for the image. When the screen size is at least 500px, we want the image to be 40% and the content to be 60%.
+
+	- Use the flexbox property and value to set .media-img to 40%.
+	- Use the flexbox property and value to set .media-content to 60%.

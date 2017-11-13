@@ -1,0 +1,4 @@
+5.6 Refactoring to Flex 
+In addition to the current properties, we want to set .fieldset-city to flex-grow: 1;. To save some characters, let's use the flex property.
+
+	- Use the shorthand flex property to refactor .fieldset-city.

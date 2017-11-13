@@ -1,0 +1,4 @@
+1.3 Starting a Grid
+Basic grids are handled well by flexbox. Let's get one started for our design patterns by making a few flex containers with one class.
+
+	- Use the .grid selector to make each grid class a flex container.

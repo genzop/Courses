@@ -1,0 +1,4 @@
+2.2 Distributing Space Around 
+The likes and comments information will have a fair amount of empty space. Let's have it divided into both sides of each flex item.
+
+	- Apply the flexbox property and value that will add space around each item.

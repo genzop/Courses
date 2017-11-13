@@ -1,0 +1,4 @@
+5.7 Refactoring From Flex 
+We want to share an answer on Stack Overflow, but we know that not everyone can use shorthand. Let's refactor this to the full properties and values.
+
+	- Refactor the example to use the full properties instead of shorthand.

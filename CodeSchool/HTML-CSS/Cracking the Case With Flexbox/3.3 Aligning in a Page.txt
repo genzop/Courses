@@ -1,0 +1,6 @@
+3.3 Aligning in a Page
+We have styles set for our sign-in form, but no flexbox yet. We want the form to be vertically and horizontally centered.
+
+	- Start by making the div containing the form a flex container.
+	- Use the flexbox property and value to center the form on the main axis.
+	- Use the flexbox property and value to center the form on the cross axis.

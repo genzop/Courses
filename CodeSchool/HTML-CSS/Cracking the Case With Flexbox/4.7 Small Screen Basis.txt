@@ -1,0 +1,6 @@
+4.7 Small Screen Basis
+We've added some space around items with padding. Now we want to use flexbox to reduce any lines to two items and set those items to split the space.
+
+	- The line with the three items feels a bit cramped. Use the flexbox property and value to have those items wrap.
+	- Set .fieldset-city to have a flex-basis of 100%.
+	- Set .fieldset-state, .fieldset-zip, and .fieldset-1of2 to have a flex-basis of 50%.

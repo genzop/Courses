@@ -1,0 +1,6 @@
+1.8 Wrapping Grid Items
+We can use a class to have grid items wrap when there's not enough space. Let's have grid containers with at least four items wrap at 500px.
+
+	- Add a .grid-wrap selector that will have flex items wrap by default.
+	- When screen sizes are at least 500px, counter the wrapping by adding the .grid-wrap selector within a media query. Use the flexbox property and selector to have them not wrap.
+	- Add the .grid-wrap class to grid flex containers with at least four items.

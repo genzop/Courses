@@ -1,0 +1,5 @@
+1.2 Creating Flex Containers 
+We're going to be using flexbox to align content and distribute space in a series of components. Let's get started by making this media component a flex container.
+
+	- Use the display property to make .media a flex container.
+	- Create a flex container that will align the two media-meta-item items.

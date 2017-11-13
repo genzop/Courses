@@ -1,0 +1,4 @@
+3.2 Vertically Centering Content
+In the media components, we want the text to vertically align to the middle of the image.
+
+	- Use the flexbox property and value to align items on the cross axis.

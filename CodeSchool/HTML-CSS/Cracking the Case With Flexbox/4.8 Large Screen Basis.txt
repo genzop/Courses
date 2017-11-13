@@ -1,0 +1,6 @@
+4.8 Large Screen Basis
+When there's enough room, we want to have the location items share a single line. Let's make some changes once the width is at least 600px.
+
+	- Use the flex-basis property to set .fieldset-city to 50%.
+	- Use the flex-basis property to set .fieldset-state to 35%.
+	- Use the flex-basis property to set .fieldset-zip to 15%.

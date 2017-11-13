@@ -1,0 +1,4 @@
+2.5 Aligning Inline Items
+Inline containers can have their alignment changed when content is justified. To counter this, we'll use some non-flexbox CSS.
+
+	- Add a vertical-align property with a value of top to the .promo selector to align our inline flex containers.

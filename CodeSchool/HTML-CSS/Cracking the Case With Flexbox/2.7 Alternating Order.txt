@@ -1,0 +1,4 @@
+2.7 Alternating Order 
+When we have multiple media components on a page and they're not wrapping, we'd like the image and content to alternate order. We set up a selector to handle it, but it needs the right flex property.
+
+	- Use a flexbox property and value to have .media-img display after .media-content.

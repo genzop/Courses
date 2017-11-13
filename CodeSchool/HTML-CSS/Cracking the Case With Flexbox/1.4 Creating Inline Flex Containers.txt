@@ -1,0 +1,4 @@
+1.4 Creating Inline Flex Containers
+To feature items, we need a few flex containers that will adjust to the size of the content instead of displaying "block level."
+
+	- Apply the flexbox property and value to create a container that will adjust to the content size.

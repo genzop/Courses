@@ -1,0 +1,5 @@
+5.8 Reverse Refactoring
+There may be a need to display media objects with the text first on small screens. We set it up, but it's so many characters! Let's use the shorthand.
+
+	- Use shorthand for the .media--reverse class for small screens.
+	- Use shorthand for the .media--reverse class for when the screen is at least 500px wide.

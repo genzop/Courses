@@ -1,0 +1,4 @@
+5.3 Reverting Alignment
+We set up a pricing grid and aligned the pricing items to the center. However, we want the featured product to revert to its default so that it fills the height.
+
+	- Use the flexbox property and value to have .pricing-featured fill all of the available height.

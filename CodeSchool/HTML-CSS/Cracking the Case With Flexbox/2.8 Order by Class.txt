@@ -1,0 +1,4 @@
+2.8 Order by Class
+Our CMS outputs items in order, but uses a class for featured items. We want featured items to display first.
+
+	- Use a flexbox property and value to have .product--featured displayed before other items.
