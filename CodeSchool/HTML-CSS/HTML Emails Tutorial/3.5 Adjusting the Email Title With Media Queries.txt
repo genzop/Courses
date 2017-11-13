@@ -1,0 +1,8 @@
+3.5 Adjusting the Email Title With Media Queries
+To improve the look of the email title on smaller screens, we need to make some adjustments to the font-size and padding. We set up a media query with some selectors and styles.
+
+	- To apply the styles, add the email-title class to the heading and the email-intro class to the paragraph of text.
+	- The changes aren't taking effect because we missed something to make the CSS in the style tag override the inline styles. Add the missing declaration to each property.
+	- We can increase the .email-title for slightly larger screens. Create a media query to target a min-width of 321px and a max-width of 375px.
+	- In the new media query, set the .email-title to a font-size of 22px and the line-height to 36px. Add the !important declaration to each of the new properties.
+	

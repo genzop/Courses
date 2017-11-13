@@ -1,0 +1,7 @@
+4.4 Styling the Button
+We grabbed some generated code from buttons.cm and now we'll need to make some adjustments to match our design.
+
+	- We want the buttons to use Georgia, serif for the font-family, so update that in both tags.
+	- Update the font-size to 20px in our center and a tags style attributes.
+	- Add text-transform: uppercase; to the style attribute in each button tag.
+	- Now use one element to position the button with: style="padding-top: 30px; text-align: center;".

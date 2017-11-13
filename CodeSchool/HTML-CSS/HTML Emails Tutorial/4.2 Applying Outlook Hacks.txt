@@ -1,0 +1,6 @@
+4.2 Applying Outlook Hacks 
+We want Outlook to use the line-height that we set, so we'll use conditional comments, a vendor property, and non-breaking spaces to convince it.
+
+	- We created a conditional comment and style tag in the head to prepare for some Outlook-specific CSS. Complete it by targeting all versions greater than or equal to 12.
+	- In the conditional style tag, select all td elements and use exactly as the value for the mso-line-height-rule vendor property.
+	- Add a non-breaking space within each of the empty td tags in the divider tables.

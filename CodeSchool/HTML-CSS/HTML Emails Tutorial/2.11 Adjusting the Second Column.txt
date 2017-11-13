@@ -1,0 +1,6 @@
+2.11 Adjusting the Second Column
+Because so much of the code is alike for the second column, we copied and pasted everything that we just did for column one. Now we can just update specific values.
+
+	- Update La Fuega Fatal's rank to Champion and change its color to #c11e29.
+	- Change the width of La Fuega Fatal's divider table to 120 and change the bgcolor of the td to #951720.
+	- Change La Fuega Fatal's record to 23-0-0 and the color to #951720.

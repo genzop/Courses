@@ -1,0 +1,6 @@
+5.6 Adding Conditional Tables
+We want our tables to have a width of 600 pixels in Outlook, so we need to add some conditional tables. We already nested the first container table in the conditional code. This conditional code is the same for each table, so we want to reuse it for each of them.
+
+	- Reuse the existing code to open and close a conditional table to nest the container table with the 2 columns of content.
+	- Open and close a conditional table to nest the container table with the button as content.
+	- Open and close a conditional table to nest the container table with the contact information as content.

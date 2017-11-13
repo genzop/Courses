@@ -1,0 +1,5 @@
+1.6 Apply a Background Using a Wrapper
+We want a textured background for the viewable area, so we'll use a wrapper element with a background image that falls back to a background color.
+
+	- Create a new div tag that will contain the existing div.
+	- Apply a background-color of "#e4c59a" and a background-image with the url of "https://s3.amazonaws.com/unmasking-html-emails/bg.jpg" to the new div.

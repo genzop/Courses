@@ -1,0 +1,6 @@
+3.3 Stacking Cells With CSS 
+Our layout isn't working as expected yet, but it's because we need to force the 2 columns to stack. We'll do that With another class in our max-width media query.
+
+	- Add a class selector for the stack-cell class. Then, add 2 properties - one to set the display to block, and the other to set the width to 100%. Make sure to give both of the properties the !important declaration.
+	- Add the stack-cell class to the td tag that contains the column content table for the contender.
+	- Add the stack-cell class to the td tag that contains the column content table for the champion.

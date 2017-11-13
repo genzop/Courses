@@ -1,0 +1,5 @@
+1.5 Containing the Content 
+We want the content to have a maximum width and to be centered, so we'll use a container element.
+
+	- First, wrap all of the existing content inside of a div tag.
+	- Restrict the width on the div to "600px" using max-width and then center it using "0 auto" for its margin.

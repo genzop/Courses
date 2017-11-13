@@ -1,0 +1,7 @@
+3.2 Full Width Tables With Media Queries
+When the available width is less than 600 pixels, we want our tables to be 100%. We'll need to create CSS for that and apply styles to the tables.
+
+	- In the head of the email, create a style tag.
+	- Create a class selector named width-full with the width set to 100% and use the !important declaration.
+	- To avoid zoom on smaller widths, we need to use a max-width media query with the value of 600px.
+	- Add the width-full class to both of our content container table tags.

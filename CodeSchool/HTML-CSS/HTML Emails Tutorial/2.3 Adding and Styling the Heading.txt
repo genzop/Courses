@@ -1,0 +1,8 @@
+2.3 Adding and Styling the Heading
+Continue recreating the header by adding a new row and cell to style the heading text.
+	
+	- Add a new tr with a td containing the text Championship Match!
+	- Set the color of the text on the td to #3a383a.
+	- Style the heading text using a font-family of Georgia, serif; and a font-size of 42px;.
+	- Make the heading bold and transform the text to uppercase.
+	- Apply spacing to the heading using a line-height of 44px and padding-top of 20px.

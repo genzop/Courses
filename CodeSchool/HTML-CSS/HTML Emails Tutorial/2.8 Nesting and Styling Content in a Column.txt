@@ -1,0 +1,7 @@
+2.8 Nesting and Styling Content in a Column
+We heard you like tables. So we're going to add some tables to your tables so that your tables are inside your tables. To style the content in the first column, we need to nest a content table and add content and styles within the td tags.
+
+	- In the first td, create a table to contain the img. Apply the reset attributes and add a width of 300 to the table.
+	- Add a new tr and td to the table, with the luchadora's rank of Contender.
+	- Style the new text with this CSS color: #b83466; font-family: Georgia, serif; font-size: 20px; font-weight: bold; line-height: 20px; padding-top: 5px;.
+	- Any text within this table should be centered and uppercase, so apply the styles text-align: center; text-transform: uppercase; to the table containing the img and rank.

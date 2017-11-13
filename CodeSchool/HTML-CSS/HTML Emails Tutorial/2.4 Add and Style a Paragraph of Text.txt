@@ -1,0 +1,7 @@
+2.4 Add and Style a Paragraph of Text 
+We need to add and style a paragraph of text that includes the match details. We can do this by using a new tr and td tag.
+
+	- Create a new tr and td and give the text:
+		Reigning Champion La Fuega Fatal will defend her title against the top contender, La Amor Peligrosa. Will the contender's attacks be enough to seize the belt, or will she go down in flames?
+	- Apply these styles to the new td: 
+		color: #3a383a; font-family: Georgia, serif; font-size: 18px; line-height: 27px; padding-top: 5px;

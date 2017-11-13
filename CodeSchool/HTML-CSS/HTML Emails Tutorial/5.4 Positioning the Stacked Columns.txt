@@ -1,0 +1,7 @@
+5.4 Positioning the Stacked Columns
+With at least 600 pixels of space, our tables will become columns. When they're not side by side, we want each one centered. It's hacky — we nested each column in a div with the display set to "inline-block" — but we want them to be centered with some vertical space.
+
+	- For centering on smaller screens, we need the td that contains both of our new div tags to have its text-align set to center.
+	- Remembering that display: inline-block can cause spacing issues, we also need that td to have its font-size set to 0.
+	- To add vertical space before the contender content table, we need to add styles to the td containing the table. Add a padding-top of "15px" to that td.
+	- We need that same style="padding-top: 15px;" on the td containing the champion content table, too.

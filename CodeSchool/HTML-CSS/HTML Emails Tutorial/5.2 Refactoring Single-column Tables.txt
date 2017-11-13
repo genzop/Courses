@@ -1,0 +1,6 @@
+5.2 Refactoring Single-column Tables
+We need to do some refactoring to make our email work without media queries. We removed the 2-column container table to focus on getting the single-column tables to use a fluid width.
+
+	- Adjust the container table with the title image, heading, and paragraph of text to have a width of 100% and add a max-width of 600px.
+	- Adjust the container table with the button to have a width of 100% and add a max-width of 600px.
+	- Adjust the container table with the contact information to have a width of 100% and add a max-width of 600px.

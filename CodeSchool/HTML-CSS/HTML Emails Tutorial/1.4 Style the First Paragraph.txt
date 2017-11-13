@@ -1,0 +1,7 @@
+1.4 Style the First Paragraph
+We need to use more inline styles so the p appears correctly.
+
+	- Set the color of the text to #3a383a.
+	- Use the font-family Georgia, serif and a font-size of 18px for the paragraph.
+	- Override any default styles by applying a line-height of 27px and a margin of 0 on the p.
+	- Separate the paragraph from the heading by applying a padding-top of "5px" to the p.

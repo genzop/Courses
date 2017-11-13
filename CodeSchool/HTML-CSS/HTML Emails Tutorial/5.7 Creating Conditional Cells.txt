@@ -1,0 +1,5 @@
+5.7 Creating Conditional Cells 
+We'll need to do a little work to counter Yahoo! Mail. We'll also want to counter the extra spacing that can happen in Outlook by adding some conditional elements.
+
+	- To counter our final layout bug in Yahoo! Mail, add a selector in the head to target all table elements and give them a margin of "0 auto". Make sure to use the !important declaration.
+	- Between our 2 div tags that are containing the table columns, we need to add a conditional </td><td>.

@@ -1,0 +1,7 @@
+2.2 Beginning the Header
+Use a table to contain and align the first image for the header.
+
+	- Add a simple table with a single td to contain the <img>.
+	- Reset the spacing for the table to 0 using the border, cellpadding, and cellspacing attributes.
+	- Fix the width of the table to 600.
+	- Center the table using the align attribute.

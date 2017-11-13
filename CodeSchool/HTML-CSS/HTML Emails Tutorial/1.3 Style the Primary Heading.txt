@@ -1,0 +1,8 @@
+1.3 Style the Primary Heading
+We want a large title that spans most of the available space. Use inline CSS to style the h1 element.
+
+	- Set the color of the h1 to #3a383a.
+	- Continue styling the h1 by setting it to a font-family of Georgia, serif and a font-size of 42px.
+	- Adjust the weight and case of the title by setting the font-weight to bold and setting text-transform to uppercase.
+	- Override any default styles on the h1 by setting the line-height to 42px and the margin to 0.
+	- Separate the heading from the image by applying "20px" to the padding-top of the h1.

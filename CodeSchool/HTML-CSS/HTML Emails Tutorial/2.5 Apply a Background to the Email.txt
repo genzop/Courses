@@ -1,0 +1,6 @@
+2.5 Apply a Background to the Email
+Use a wrapper table to apply a background to the whole email.
+
+	- Create a new table with a single tr and td that contains the existing table.
+	- Reset the spacing and border of this new table and use an attribute to set the width to 100%. For this you'll need to add 4 new attributes to the table.
+	- Style the table with a background-color of #e4c59a and a background-image with a URL of https://s3.amazonaws.com/unmasking-html-emails/bg.jpg.

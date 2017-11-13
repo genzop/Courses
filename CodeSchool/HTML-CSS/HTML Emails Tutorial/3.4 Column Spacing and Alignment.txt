@@ -1,0 +1,6 @@
+3.4 Column Spacing and Alignment 
+When the layout is in a single column, we want to have some horizontal spacing to separate the content from the edges of the screen and we want smaller tables centered. We can apply these outside of the media query.
+
+	- Apply padding: 0 10px; to the first td containing the rest of our email code.
+	- Apply align="center" to the content table that contains the contender's information.
+	- Apply align="center" to the content table that contains the champion's information.

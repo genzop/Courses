@@ -1,0 +1,5 @@
+4.7 Adjusting Text Size Adjust
+The text at the bottom of our email is intended to be small, but a few clients bump up the font-size to "14px". We'll need some more defensive styles to counter them. Luckily, we have 2 vendor properties to help: -ms-text-size-adjust:none; and -webkit-text-size-adjust:none;.
+
+	- We're going to target all td tags with the vendor property to disable the text size adjusting. In our main style tag, add a td selector and apply the 2 properties.
+	- To avoid any oddities that can occur in Gmail applications, we need to remove the -webkit-text-size-adjust:none; from our button style.

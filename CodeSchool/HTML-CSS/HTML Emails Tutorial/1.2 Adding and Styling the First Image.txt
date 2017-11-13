@@ -1,0 +1,7 @@
+1.2 Adding and Styling the First Image
+The first bit of content to add is an image at the top of the email. It needs a combination of HTML attributes and inline styles to appear correctly.
+
+	- Begin by adding an img tag with a source of https://s3.amazonaws.com/unmasking-html-emails/info.png.
+	- Set the alt text for the image to La Amor Peligrosa vs. La Fuega Fatal.
+	- Add inline styles to the image to set its display property to "block" and max-width property to "100%".
+	- Use the width attribute to set the width of the image to 600 pixels, keeping in mind that the width attribute defaults to pixels.

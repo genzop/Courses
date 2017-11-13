@@ -1,0 +1,5 @@
+4.6 Overriding Client Links
+We added in another table with a phone number, unsubscribe link, and address. We'll need to do some defensive styling for client-generated links.
+
+	- We need to create a span with a class of client-link that contains only the phone number, +90 12 3456 7890.
+	- In the head, we added a client-link class with a color, but it's not applying to the link. Fix the selector so that it will apply to any a tags within the client-link class.

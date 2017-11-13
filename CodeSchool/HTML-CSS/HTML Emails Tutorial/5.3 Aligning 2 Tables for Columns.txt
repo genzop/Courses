@@ -1,0 +1,5 @@
+5.3 Aligning 2 Tables for Columns
+We've replaced the content tables for each of our 2 columns and we nested each one in another table for controlling their position. They're not aligning properly yet, so we need to make some adjustments. We're up to 5 tables deep — be sure to check your totem.
+
+	- The contender content is nested in a table with a width of 300. We need that table to have an align attribute of left for it to be a column table.
+	- We need align="left" on the table that is containing the champion content, too.
