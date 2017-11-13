@@ -1,0 +1,2 @@
+1.5 More Lists III
+Rather than store a collection of shared styles in a class or placeholder selector, our coworker is convinced they should be represented as shown in $styles - a list of lists. Inside the @each loop within .factory, utilize nth() to create working CSS properties and values from each pair in $styles.

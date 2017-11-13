@@ -1,0 +1,9 @@
+=assemble($side, $bg: #fff, $pad: 10px)
+  background: $bg
+  border-#{$side}: 1px solid #ccc
+  padding: $pad
+
+.factory
+  +assemble(left)
+.highrise
+  +assemble(right, #797979, 20px)

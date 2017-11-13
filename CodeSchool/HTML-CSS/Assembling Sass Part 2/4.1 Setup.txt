@@ -1,0 +1,2 @@
+4.1 Setup
+Before getting too far into text styling, the team's decided to try out the Compass vertical rhythm module. Move the base font size and line height values out of body and into the appropriate global variables, then kick things off with establish-baseline.

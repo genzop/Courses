@@ -1,0 +1,2 @@
+3.8 Inline Data
+Since arrow.png is the only background image in our stylesheet, we're probably better off saving the HTTP request and just embedding it. Swap out the image-url() function to achieve Base64 encoding.

@@ -1,0 +1,7 @@
+$surveyors: judy phillip
+$architects: william emily
+$crew: join($surveyors, $architects)
+
+@each $name in $crew
+  .team-#{$name}
+    background: url('../images/#{$name}.jpg')

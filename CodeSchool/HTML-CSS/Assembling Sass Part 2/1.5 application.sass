@@ -1,0 +1,5 @@
+$styles: background #333333, margin 20px, padding 10px
+
+.factory
+  @each $style in $styles
+    #{nth($style, 1)}: nth($style, 2)

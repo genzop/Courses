@@ -1,0 +1,10 @@
+@import "compass"
+$color-highlight: #e5e5e5
+
+.note
+  background: $color-highlight
+  padding: 10px
+  &.warning
+    background: scale-lightness($color-highlight, 20%)
+  &.error
+    background: scale-saturation($color-highlight, 90%)

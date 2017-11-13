@@ -1,0 +1,2 @@
+2.5 Gradients II
+There's been a last-minute change from the design team - rather than having a radial-gradient starting from the center, .socket should have a linear-gradient starting at the top. Assure them it's a quick fix by adjusting the value while they wait.

@@ -1,0 +1,2 @@
+3.6 Stretch
+We've added decorative overlays with the :after pseudo-element, using the absolute positioning trick to make it stick a few pixels from each edge. Clean up the styles by importing the compass/layout module and adding stretch.

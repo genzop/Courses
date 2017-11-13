@@ -1,0 +1,2 @@
+1.6 More Utilities I
+Adding a subtle change to .socket on :hover isn't going well: darken() causes the background to become black at low percentages. Instead, use scale_color to relatively darken the color by 30%. Hint: you'll need to use a negative value on the $lightness keyword argument.

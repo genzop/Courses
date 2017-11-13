@@ -1,0 +1,2 @@
+2.1 Importing I
+We've added a slight transition to our anchor color, but we were a bit overzealous: without Compass imported, the transition mixin isn't available. Add Compass to the top of our stylesheet to rectify this situation.

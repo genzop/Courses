@@ -1,0 +1,3 @@
+1.1 Indented Syntax I
+The foreman has a newfound efficiency obsession, and has ordered a switch to the indented 
+syntax. Refactor the .surveyor declaration to do away with braces and semicolons.

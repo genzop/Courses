@@ -1,0 +1,2 @@
+1.4 More Lists II
+Instead of generating classes with hyphenated names (.team-judy), we've been asked to use each crew member's index (.team-1). Use $crew and $name with index() to fulfill this request.

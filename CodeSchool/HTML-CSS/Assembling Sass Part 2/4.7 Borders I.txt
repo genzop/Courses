@@ -1,0 +1,2 @@
+4.7 Borders I
+Another late night has produced a second gem: the border added to h2 is playing havoc on our baseline. Replace the border-top property with the appropriate mixin, using 1 unit for the padding value and ensuring the adjusted font size is accounted for.

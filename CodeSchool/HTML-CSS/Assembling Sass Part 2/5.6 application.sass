@@ -1,0 +1,12 @@
+@import "compass"
+$logos: sprite-map("logos/*.png")
+
+.logo
+  background: $logos sprite-position($logos, logo)
+  display: block
+  text-indent: -9999px
+  +sprite-dimensions($logos, logo)
+  &:hover
+    background-position: sprite-position($logos, hover)
+  &:active
+    background-position: sprite-position($logos, active)

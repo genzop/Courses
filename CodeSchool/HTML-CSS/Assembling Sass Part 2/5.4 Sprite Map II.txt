@@ -1,0 +1,2 @@
+5.4 Sprite Map II
+With our sprite map created, use $logos to set the generated sprite image as the background of .logo.

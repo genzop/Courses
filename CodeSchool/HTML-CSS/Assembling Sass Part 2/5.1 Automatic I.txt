@@ -1,0 +1,2 @@
+5.1 Automatic I
+Three variations of the company logo show up in our design, so we've saved each to the logos folder in the images directory. To make usage easy, let's use Compass automatic spriting: start by importing all .png files in the logos folder.

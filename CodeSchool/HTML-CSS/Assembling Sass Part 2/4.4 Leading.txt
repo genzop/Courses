@@ -1,0 +1,2 @@
+4.4 Leading
+It was a late night, and our last commit seems to have thrown the grid off - the h1 leading tweak isn't taking its adjusted font size into consideration. Pass the necessary value into adjust-leading-to to account for the change in size.

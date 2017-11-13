@@ -1,0 +1,2 @@
+4.2 Font Size
+With our newly-found rhythm, the font-size properties below only serve to mess up the grid. Replace them with the equivalent vertical rhythm mixin.

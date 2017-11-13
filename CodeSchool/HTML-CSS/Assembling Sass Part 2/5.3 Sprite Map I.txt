@@ -1,0 +1,2 @@
+5.3 Sprite Map I
+Oh. They weren't logo variations after all - these images are the default, hover, and active states of a link. It'll be easier to handle this manually, so let's start by removing the automatic import and mixin. After that, set an appropriate sprite-map to a variable called $logos.

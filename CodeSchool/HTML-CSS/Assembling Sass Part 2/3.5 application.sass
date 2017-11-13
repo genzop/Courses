@@ -1,0 +1,12 @@
+@import "compass"
+
+=button($color)
+  background-color: $color
+  color: contrast-color($color, #111, #eee, 50%)
+
+.btn-a
+  +button(#9fb2b0)
+.btn-b
+  +button(#e58e1a)
+.btn-c
+  +button(#322e2a)

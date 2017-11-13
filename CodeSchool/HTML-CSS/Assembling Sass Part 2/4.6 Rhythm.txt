@@ -1,0 +1,2 @@
+4.6 Rhythm
+We've added a bit of padding above and below our li items, but the resulting collection of four mixins on li is lacking optimization. Clean things up with rhythm.

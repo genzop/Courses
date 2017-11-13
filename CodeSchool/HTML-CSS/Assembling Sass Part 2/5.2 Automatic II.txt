@@ -1,0 +1,2 @@
+5.2 Automatic II
+Now that our sprite image has been generated, complete the automatic setup with the all-x-sprites mixin, remembering that x represents the folder name our sprites reside in.

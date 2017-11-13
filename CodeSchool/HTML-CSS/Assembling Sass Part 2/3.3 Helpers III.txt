@@ -1,0 +1,2 @@
+3.3 Helpers III
+The .warning and .error states of .note currently have hardcoded background colors, but we'd prefer to have them adjust our stored variable. Set .warning to scale the lightness of $color-highlight up by 20%, and set .error to scale the saturation of $color-highlight up by 90%.

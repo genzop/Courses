@@ -1,0 +1,2 @@
+4.8 Borders II
+Just before pushing the site to production, the foreman has burst into your office, breathlessly asking for the paragraph to stand out just a touch more. Add a 2px border and 1 unit of padding to each side of the p, without upsetting your grid.

@@ -1,0 +1,2 @@
+3.7 Image Dimensions
+.entry has arrow.png as a background image, set off to the right. We need a line height equal to arrow.png's height (30px) and right padding equal to arrow.png's width (30px), plus 10px. Use image-height() and image-width() to automate the values currently being set manually.

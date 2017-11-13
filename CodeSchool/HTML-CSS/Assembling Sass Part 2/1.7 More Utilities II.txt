@@ -1,0 +1,2 @@
+1.7 More Utilities II
+The text color of .worksite is dependent on the number of members in our crew. Let's update the conditional statement to use the single-line if() for brevity.

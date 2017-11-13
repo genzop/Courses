@@ -1,0 +1,2 @@
+2.4 Gradients I
+Someone added a radial gradient and, aside from being a bit of an eyesore, it's proving difficult to maintain. Go ahead and use the background mixin to simplify the process.

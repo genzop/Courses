@@ -1,0 +1,8 @@
+@import "compass"
+
+=borders($side, $style)
+  border-#{$side}: $style
+  border-#{opposite-position($side)}: $style
+
+.complex
+  +borders(left, 10px solid #ccc)

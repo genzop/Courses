@@ -1,0 +1,2 @@
+3.2 Helpers II
+With Compass around, let's simplify our scale_color adjustment from Level 1 to simply use scale-lightness.

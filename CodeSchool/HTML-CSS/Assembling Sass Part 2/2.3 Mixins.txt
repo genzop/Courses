@@ -1,0 +1,2 @@
+2.3 Mixins
+.socket partially rotates when .is-active is added, but the non-prefixed transform property is lacking support in some browsers. Use the transform mixin instead to widen coverage.

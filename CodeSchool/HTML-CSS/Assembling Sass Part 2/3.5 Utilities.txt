@@ -1,0 +1,3 @@
+3.5 Utilities
+Someone started automating button creation with the button mixin, but every button has 
+#eee-colored text regardless of background. Replace the color value in the mixin with the contrast-color() function, passing in $color and returning #111 as the dark value and #eee as the light value with a 50% threshold.
