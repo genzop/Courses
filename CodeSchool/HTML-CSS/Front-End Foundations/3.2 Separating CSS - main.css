@@ -1,0 +1,51 @@
+/*3.2 Separating CSS - main.css
+We've got some cool CSS and we'd like to make it available to every page on our site. It doesn't make sense to copy that CSS <style> block to every page, because that means we'll have to update all of them individually whenever we make a change.
+
+Instead, let's move our CSS to a new file and link that to each page so our CSS is all in one spot.
+
+1) Move all of the CSS in prependers-band.html over to a new file we've created in the 2nd tab called main.css.
+2) Replace the style tag in prependers-band.html with a link tag that loads main.css.
+3) Good job! Now copy that link tag to the header of bands.html so it can also enjoy the CSS rules in main.css.*/
+
+html, body, h1, h2, h3, h4, ul, ol, li, p, a {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+h1 {
+  color: #000000;
+  margin: 0 0 15px 0;
+}
+h2 {
+  color: #000000;
+  margin: 15px 0 15px;
+}
+h3 {
+  color: #333333;
+  margin: 20px 0 5px 0;
+  border-bottom: 1px solid #aaaaaa;
+  padding: 2px;
+}
+h4 {
+  color: #666666;
+  margin: 10px 0 10px 0;
+}
+p {
+  color: #444444;
+  margin: 0 0 10px 0;
+}
+a {
+  color: #440000;
+}
+ul {
+  padding: 0 0 0 30px;
+}
+li {
+  margin-bottom: 5px;
+}
+body {
+  padding: 15px;
+}
+ol {
+  padding: 0 0 0 20px;
+} 

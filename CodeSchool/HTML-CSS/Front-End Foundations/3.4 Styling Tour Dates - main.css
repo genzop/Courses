@@ -1,0 +1,70 @@
+/*3.4 Styling Tour Dates - main.css
+Back in regular-band.html, we've added that nav class to the site navigation for you. The tour dates on this page are another great spot to use classes.
+
+We don't need to add a class to the <ul> that contains the tour dates, but we do need a way to access the date/time paragraph tag and the concert location paragraph tag separately.
+
+1) Add a class of day-time to each paragraph tag that contains a date and time.
+2) Add a class of concert-location to each paragraph tag that contains a location.
+3) Use class selectors to change the .day-time class color to #444444 and change the .concert-location class color to #888888.
+4) Let's change the text so that it stands out a little better too.For both the .day-time and the .concert-location, add a text-decoration of underline.*/
+
+html, body, h1, h2, h3, h4, ul, ol, li, p, a {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+h1 {
+  color: #000000;
+  margin: 0 0 15px 0;
+}
+h2 {
+  color: #000000;
+  margin: 15px 0 15px;
+}
+h3 {
+  color: #333333;
+  margin: 20px 0 5px 0;
+  border-bottom: 1px solid #aaaaaa;
+  padding: 2px;
+}
+h4 {
+  color: #666666;
+  margin: 10px 0 10px 0;
+}
+p {
+  color: #555555;
+  margin: 0 0 10px 0;
+}
+a {
+  color: #440000;
+}
+ul {
+  padding: 0 0 0 30px;
+}
+li {
+  margin-bottom: 5px;
+}
+body {
+  padding: 15px;
+}
+ol {
+  padding: 0 0 0 20px;
+}
+.nav {
+  padding: 0;
+}
+.nav li {
+  display: inline;
+  padding-right: 20px;
+}
+.nav li:last-child {
+  padding-right: 0;
+}
+.day-time {
+  color: #444444;
+  text-decoration: underline;
+}
+.concert-location {
+  color: #888888;
+  text-decoration: underline;
+}

@@ -1,0 +1,10 @@
+/*5.4 Font Family 3
+Create a CSS rule to set the font based on the following values:
+
+	Primary: Arial
+	Secondary: none
+	Base: serif*/
+
+p {
+  font-family: Arial, serif;
+}

@@ -1,0 +1,36 @@
+<!--5.9 A Basic Form
+The Open Source Records contact form is the main way that they'll be able to learn about new talent.
+
+We won't be hooking up the form responses to a server, but we can still create the form's HTML now.
+
+1) Start creating a form by adding an opening and closing form tag underneath the Contact heading.
+2) Add an input tag with a type attribute set to text so that an aspiring band can enter their band name.
+3) Add a label that says Band Name before the input field. Then add the appropriate attributes to the label and input so the two are related with the value band-name.
+4) Below the input tag, add a new input tag with a type attribute set to submit. The value attribute should say "Tell us about your band".-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+    <div class="header">
+      <img src="images/osr-logo.png" alt="Open Source Records logo">
+
+      <ul class="nav">
+        <li><a href="about.html">About</a></li>
+        <li><a href="bands.html">Bands</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="content-section">
+      <h1>Contact</h1>
+      <form>
+        <label for="band-name">Band Name</label>
+        <input type="text" id="band-name">
+        <input type="submit" value="Tell us about your band">
+      </form>      
+    </div>
+  </body>
+</html>

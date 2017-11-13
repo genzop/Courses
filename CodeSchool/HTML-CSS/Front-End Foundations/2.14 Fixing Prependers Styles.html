@@ -1,0 +1,109 @@
+<!--2.14 Fixing Prependers Styles
+We've copied the styles you wrote for the Regular Expressionists page over to prependers-band.html, but some issues have popped up. Go through each of these tasks and fix up some of those issues.
+
+1) The Bio section the page contains two paragraphs, but they are appearing too close together. Adjust the p tag so there's 10px of margin-bottom space for the bottom of the any paragraphs.
+2) In the last challenge, we fixed the ul styles so we could read the bullet points, but that page didn't have any ol tags.Adjust the ol tag so there's 20px of padding-left space and the album track numbers should line up with the album name headings.
+3) Our song list items look good now, but there's another problem - we didn't have album names on the page in the last challenge, so our album titles here don't have the correct spacing.Adjust the h4 tag so there's 10px of margin space above and below the album name headings.-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+      html, body, h1, h2, h3, h4, ul, ol, li, p, a {
+        padding: 0;
+        border: 0;
+        margin: 0;
+      }
+      p {
+        color: #444444;
+        margin-bottom: 10px;
+      }
+      ol {
+        padding-left: 20px;
+      }
+      h4 {
+        color: #666666;
+        margin: 10px 0px 10px 0px;
+      }
+      h1 {
+        color: #000000;
+        margin: 0 0 15px 0;
+      }
+      h2 {
+        color: #000000;
+        margin: 15px 0 15px;
+      }
+      h3 {
+        color: #333333;
+        margin: 15px 0 0 0;
+        border-bottom: 1px solid #aaaaaa;
+      }
+      a {
+        color: #440000;
+      }
+      ul {
+        padding: 0 0 0 30px;
+      }
+      li {
+        margin-bottom: 5px;
+      }
+      body {
+        padding: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Open Source Records</h1>
+
+    <ul>
+      <li><a href="about.html">About</a></li>
+      <li><a href="bands.html">Bands</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <h2>The Prependers</h2>
+
+    <h3>Bio</h3>
+
+    <p>The Prependers are a quirky four-piece from Orlando, FL. Critics have hailed them as the greatest post-garage-rock band of the last decade.</p>
+
+    <p>They are currently writing a full length album that's a follow-up to their breakout 2011 album, Top Right Bottom Left, and their critically acclaimed EP, Opacity Zero.</p>
+
+    <h3>Members</h3>
+
+    <ul>
+      <li>Jack Smith - Vocals</li>
+      <li>Sarah Quan - Guitar</li>
+      <li>Laverne Butlet - Bass</li>
+      <li>Simon St. Hollister - Drums</li>
+    </ul>
+
+    <h3>Albums</h3>
+
+    <h4>Top, Right, Bottom, Left</h4>
+
+    <ol>
+      <li>The Last</li>
+      <li>Downtown</li>
+      <li>Yellow Carpet</li>
+      <li>Rocket to Mars</li>
+      <li>Walk, not Run</li>
+      <li>Design</li>
+      <li>Shopping Cart</li>
+      <li>Our Gift to You</li>
+    </ol>
+
+    <h4>Opacity Zero</h4>
+
+    <ol>
+      <li>Visible/Invisible</li>
+      <li>Car Trip</li>
+      <li>AFK</li>
+      <li>Up and Up</li>
+    </ol>
+
+    <h3>Tour Dates</h3>
+
+    <p>The Prependers are not currently on tour because they are recording their new album. Check back later!</p>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+/*3.3 Fixing The Site Navigation - main.css
+We can use class attributes applied to HTML tags so they can be specifically targeted in CSS.
+
+Let's organize our HTML and CSS styles with some classes.
+
+1) The site navigation is a perfect candidate for adding a class. Add a class attribute to the unordered list, and set the name of it to nav.
+2) Switch to the main.css file, and set the padding for the .nav selector to 0 in order to remove the space that's appearing before the site navigation.
+3) Set the .nav li items to display horizontally with inline instead of their default block-level appearance.
+4) The .nav li items are appearing a little too close together. Add 20px of padding-right space so they have some room to breathe.
+5) That right padding is being applied to every navigation list item - even the last one on the right, which doesn't need any padding.Use the :last-child pseudo-selector to set the padding-right value to 0 to remove the extra space on the last navigation list item.*/
+
+html, body, h1, h2, h3, h4, ul, ol, li, p, a {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+h1 {
+  color: #000000;
+  margin: 0 0 15px 0;
+}
+h2 {
+  color: #000000;
+  margin: 15px 0 15px;
+}
+h3 {
+  color: #333333;
+  margin: 20px 0 5px 0;
+  border-bottom: 1px solid #aaaaaa;
+  padding: 2px;
+}
+h4 {
+  color: #666666;
+  margin: 10px 0 10px 0;
+}
+p {
+  color: #444444;
+  margin: 0 0 10px 0;
+}
+a {
+  color: #440000;
+}
+ul {
+  padding: 0 0 0 30px;
+}
+li {
+  margin-bottom: 5px;
+}
+body {
+  padding: 15px;
+}
+ol {
+  padding: 0 0 0 20px;
+}
+.nav {
+  padding: 0;
+}
+.nav li {
+  display: inline;
+  padding-right: 20px;
+}
+.nav li:last-child {
+  padding-right: 0px;
+}

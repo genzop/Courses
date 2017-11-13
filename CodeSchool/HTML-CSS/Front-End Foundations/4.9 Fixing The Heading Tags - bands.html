@@ -1,0 +1,43 @@
+<!--4.9 Fixing The Heading Tags - bands.html
+The next problem is a trickier one. In the last challenge, we removed the h1 tag and replaced it with an img tag. That's fine, but it also means that our highest level heading right now is an h2 tag, which isn't OK.
+
+Each page should have one h1 tag, and the rest of the content should be organized with h2 and h3 tags. That means we need to shift our existing heading tag numbers down by one, and then update our CSS selectors to reflect that shift.
+
+1) Start the fix off in bands.html. Change any h2 tags to h1, and any h3 tags to h2.
+2) Do the same thing for the heading tags on prependers-band.html. The band's name should be marked up with the h1 tag, followed by the page sections with h2 tags, and then the album names with h3 tags.
+3) You're doing such a fantastic job that we've saved you the effort of having to fix regular-band.html, about.html and contact.html, but we'll leave it up to you to make the heading shift in your CSS. Remember, what was an h2 is now an h1, and so on. Delete the existing h1 selector and rules, and then update the CSS selectors in main.css to reflect the new heading tag organization.-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+    <div class="header">
+      <img src="images/osr-logo.png" alt="Open Source Records logo">
+
+      <ul class="nav">
+        <li><a href="about.html">About</a></li>
+        <li><a href="bands.html">Bands</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="content-section">
+      <h1>Bands</h1>
+
+      <ul class="bands-list">
+        <li>
+          <img src="images/prependers-logo.jpg" alt="The Prependers Logo">
+          <h2><a href="prependers-band.html">The Prependers</a></h2>
+        </li>
+        <li>
+          <img src="images/regular-logo.jpg" alt="Regular Expressionists Logo">
+          <h2><a href="regular-band.html">Regular Expressionists</a></h2>
+        </li>
+      </ul>
+
+      <p>We're always looking for new talent, so <a href="contact.html">Contact us now!</a></p>
+    </div>
+  </body>
+</html>

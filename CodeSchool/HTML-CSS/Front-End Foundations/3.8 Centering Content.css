@@ -1,0 +1,83 @@
+/*3.8 Centering Content
+Right now all of our content is aligned to the left of the screen, but it probably makes sense for some of this stuff to be centered on the page.
+
+1) Center the content-section division that contains all of the page's main content.
+2) Align The Prependers h2 to the center inside the main content section.
+3) Align the Open Source Records h1 to the center at the top of the page. Then, align the site navigation .nav to the center as well.*/
+
+html, body, h1, h2, h3, h4, ul, ol, li, p, a {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+h1 {
+  color: #000000;
+  margin: 0 0 15px 0;
+  text-align: center;
+}
+h2 {
+  color: #000000;
+  margin: 15px 0 15px;
+  text-align: center;
+}
+h3 {
+  color: #333333;
+  margin: 20px 0 5px 0;
+  border-bottom: 1px solid #aaaaaa;
+  padding: 2px;
+}
+h4 {
+  color: #666666;
+  margin: 10px 0 10px 0;
+}
+p {
+  color: #444444;
+  margin: 0 0 10px 0;
+}
+a {
+  color: #440000;
+}
+ul {
+  padding: 0 0 0 30px;
+}
+li {
+  margin-bottom: 5px;
+}
+body {
+  padding: 0;
+}
+ol {
+  padding: 0 0 0 20px;
+}
+.nav {
+  padding: 0;
+  text-align: center;
+}
+.nav li {
+  display: inline;
+  padding-right: 20px;
+}
+.nav li:last-child {
+  padding-right: 0;
+}
+.day-time {
+  color: #444444;
+  margin: 0 0 3px 0;
+}
+.concert-location {
+  color: #888888;
+  margin: 0 0 15px 0;
+}
+.album {
+  border: 2px dashed #bbbbbb;
+  padding: 5px 10px 5px 10px;
+  margin-bottom: 5px;
+}
+.header {
+  padding: 15px;
+}
+.content-section {
+  padding: 15px;
+  width: 450px;
+  margin: 0 auto 0 auto;
+}

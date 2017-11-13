@@ -1,0 +1,16 @@
+/*4.11 Styling CSS Backgrounds
+Before we work on adding backgrounds with CSS to the Open Source Records page, let's practice with a temporary page here.
+
+1) Set the background-color of the body to #d2d2d2 and the background-color of the .box to #badf00.
+2) Now, modify the CSS so that the background-color of the body is still being used, but instead of the background-color property, use the shorthand background version. Use bg-body.png as the image, put the image in the top right of the container, and repeat it in all directions.
+3) Finally, modify the CSS rule for the .box class by reworking the existing background-color into a single shorthand background property that displays the image bg-box.png, put the image at the top and center of the container, and repeat in the y direction with repeat-y.*/
+
+body {
+  background: #d2d2d2 url(bg-body.png) top right repeat;
+}
+.box {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  background: #badf00 url(bg-box.png) top center repeat-y;
+}

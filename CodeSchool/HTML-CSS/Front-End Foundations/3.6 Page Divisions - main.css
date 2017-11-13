@@ -1,0 +1,73 @@
+/*3.6 Page Divisions - main.css
+It would be great to style the page header differently from the rest of the content, so let's add some divisions and classes to help us do that.
+
+1) Wrap the Open Source Records header and the site navigation inside of a div container, and give that tag a class of header.
+2) Perfect! Now wrap all of remaining content in the page body inside another div container, and give that tag a class of content-section.
+3) Now that we have the divisions in place, let's switch over to the main.css file. Before we had separate divisions, we added 15px of padding to the entire body. Now, we want our divisions to have better control over the page, so set the padding for the body selector to 0. Alternatively, since the padding is already being set by the CSS declaration at the very top, you could remove the body selector from the CSS and that works too.
+4) Now we can add 15px of padding back to all sides, but this time add it to the header and content-section divisions.
+5) For this site, our designers have asked us to make sure the content-section doesn't get bigger than 450px, so use that number to set the content section's width.*/
+
+html, body, h1, h2, h3, h4, ul, ol, li, p, a {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+.header {
+  padding: 15px 15px 15px 15px;
+}
+.content-section {
+  width: 450px;
+  padding: 15px 15px 15px 15px;
+}
+h1 {
+  color: #000000;
+  margin: 0 0 15px 0;
+}
+h2 {
+  color: #000000;
+  margin: 15px 0 15px;
+}
+h3 {
+  color: #333333;
+  margin: 20px 0 5px 0;
+  border-bottom: 1px solid #aaaaaa;
+  padding: 2px;
+}
+h4 {
+  color: #666666;
+  margin: 10px 0 10px 0;
+}
+p {
+  color: #444444;
+  margin: 0 0 10px 0;
+}
+a {
+  color: #440000;
+}
+ul {
+  padding: 0 0 0 30px;
+}
+li {
+  margin-bottom: 5px;
+}
+ol {
+  padding: 0 0 0 20px;
+}
+.nav {
+  padding: 0;
+}
+.nav li {
+  display: inline;
+  padding-right: 20px;
+}
+.nav li:last-child {
+  padding-right: 0;
+}
+.day-time {
+  color: #444444;
+  margin: 0 0 3px 0;
+}
+.concert-location {
+  color: #888888;
+  margin: 0 0 15px 0;
+}

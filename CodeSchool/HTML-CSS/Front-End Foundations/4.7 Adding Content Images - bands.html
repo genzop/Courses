@@ -1,0 +1,41 @@
+<!--4.7 Adding Content Images - bands.html
+Let's update The Prependers page to include images for their album covers.
+
+1) Check out the site folder structure and create an image element in between the album name and song list for the Top, Right, Bottom, Left album. Make sure the image has an alt attribute with this text: "Top, Right, Bottom, Left album cover".
+2) Check out the site folder structure and create an image element in between the album name and song list for the Opacity Zero album. Make sure the image has an alt attribute with this text: "Opacity Zero album cover".
+3) While we're adding content images, let's go ahead and add band images to the bands.html page. Insert the images before the heading tags inside of each list item for The Prependers and Regular Expressionists. Each band has their own image that is located in the images folder - and don't forget to add an alt description for each image!-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+    <div class="header">
+      <h1>Open Source Records</h1>
+      
+      <ul class="nav">
+        <li><a href="about.html">About</a></li>
+        <li><a href="bands.html">Bands</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    
+    <div class="content-section">
+      <h2>Bands</h2>
+      
+      <ul class="bands-list">
+        <li>
+          <img src="images/prependers-logo.jpg" alt="Prependers logo">
+          <h3><a href="prependers-band.html">The Prependers</a></h3>
+        </li>
+        <li>
+          <img src="images/regular-logo.jpg" alt="Regular logo">
+          <h3><a href="regular-band.html">Regular Expressionists</a></h3>
+        </li>
+      </ul>
+      
+      <p>We're always looking for new talent, so <a href="contact.html">Contact us now!</a></p>
+    </div>
+  </body>
+</html>

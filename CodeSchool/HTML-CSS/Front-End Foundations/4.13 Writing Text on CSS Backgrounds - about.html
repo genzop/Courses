@@ -1,0 +1,35 @@
+<!--4.13 Writing Text on CSS Backgrounds - about.html
+The Prependers are putting out a new album soon, and Open Source Records wants to feature them on the About page. We'll do that with a container that shows a background image.
+
+1) Under the paragraph in the content section, add an empty <div> container and give it a class of recording-now.
+2) Switch over to main.css and select the new container with the .recording-now class selector. Set the dimensions of that container with a width of 440px and a height of 200px.
+3) Now, add a background to that container with the following value: #ffffff url(images/prependers-recording.jpg) top left no-repeat
+4) In the about.html file, create a <p> tag inside of that .recording-now container with the text Recording Album Now!.
+5) Finally, select the .recording-now p and set the font-size to 28px. You can also experiment with different color values and see the changes in the Preview section.-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+    <div class="header">
+      <img src="images/osr-logo.png" alt="Open Source Records logo">
+      
+      <ul class="nav">
+        <li><a href="about.html">About</a></li>
+        <li><a href="bands.html">Bands</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+        
+    <div class="content-section">
+      <h1>About</h1>
+    
+      <p>Open Source Records is a quickly growing record label that brings you the hottest up-and-coming groups.  All of our bands are actively recording and touring, and receive our full support producing, recording, mixing, touring, and promoting their work.  At Open Source Records, artists come first.</p>
+      <div class="recording-now">
+        <p>Recording Album Now!</p>
+      </div>
+    </div>
+  </body>
+</html>

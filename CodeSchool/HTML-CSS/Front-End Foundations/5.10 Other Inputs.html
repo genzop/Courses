@@ -1,0 +1,40 @@
+<!--5.10 Other Inputs 
+Instead of separate fields with a few different questions, Open Source Records has decided to just invite bands to tell their story. That story will probably be pretty long, so we should use some input types other than just text.
+
+1) Create a label that says Your Story and add a textarea element after it. Then add the appropriate attributes to the label and textarea so the two are related with the value your-story.
+2) Next, create a label that says On Tour and add an input element after it. The type attribute for the input should be set to checkbox. Then add the appropriate attributes to the label and input so the two are related with the value on-tour.-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+    <div class="header">
+      <img src="images/osr-logo.png" alt="Open Source Records logo">
+
+      <ul class="nav">
+        <li><a href="about.html">About</a></li>
+        <li><a href="bands.html">Bands</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="content-section">
+      <h1>Contact</h1>
+
+      <form>
+        <label for="band-name">Band Name</label>
+        <input type="text" id="band-name">
+        <label for="your-story">Your Story</label>
+        <textarea id="your-story"></textarea>
+        <label for="on-tour">On Tour</label>
+        <input type="checkbox" id="on-tour">
+        
+        
+        
+        <input type="submit" value="Tell us about your band">
+      </form>
+    </div>
+  </body>
+</html>
