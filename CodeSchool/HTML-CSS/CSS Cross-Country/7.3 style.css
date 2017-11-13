@@ -1,0 +1,10 @@
+.logo {
+  background: url(logo2.png);
+  display: block;
+  height: 75px;
+  text-indent: -9999px;
+  width: 250px;
+}
+.logo:hover, .logo:focus {
+  background-position: 0 -75px;
+}

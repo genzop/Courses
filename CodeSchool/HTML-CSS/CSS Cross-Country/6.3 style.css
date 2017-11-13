@@ -1,0 +1,9 @@
+.more {
+  background: url(arrow.png) no-repeat;
+  background-position: top right;
+  background-color: #c09d78;  
+  display: block;
+  position: relative;
+  padding: 0 50px;
+  
+}

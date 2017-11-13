@@ -1,0 +1,2 @@
+1.3 ID Selector
+Select the slogan only by its ID attribute, then center the text and make it italic. If you don't remember the CSS properties, refer to Mozilla's CSS Reference.

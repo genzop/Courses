@@ -1,0 +1,3 @@
+.hours li:nth-child(odd) {
+ background-color: #c5c9cf;
+}

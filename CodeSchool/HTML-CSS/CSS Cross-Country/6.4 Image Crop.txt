@@ -1,0 +1,2 @@
+6.4 Image Crop
+Images are currently being non-proportionally resized via CSS. Apply the height and width to their parent list items instead, and hide any overflow.

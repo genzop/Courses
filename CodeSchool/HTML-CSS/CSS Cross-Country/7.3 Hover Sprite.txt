@@ -1,0 +1,2 @@
+7.3 Hover Sprite
+Add the appropriate background-position shift to the hover state to make use of the new logo2.png sprite (see the images tab).

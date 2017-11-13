@@ -1,0 +1,7 @@
+.logo {
+  background: url(logo.png);
+  display: block;
+  height: 75px;
+  width: 250px;
+  text-indent: -9999px;
+}

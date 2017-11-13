@@ -1,0 +1,2 @@
+1.7 Columns
+Now let's make the <article> a column with the same width as the <aside> column and float it left.

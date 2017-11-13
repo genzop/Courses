@@ -1,0 +1,2 @@
+8.5 Pseudo Elements
+Use a pseudo class to target the first paragraph, and a pseudo element to give the first line a font weight of bold.

@@ -1,0 +1,6 @@
+.content {
+  border: 2px solid #ccc;
+}
+.content.home {
+  border: 0px;
+}

@@ -1,0 +1,2 @@
+3.2 Box Model	
+The <figure> in our page footer should have a total box width of 120px. Add an appropriate content width given its base padding and border.

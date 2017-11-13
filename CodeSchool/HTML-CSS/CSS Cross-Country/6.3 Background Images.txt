@@ -1,0 +1,2 @@
+6.3 Background Images
+Refactor the inline image in .more to be a background image, placed in the top right of the .more button.

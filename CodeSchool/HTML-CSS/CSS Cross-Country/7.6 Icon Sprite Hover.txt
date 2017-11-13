@@ -1,0 +1,2 @@
+7.6 Icon Sprite Hover
+Now, add the appropriate positioning shifts to the hover state of our navigation items.

@@ -1,0 +1,12 @@
+.sidebar a {
+  display: block;
+  line-height: 40px;
+}
+.sidebar .featured,
+.sidebar .sales {
+  background: url(sidebar.png) no-repeat;
+  padding-left: 50px;  
+}
+.sidebar .sales {
+  background-position: 0 -80px;
+}

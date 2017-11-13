@@ -1,0 +1,2 @@
+7.2 Image Replacement
+The anchor in <h1> is now replaced with a background image, but there's no fallback text. Add the logo's text to the HTML and remove it from view.

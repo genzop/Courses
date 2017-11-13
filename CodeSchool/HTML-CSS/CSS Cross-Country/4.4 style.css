@@ -1,0 +1,11 @@
+header, article {
+  padding: 20px;
+}
+header {  
+  background: #ccc;
+  font-size: 16px;
+}
+article {
+  font-size: 14px;  
+  margin-bottom: 20px;
+}

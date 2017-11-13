@@ -1,0 +1,2 @@
+3.3 Box Model Overflow
+Add an appropriate content height to give the <figure> a height of 120px, hide any overflow on the x-axis, and add a scroll bar on the y-axis if necessary. Hint: Use overflow-x and overflow-y to target the different axes.
