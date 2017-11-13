@@ -1,0 +1,2 @@
+2.5 Convert to Percentage
+From the CSS styles given, convert .content to a percentage. Give your answer to 6 decimals. Use this Flexible Math tool to help.

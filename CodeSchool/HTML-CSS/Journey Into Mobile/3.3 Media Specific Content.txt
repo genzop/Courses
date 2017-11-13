@@ -1,0 +1,2 @@
+3.3 Media Specific Content
+Stack the .content and the .sidebar, making sure their width inherits from the parent container. Use the Desktop and Mobile buttons below to resize the site.

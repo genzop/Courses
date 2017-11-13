@@ -1,0 +1,6 @@
+@media screen and (max-width: 850px) {
+  h1 {
+    font-size: 3.125em;
+    line-height: 0.6em;
+  }
+}

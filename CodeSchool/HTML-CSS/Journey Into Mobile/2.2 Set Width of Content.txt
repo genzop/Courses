@@ -1,0 +1,2 @@
+2.2 Set Width of Content
+Using percentages, set the width for the .content to the equivalent of 575px. Remember, the context is the total width of the site which is 960px. Use this Flexible Math tool to help.

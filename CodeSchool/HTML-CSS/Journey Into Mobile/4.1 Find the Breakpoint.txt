@@ -1,0 +1,2 @@
+4.1 Find the Breakpoint
+Using the border handles on either side, keep resizing the site below to see where the logo breaks. Once you find it, write a media query to target that breakpoint, adding 20px to the breakpoint you find. Use the max-width property.

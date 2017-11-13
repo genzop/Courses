@@ -1,0 +1,2 @@
+2.6 Set Margin of Content
+Using percentages, set the margin-right of .content to the equivalent of 380px to 6 decimals. Determine the correct context by viewing the given HTML markup.

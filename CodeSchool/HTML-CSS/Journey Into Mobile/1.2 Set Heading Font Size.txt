@@ -1,0 +1,2 @@
+1.2 Set Heading Font Size
+Using ems, set the h1 to be the equivalent of 24px. Remember, the target divided by context rule, keeping in mind our context is the body font-size set in pixels.

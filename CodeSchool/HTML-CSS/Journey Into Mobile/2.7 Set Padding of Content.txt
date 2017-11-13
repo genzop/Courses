@@ -1,0 +1,2 @@
+2.7 Set Padding of Content
+Using percentages, set the padding of .content to the equivalent of 31px. Determine the correct context by viewing the given HTML markup. Give your answer to at least 7 decimals.

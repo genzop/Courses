@@ -1,0 +1,2 @@
+1.1 Mobile Web Demo
+Set the body font-size using relative sizing so that 1em = 10px. Remember, the default font-size for a browser is 16px.

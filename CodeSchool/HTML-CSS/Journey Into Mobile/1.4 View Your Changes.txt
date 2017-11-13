@@ -1,0 +1,2 @@
+1.4 View Your Changes
+Set the <h1> to a font-size, in ems, of 70px, with the context being 16px. Also, set the <h3> font-size to 40px, in ems with the same context. Be sure to view the Rendered tab to see the site you'll be building in future levels. Use the toolbar buttons and border handles to resize the site.

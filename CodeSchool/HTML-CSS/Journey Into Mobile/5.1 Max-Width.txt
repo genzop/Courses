@@ -1,0 +1,2 @@
+5.1 Max-Width
+Set the max-width of images to 100%.

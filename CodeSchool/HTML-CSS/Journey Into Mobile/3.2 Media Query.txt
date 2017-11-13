@@ -1,0 +1,2 @@
+3.2 Media Query
+Using the media query you just wrote, stack the .logo and <nav>, rather than floating them to either side. Also, set the width to inherit from the parent and center the text inside the <nav>. Use the Desktop and Mobile buttons below to resize the site.

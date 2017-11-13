@@ -1,0 +1,2 @@
+7.7 Noscript Fallback
+Finally, add a <noscript> fallback block within the <picture> element to include a normal img tag, with the camp-site.jpeg and "Our Camp Site" alt text.

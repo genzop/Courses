@@ -1,0 +1,2 @@
+2.4 Determine the Context 2
+From the markup in the HTML Source, what is the correct context for .content? Enter the CSS selector for the correct HTML element below.

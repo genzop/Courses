@@ -1,0 +1,21 @@
+.logo {
+  float: left;
+  width: 36.1702128%; /* 340px/940px */
+}
+
+nav {
+  float: right;
+}
+
+@media screen and (max-width: 320px) {
+  .logo {
+    float: none;
+    width: inherit; 
+  }
+  nav {
+    float: none;
+    width: inherit;
+    text-align: center;
+  }
+}
+

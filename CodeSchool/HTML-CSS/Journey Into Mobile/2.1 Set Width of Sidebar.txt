@@ -1,0 +1,2 @@
+2.1 Set Width of Sidebar
+Using percentages, set the width for the .sidebar to the equivalent of 400px to 6 decimals. Remember, the context is the total width of the site which is 960px. Use the HTML and CSS Source tabs for more information. Use this Flexible Math tool to help.

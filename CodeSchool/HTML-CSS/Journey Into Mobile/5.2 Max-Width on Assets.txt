@@ -1,0 +1,2 @@
+5.2 Max-Width on Assets
+Set the max-width of images, embeds, objects, and videos to 100%.

@@ -1,0 +1,13 @@
+.banner-caption {
+  bottom: 30px;
+  position: absolute;
+  right: 0;
+  width: 42.5531915%;
+}
+
+@media screen and (max-width: 850px) {
+  .banner-caption {
+    bottom: 0;
+    width: 100%;
+  }   
+}

@@ -1,0 +1,6 @@
+@media screen and (max-width: 720px) {
+  h1 {
+    font-size: 4.375em;
+    line-height: 0.5714285714285714em;
+  }
+}
