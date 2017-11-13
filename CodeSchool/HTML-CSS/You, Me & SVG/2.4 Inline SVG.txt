@@ -1,0 +1,4 @@
+2.4 Inline SVG
+Let's try moving our code inline from an SVG file into an HTML file.
+
+	- Move the SVG code from home.svg into our index.html file, and remove the img tag that is currently including it.

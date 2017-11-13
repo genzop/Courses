@@ -1,0 +1,6 @@
+2.11 A Polygon Roof
+Our house is looking good — however the rain pools up on our roof and is starting to cause leaks! Replace the rectangle roof with a polygon roof!
+
+	- Delete the rectangle roof we currently have.
+	- Create a simple polygon element. Set the class attribute to roof. Don't worry about coordinates yet.
+	- Give the new polygon a points attribute set to these new, leakproof roof points: 256,148 262,203 80,203 87,148 327,148

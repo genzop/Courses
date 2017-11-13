@@ -1,0 +1,6 @@
+3.7 Scale That Other Flower 
+Let's now make the fourth and final flower smaller like the first flower. Yay, symmetry!
+
+	- Scale the last (fourth) flower by .8.
+	- After the scale(), add another translate() to move the flower back down and over into its proper position using 55 for the X value and 71 for the Y value.
+	

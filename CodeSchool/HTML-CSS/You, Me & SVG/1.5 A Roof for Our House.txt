@@ -1,0 +1,6 @@
+1.5 A Roof for Our House
+Now let's give our house a red roof!
+
+	- Start by giving the new rect element a height of 56 and width of 184.
+	- Next, give the rectangle a fill color of #E04E27.
+	- Position the roof rect element over the body of the house at x coordinate 80 and y coordinate 148.

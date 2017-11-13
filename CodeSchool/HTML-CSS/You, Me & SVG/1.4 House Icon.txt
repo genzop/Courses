@@ -1,0 +1,6 @@
+1.4 House Icon 
+Let's build the body of the house by using a rect element.
+
+	- Create a rect element using a height of 84 and a width of 162 to create the body of our house.
+	- Give the rectangle a fill color of #FBF6A7.
+	- Position the rect element at x coordinate 90 and y coordinate 198.

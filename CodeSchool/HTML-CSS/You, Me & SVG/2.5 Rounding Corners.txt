@@ -1,0 +1,4 @@
+2.5 Rounding Corners
+When rounding the corners of a single rectangle, you can either round all corners or none of them. However, our designer wants our door to have only the top two corners rounded. One way to accomplish this is to place a short rounded rectangle over the top part of the door.
+
+	- We created the rect element for the top of our door — go ahead and round the edges by a value of 5.

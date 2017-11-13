@@ -1,0 +1,4 @@
+2.12 Order Matters
+Something went awry when exporting our flower! All three elements (one line and two circle elements) should be visible. However, we can only see one of the circle elements.
+
+	- Rearrange the elements so that both circle elements are visible in the Preview section along with the line for our flower stem.

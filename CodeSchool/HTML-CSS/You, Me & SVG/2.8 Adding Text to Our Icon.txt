@@ -1,0 +1,8 @@
+2.8 Adding Text to Our Icon 
+Use a text element to add the word HOME to our icon.
+
+	- Create a text element with the word HOME.
+	- Position the text element at x coordinate 85 and y coordinate 97.
+	- Set the font-size to 70 and the fill color to #3E9FD8.
+	- Set the stroke color to #FFFFFF and stroke-width to 2.
+	- Set the font-family of the text to Filmotype Major.

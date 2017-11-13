@@ -1,0 +1,5 @@
+3.5 Rotating That Flower 
+The circles that make up the flower blooms have been grouped. Give the flowers some variety by rotating the second one.
+
+	- Rotate the second flower's bloom group by 195 degrees around an axis of 228,267.
+	- Rotate the third flower's bloom group by 50 degrees around an axis of 228,267.

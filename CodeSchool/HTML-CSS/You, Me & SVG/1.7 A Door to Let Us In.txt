@@ -1,0 +1,7 @@
+1.7 A Door to Let Us In
+We have created a door, but we have no way of opening it! Create one last rect element to be the handle for our door.
+
+	- Create a rect element for our new door handle.
+	- Set the height attribute for our door handle to 8 and width attribute to 2. Don't worry about its color or position just yet.
+	- Give our new rectangle a fill color of #FBF6A7.
+	- Position the handle at x coordinate 183 and y coordinate 252.

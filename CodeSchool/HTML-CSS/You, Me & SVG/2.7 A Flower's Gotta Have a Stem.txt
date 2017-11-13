@@ -1,0 +1,6 @@
+2.7 A Flower's Gotta Have a Stem
+We have created a flower bud using two circle elements. Let's create a line that will act as our flower's stem.
+
+	- Create a line element.
+	- Position the line element by setting the x1 attribute to 228 and y1 attribute to 267. Then, set the x2 attribute to 228 and y2 attribute to 282.
+	- Lastly, set the stroke color to #068C70 and the stroke-width to 1.

@@ -1,0 +1,8 @@
+3.2 Group All the Things
+The windows that our designer exported for us seem to be in the wrong location. We can fix this easily by using groups.
+
+	- Put the elements that create the right and left windows into one group.
+	- Move the group to the right 72 and down 110 by using translate().
+	- Give the group a class attribute of windows.
+	- Add a .windows class inside our stylesheet to give the rect element inside our group a fill color of #3E9FD8.
+	- Great! Now use the .windows class again to give the line elements a stroke of #E04E27 and a stroke-width of 4px.

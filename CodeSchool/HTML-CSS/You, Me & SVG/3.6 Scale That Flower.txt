@@ -1,0 +1,5 @@
+3.6 Scale That Flower
+We can resize the first flower by scaling it! Be sure to translate the flower back to its proper position.
+
+	- Scale the first flower by .8.
+	- Translate the flower back down and over into its proper position using 60 for the X value and 71 for the Y value.

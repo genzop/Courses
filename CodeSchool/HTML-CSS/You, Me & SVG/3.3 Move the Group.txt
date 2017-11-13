@@ -1,0 +1,4 @@
+3.3 Move the Group
+We have added more flowers and grouped/translated them each to their current position.
+
+	- One of our flowers is too far off the house. Fix the translate() values so it moves in front of the house and to the left of the other flowers. You'll need to take a few guesses, and watch the SVG displayed in the Preview section.

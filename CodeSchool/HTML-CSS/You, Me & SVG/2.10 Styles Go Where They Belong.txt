@@ -1,0 +1,4 @@
+2.10 Styles Go Where They Belong
+We have already moved most of the styles into style.css for you. However, our background circle is not finished.
+
+	- Go ahead and move the stroke-width into the style.css file.

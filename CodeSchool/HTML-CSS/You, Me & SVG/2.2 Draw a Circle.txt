@@ -1,0 +1,7 @@
+2.2 Draw a Circle
+Let's give our house icon a green background circle.
+
+	- Create a circle element.
+	- Place the center of the circle at cx coordinate 170 and cy coordinate 170.
+	- Give the circle a 162 pixel radius.
+	- Color the circle green by adding a fill color of #068C70.

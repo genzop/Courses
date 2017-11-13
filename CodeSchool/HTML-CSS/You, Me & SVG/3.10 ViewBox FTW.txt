@@ -1,0 +1,7 @@
+3.10 ViewBox FTW
+Let's use a new viewBox coordinate system to ensure that our icon's width and height scales with our windows.
+
+	- Remove the width and height attributes from the svg element.
+	- Give our svg element a viewBox attribute. There is no need for values yet.
+	- For the x, y, width, and height, set the viewBox attribute to 0 0 340 340.
+	- Now that we've set the static numbers on our viewBox, let's adjust our viewport. In the style.css file, add a width of 30% and a height of auto to the svg selector.

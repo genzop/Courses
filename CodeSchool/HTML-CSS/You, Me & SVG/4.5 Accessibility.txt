@@ -1,0 +1,5 @@
+4.5 Accessibility
+Make our home icon more screen-reader accessible by adding title and desc attributes.
+
+	- Create a title tag with Home Icon as the content.
+	- Create a desc tag with the following content: A yellow house with blue windows.

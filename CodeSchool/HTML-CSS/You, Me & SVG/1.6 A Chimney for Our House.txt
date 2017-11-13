@@ -1,0 +1,5 @@
+1.6 A Chimney for Our House
+We used a rect element to give our house a chimney. However, something is not quite right…
+
+	- Fix the chimney position by moving it to x coordinate 98 and y coordinate 127.
+	- The chimney is now in the right spot! However, giving the chimney topper a different color would really make our chimney pop! Make the chimney topper rect (the second one) have a fill color of #E04E27.
