@@ -1,0 +1,4 @@
+4.17 Linear Gradient
+We want to add a subtle linear-gradient to our .nav. Create a linear-gradient with two color-stops, #3e606f and #324d59. For now, we’ll leave the gradient going in the default direction (to bottom or 180deg).
+
+

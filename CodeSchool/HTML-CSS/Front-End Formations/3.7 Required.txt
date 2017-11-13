@@ -1,0 +1,2 @@
+3.7 Required
+We want to make sure the user fills out their email before submitting the form. Add the appropriate attribute to validate the form field.

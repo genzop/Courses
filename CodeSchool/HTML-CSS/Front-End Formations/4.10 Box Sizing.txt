@@ -1,0 +1,4 @@
+4.10 Box Sizing
+Now we want our inputs to have a width of 100%, but if we were to include the padding and border properties, they’d be pushed outside of that 100%. Using the box-sizing property, make the border and padding part of the width.
+
+

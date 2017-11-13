@@ -1,0 +1,2 @@
+2.6 Nav
+The major navigation for our blog can use some more semantic markup. Mark up the content using the appropriate HTML5 element.

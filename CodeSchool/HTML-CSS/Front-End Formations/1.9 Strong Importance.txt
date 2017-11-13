@@ -1,0 +1,2 @@
+1.9 Strong Importance
+Using an HTML tag, mark up the date to have “strong importance.”

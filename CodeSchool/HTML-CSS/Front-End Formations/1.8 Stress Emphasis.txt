@@ -1,0 +1,2 @@
+1.8 Stress Emphasis
+Using an HTML tag, mark up “invitation-only” to have “stress emphasis.”

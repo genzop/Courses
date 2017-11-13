@@ -1,0 +1,2 @@
+5.12 Transition 2
+Write a transition on one line using the shorthand transition property. The property we want to transition is background-color, the duration is 0.6 seconds, the timing is linear, and the delay is 0.1 second.

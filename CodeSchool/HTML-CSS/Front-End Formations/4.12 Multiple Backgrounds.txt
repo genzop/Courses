@@ -1,0 +1,2 @@
+4.12 Multiple Backgrounds
+We have two images, painting-01.jpg and painting-02.jpg. Using the separate background properties, add both images to the element. We want the first image at top left and the second image at center. Both images have no-repeat as the repeat value.

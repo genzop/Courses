@@ -1,0 +1,4 @@
+2.2 Section
+We want to mark up the grouping of related content on our blog with the appropriate HTML5 element. Use an HTML5 element to mark up the content.
+
+

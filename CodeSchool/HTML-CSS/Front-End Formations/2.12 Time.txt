@@ -1,0 +1,2 @@
+2.12 Time
+Each of our blog posts have a published on date. Mark up the date using the appropriate HTML5 element.

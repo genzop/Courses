@@ -1,0 +1,2 @@
+1.7 Stylistically Offset
+Using an HTML tag, make the first paragraph an article lead, which needs to be “stylistically offset” from the following paragraphs. Add a class of lead to that tag as well so that the appropriate styles are set.

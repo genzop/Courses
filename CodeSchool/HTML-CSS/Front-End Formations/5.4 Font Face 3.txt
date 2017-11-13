@@ -1,0 +1,2 @@
+5.4 Font Face 3
+We want to add the bold version of DroidSerifRegular, DroidSerifBold, using the local version at DroidSerifBold.eot. Create a new @font-face declaration, but set it up so that we can use the font-weight to change the weight.

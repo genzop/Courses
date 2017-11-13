@@ -1,0 +1,2 @@
+2.10 Figure
+We have a self-contained piece of content for a picture in a blog post. Mark it up using the appropriate HTML5 element.

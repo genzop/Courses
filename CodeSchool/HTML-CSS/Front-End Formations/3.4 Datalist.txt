@@ -1,0 +1,2 @@
+3.4 Datalist
+Use the datalist element to create a predefined value set of categories for our blog using categories as the name. The categories are reviews, profiles, and announcements. Don’t forget about the list and id attributes!

@@ -1,0 +1,4 @@
+2.8 Article
+The blog posts on our blog can be considered syndicated content. Mark them up with the appropriate HTML5 element.
+
+

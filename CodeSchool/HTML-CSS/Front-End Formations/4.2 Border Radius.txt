@@ -1,0 +1,2 @@
+4.2 Border Radius
+Let’s round the corners on the background for each of our blog posts. Use the separate properties for each side with a value of 4px.

@@ -1,0 +1,2 @@
+1.6 Alternate Voice or Mood
+Using an HTML element, mark up the text, “This is the finest piece of art I have ever seen” to be represented in an “alternate voice” or “mood”.

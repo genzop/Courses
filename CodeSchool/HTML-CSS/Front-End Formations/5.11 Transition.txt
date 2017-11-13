@@ -1,0 +1,2 @@
+5.11 Transition
+Let’s add a nice transition to all of our links when they are hovered over. Using the individual properties, add a transition to the color property over the course of 1 second, with a 0 second delay, and the timing function of ease.

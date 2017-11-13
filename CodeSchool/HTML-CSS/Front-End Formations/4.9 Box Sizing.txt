@@ -1,0 +1,2 @@
+4.9 Box Sizing
+We want to include the padding value in our width and height. Using the box-sizing property, adjust the value of the .box to include the padding into the width property.

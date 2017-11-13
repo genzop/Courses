@@ -1,0 +1,2 @@
+4.8 Text Shadow
+Add a text-shadow to our blog title, with a 0 offset-x, 1px offset-y, 2px blur-radius, and a color of #000.

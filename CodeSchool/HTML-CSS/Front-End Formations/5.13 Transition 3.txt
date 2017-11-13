@@ -1,0 +1,2 @@
+5.13 Transition 3
+Using a keyword, change the transition to transition the two properties, color and background-color.

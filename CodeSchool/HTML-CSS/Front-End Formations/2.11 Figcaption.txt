@@ -1,0 +1,4 @@
+2.11 Figcaption
+We’ve added a caption to the image in our blog post. Mark it up using the appropriate HTML5 element.
+
+

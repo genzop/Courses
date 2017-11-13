@@ -1,0 +1,2 @@
+2.5 Aside
+There is a section of secondary information on the right side of our blog. Mark up the content using the appropriate HTML5 element.

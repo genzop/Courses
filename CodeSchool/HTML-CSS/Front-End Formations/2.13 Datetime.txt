@@ -1,0 +1,2 @@
+2.13 Datetime
+Add the appropriate attribute with the date formatted as yyyy-mm-dd so that we can still use the current content within the time element.

@@ -1,0 +1,2 @@
+2.3 Header
+We have an area of introductory content at the top of our blog. Use the appropriate HTML5 element to mark up the content.

@@ -1,0 +1,4 @@
+4.4 Border Radius 3
+Using a percentage value, set the border-radius on the author’s image to be a circle.
+
+

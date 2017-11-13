@@ -1,0 +1,4 @@
+4.19 Radial Gradient
+Let’s add a radial-gradient to our .masthead. Write a radial-gradient with two color-stops, #1e3e4d and #102028. We will just use the default ellipse as the gradient shape.
+
+

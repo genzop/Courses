@@ -1,0 +1,2 @@
+4.3 Border Radius 2
+Let’s change our .post border-radius to only round the top left and right corners, but set the bottom right and left values to 0. This time, use the shorthand border-radius property to accomplish each of these tasks.

@@ -1,0 +1,2 @@
+2.9 Main
+We want to make the main content area markup more semantic. Mark up the content with the appropriate HTML5 element.

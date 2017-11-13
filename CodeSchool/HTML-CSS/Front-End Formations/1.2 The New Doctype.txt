@@ -1,0 +1,2 @@
+2.1 The New Doctype
+Welcome to the challenges! Start out by writing the new HTML5 doctype.
