@@ -1,0 +1,9 @@
+4.5 Racing
+Time to implement the "Enter Race" button and "Cancel Race" link.
+
+	- First (because it's a little easier), let’s listen for the click event on the "Cancel Race" link and tell it to call the cancelRace() method. (Don’t forget to send the current race in.)
+	- Now let's implement the cancelRace() method in our component. It’ll simply need to set the race's isRacing to false.
+	- Next, let's implement the "Enter Race" button by listening for a click and then calling the enterRace() method.
+	- Here's where things get a little tricky. First, take a look at the cashLeft() method we wrote for you in races.component.ts. This returns how much cash we have left to enter races.
+
+	Define an enterRace() method that checks to see if cashLeft() is greater than the race entryFee. If it is, then enter us in the race by setting isRacing to true, otherwise pop up a JavaScript alert() that says "You don't have enough cash".

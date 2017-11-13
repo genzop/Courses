@@ -1,0 +1,5 @@
+4.8 Semantic Versioning
+We want to make sure we are always up-to-date with the most recent patch-level changes to our dependencies when we run npm install.
+
+	- Update the connect version on package.json to fetch the latest patch-level changes. All we have to do is add one character to the beginning of the version number.
+	- Now update the underscore version on package.json to fetch the latest patch-level changes. Again, all we have to do is add one character to the beginning of the version number.

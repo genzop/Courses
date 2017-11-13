@@ -1,0 +1,6 @@
+3.11 Showing CreatedOn Date
+It's time to show when a review was created using the createdOn property. Follow the task below to add this in.
+
+	- Upon saving a review, we're running the addReview function in our app.js JavaScript file. Before the review is pushed onto the array, add to this.review a new property createdOn with a value Date.now().
+	- In the review template, we're already displaying most of the information about our review. Add the createdOn date to the review within the cite element. We want it to say "-<Author> on <date>".
+	- Use the date filter on the createdOn property in the template.

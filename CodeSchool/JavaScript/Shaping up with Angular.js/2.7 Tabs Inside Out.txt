@@ -1,0 +1,7 @@
+2.7 Tabs Inside Out
+We just learned that cramming a bunch of logic into our HTML is kinda bad. Let's start the Right Way with a Controller which will control our tabs.
+
+	- Create a controller named TabController.
+	- An empty Controller isn't much use. Do you remember why we needed a Controller at all? That's right, we need to initialize the tab property. Go ahead and add that property now, setting it to 1.
+	- In order to set the current tab, we'll need a setTab method to use in our HTML. It should set the tab property of TabController to a value passed in.
+	- We've got a setTab method. Now we need an isSet method that accepts a value and returns whether that value matches this.tab.

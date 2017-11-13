@@ -1,0 +1,8 @@
+1.2 The Beginning of All Routes
+Let's get started creating routes for this super-duper NoteWrangler app! The night is late and the coffee is gettin' cold. Let's set up our app so we can start wranglin' some notes!
+
+	- Inside the app.js file, declare an Angular module for our NoteWrangler app. For now it will have no dependencies.
+	- What is the name of the module you need to include to use routes? Update the app.js module declaration to include it.
+	- Define the module’s config() function and inject $routeProvider.
+	- Create a simple route for when /notes is in the URL, link to the index.html template in the templates/pages/notes/ directory.
+	- Now, add a new div tag to our index.html with an attribute directive that will include the rendered template for the current route.

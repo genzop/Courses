@@ -1,0 +1,7 @@
+4.9 A Date Filter
+The tweetedDate is now being displayed on each tweeted note card. Let's format it! See the Angular documentation for the appropriate elements to compose the format string.
+
+	- Use a filter to display the tweeted date in our p tag like so: Tweeted on a Monday in October.
+	- It's the middle of the night and you are ready to finish your Angular NoteWrangler app! You realize the title of our card container div would be more beneficial if it included a fancy date along with the title of the note.
+
+	Add the date to the end of the title attribute with another pair of double brackets. Format the date inside the brackets like so: Oct. 08.

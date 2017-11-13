@@ -1,0 +1,2 @@
+3.5 Regex Routes
+Rewrite the show route to only accept numeric input for the id parameter. You'll have to add the initialize function to the AppRouter and use a regular expression.

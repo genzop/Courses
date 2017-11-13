@@ -1,0 +1,2 @@
+7.7 Sync to localStorage II
+Fantastic! Now to finish it up, all you need to do is implement the update case below. Use setItem and JSON.stringify, just like in the create case.

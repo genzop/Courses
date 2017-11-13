@@ -1,0 +1,6 @@
+1.4 A New Route and a Root Route
+Practice using when() by creating a route for new notes and a route for the root of the application.
+
+	- Create a new route which maps /notes/new to the notes edit.html template.
+	- Create a route for / that redirects to the /users index page.
+	- Create a default route that will redirect the user to /notes when an undefined route is used.

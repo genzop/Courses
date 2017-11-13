@@ -1,0 +1,7 @@
+4.3 Template Property Binding
+We've gone ahead and applied new HTML and CSS to our app to make it prettier. We also have two new fields in our model and mocks: image and imageDescription.
+
+	- Use property binding to display our race images in the <img> tag we’ve added.
+	- Use property binding to add an alt attribute to each of our images that contains the value of our imageDescription.
+	- Use class binding to optionally add the racing css class to our <li> if we are racing in this race.
+	

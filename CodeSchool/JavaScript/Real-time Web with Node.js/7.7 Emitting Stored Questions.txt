@@ -1,0 +1,5 @@
+7.7 Emitting Stored Questions
+Now that we have questions stored in redis, let's emit them whenever a new client connects to the server through socket.io.
+
+	- Use the lrange command to retrieve a list of questions that represent the questions list within redis.
+	- Inside of the lrange callback, use a forEach loop to iterate through the questions and emit() each question to the client. Remember, don't use broadcast.emit because we only want to send the questions to the client that is connecting to the server.

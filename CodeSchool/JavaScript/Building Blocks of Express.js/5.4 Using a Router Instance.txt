@@ -1,0 +1,7 @@
+5.4 Using a Router Instance
+Let's refactor app.js to use a Router object.
+
+	- Create a new router object and assign it to the router variable.
+	- When we are done, our router will be mounted on the /cities path. With this in mind, change app.route('/cities') to use router and map requests to the root path.
+	- Likewise, let's move our '/cities/:name' route to our router. Remember to update the path.
+	- Our router is now ready to be used by app. Mount our new router under the /cities path.

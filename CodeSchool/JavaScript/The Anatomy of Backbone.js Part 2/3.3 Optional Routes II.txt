@@ -1,0 +1,2 @@
+3.3 Optional Routes II
+Dr. Goodparts has the bad habit of typing out his URL's with a trailing slash and now he's upset that our routes don't work. Please update the route below to optionally accept an optional trailing slash

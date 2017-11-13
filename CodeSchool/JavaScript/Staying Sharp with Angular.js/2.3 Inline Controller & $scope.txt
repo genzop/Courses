@@ -1,0 +1,8 @@
+2.3 Inline Controller & $scope
+We have already separated out the duplicate note code into nw‑card.html. Clean up the template using $scope syntax instead of controllerAs.
+
+	- Inject the $scope service into the controller.
+	- Delete the unnecessary alias for our controller.
+	- Set the header property on the controller's $scope instead of this. Note: We do not want to modify the string.
+	- Set description property on the controller's $scope instead of this. Note: We do not want to modify the string.
+	- Display the header and description on the nw-card.html page.

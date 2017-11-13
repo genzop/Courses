@@ -1,0 +1,6 @@
+6.5 Appending New Models
+Uh oh. Dr. Goodparts is at it again, adding new models to the collection, and he's upset because when he adds a model, the DOM isn't updated.
+
+In the AppointmentListView's initialize function, listen for the collections add event and call the addOne function to append the new model to the view.
+
+Make sure you include the context argument to ensure addOne is called with the correct context.

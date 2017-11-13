@@ -1,0 +1,5 @@
+3.6 The Configurable Bits
+By default, the Tweet Validator API checks for a maxLength of 144 characters — this, too, is configurable. Some other social posting sites have different character length requirements.
+
+	- Create a characterLength variable outside of the return statement and set it to an integer representing an alternate number of max characters.
+	- Pass characterLength in for maxLength along with the description in our Tweetable() POST request.

@@ -1,0 +1,7 @@
+1.5 Our First Component
+Let’s build out a racing schedule app. It will be similar to what we built in the video, but a little different.
+
+	- In the index.html file, create a custom HTML element called racing-app between the body tags, with the inner content of Loading...
+	- Inside the main.ts file, write out a @Component decorator, which has a selector for racing-app, and prints out the heading component property in an h1 tag.
+	- Next, to make our module aware of the component, let's add the AppComponent to the declarations array inside our @NgModule decorator.
+	- Let's add a new property to our @NgModule decorator called bootstrap and set it as an array. Inside this array, let's add a reference to AppComponent to tell Angular to render it when the module is bootstrapped.

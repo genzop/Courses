@@ -1,0 +1,5 @@
+4.3 Creating an Element Directive
+Instead of using ng-include, lets create a custom directive called productDescription.
+
+	- Create an Element Directive for our Description div that includes the product-description.html.
+	- Include the file on the page using a custom directive tag instead of ng-include.

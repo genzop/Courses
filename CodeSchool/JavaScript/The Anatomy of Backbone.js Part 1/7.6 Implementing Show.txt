@@ -1,0 +1,6 @@
+7.6 Implementing Show
+Time to implement the show action. As you can see you've already created an instance of the Appointment and passed in the id from the URL.
+
+You'll want to create an instance of the AppointmentView, render it, and replace the contents of #app with its top-level element.
+
+Lastly, don't forget to fetch data from the server for the appointment.

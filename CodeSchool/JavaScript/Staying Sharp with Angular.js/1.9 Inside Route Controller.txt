@@ -1,0 +1,7 @@
+1.9 Inside Route Controller
+We want to display notes from the server within our template. Let's get started by creating a controller in our routes file.
+
+	- Create a controller function inside this /notes route.
+	- Give the newly created controller an alias of notesCtrl so that we can access it from within the notes index template.
+	- We'll need to make a call to the server to retrieve the list of notes data, so we'll need to use the $http service in the controller we just created. Inject the $http service into the controller.
+	- Use the $http() function to make an HTTP request to the /notes URL. Upon success, save the resulting data to a notes variable on the controller.

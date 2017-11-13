@@ -1,0 +1,5 @@
+2.6 Listening for Close
+Like our parents always used to say, listening is more important than talking! Modify the server so that we know when it's closed down.
+
+	- Listen for the 'close' event on the server. The event listener should take a callback function that accepts no arguments.
+	- Inside the 'close' callback, log the message "Closing down the server...".

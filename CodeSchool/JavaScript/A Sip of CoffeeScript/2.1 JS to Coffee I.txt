@@ -1,0 +1,3 @@
+2.1 JS to Coffee I
+
+Convert the commented jQuery code below to CoffeeScript

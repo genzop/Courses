@@ -1,0 +1,2 @@
+1.4 ID Attribute
+Sweet! But Quick! Before Dr. Goodparts gets back from lunch, update the Appointment model to use the "identifier" string as the idAttribute instead of the default "id", that way you can call appointment.id later on.

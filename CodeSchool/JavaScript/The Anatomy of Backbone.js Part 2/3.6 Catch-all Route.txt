@@ -1,0 +1,2 @@
+3.6 Catch-all Route
+Just in case people fiddle around with the URL let's add a catch-all route to our router that will log out to the console. Make sure the catch-all route comes last.

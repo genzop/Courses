@@ -1,0 +1,4 @@
+2.6 Listening for Changes
+Dr. Goodparts is upset that he wasn't notified when we changed his last appointment to cancelled.
+
+Add a listener to the appointment model instance to pop-up an alert box (using alert) whenever any of the model attributes change.

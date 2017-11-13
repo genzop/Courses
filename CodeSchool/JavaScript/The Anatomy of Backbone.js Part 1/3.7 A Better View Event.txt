@@ -1,0 +1,4 @@
+3.7 A Better View Event
+Phew, over the weekend you convinced Dr. Goodparts to come to his senses and allow you to change the click event to only alert when the user double clicks on the view.
+
+Make those changes quick and deploy!

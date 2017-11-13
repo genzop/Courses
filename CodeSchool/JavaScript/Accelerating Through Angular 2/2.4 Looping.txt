@@ -1,0 +1,2 @@
+2.4 Looping
+Notice that our AppComponent now contains an array called races. Much like you saw in the video, modify the <li> you see in the template to use a for loop and print out each of the races.

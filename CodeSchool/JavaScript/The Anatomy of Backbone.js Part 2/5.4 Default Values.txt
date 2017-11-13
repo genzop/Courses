@@ -1,0 +1,2 @@
+5.4 Default Values
+Update the template to use the title and name attributes from the model to fill out the value attributes of the input elements in the template.

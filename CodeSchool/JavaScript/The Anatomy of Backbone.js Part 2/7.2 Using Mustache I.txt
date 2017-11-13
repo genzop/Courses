@@ -1,0 +1,2 @@
+7.2 Using Mustache I
+Convert the AppointmentForm view below to use Mustache templating. Make sure you remember to change the <%= %> placeholders with Mustache's {{}} placeholders.

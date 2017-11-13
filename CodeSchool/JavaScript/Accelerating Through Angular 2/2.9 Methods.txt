@@ -1,0 +1,6 @@
+2.9 Methods
+Let's do some math to display the total amount we've spent entering races, and then how much cash we have left to enter new races.
+
+	- At the bottom of our template we've added a place to display our total cost. Our total cost will be calculated by summing up the entryFee properties of ONLY the races we are racing in ( isRacing is true). Write a method named totalCost() in our AppComponent that returns this value.
+	- Using the method we created in the first task, display the totalCost() value in the h2 element from the template that has the Total cost: label prepopulated for us.
+	- It looks like the output of our code needs to be formatted as currency. Pipe the output to the currency pipe to display the value as US dollars like entryFee.

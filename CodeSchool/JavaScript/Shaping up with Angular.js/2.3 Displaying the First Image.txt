@@ -1,0 +1,4 @@
+2.3 Displaying the First Image
+We've added images to all products as well – like any self respecting store should have. A product has an array of images we can use in our HTML. Let's get the first image to show on the page!
+
+	- We want to display the first full-sized image for each product. Can you figure out how?

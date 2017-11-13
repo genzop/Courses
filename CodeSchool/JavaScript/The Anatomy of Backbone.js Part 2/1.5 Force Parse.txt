@@ -1,0 +1,2 @@
+1.5 Force Parse
+In the Appointment instantiation code below, make sure the attributes get run through our new parse function by passing in the appropriate option to the Appointment constructor

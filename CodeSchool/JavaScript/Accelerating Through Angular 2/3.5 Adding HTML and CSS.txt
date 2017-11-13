@@ -1,0 +1,5 @@
+3.5 Adding HTML and CSS
+Let’s separate out HTML and CSS files for our RacesComponent.
+
+	- As you can see, we moved the HTML of the racing app into a races.component.html file. Let's include it in the component metadata.
+	- Great! We also created races.component.css and added a few styles there. Let's go ahead and include that as well.

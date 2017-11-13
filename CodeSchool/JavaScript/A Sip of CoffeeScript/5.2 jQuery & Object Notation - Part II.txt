@@ -1,0 +1,3 @@
+5.2 jQuery & Object Notation - Part II
+
+Wrap the following code into an init function that belongs to a new object named coffeeList. After defining coffeeList, invoke the coffeeList.init function.

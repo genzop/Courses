@@ -1,0 +1,3 @@
+3.5 Switch/Case
+
+Given the JavaScript code below, rewrite it in CoffeeScript using a switch/when expression.

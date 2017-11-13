@@ -1,0 +1,6 @@
+6.3 Render the Collection
+Good morning. Last night you were so close to implementing the render function on AppointmentListView but decided to take a nap, and here you are!
+
+Go ahead and implement the addOne function, rendering an AppointmentView for each model in the collection, and appending it to the collection view's top-level element.
+
+Note There is a bug in the forEach call. Make sure and fix it before submitting.

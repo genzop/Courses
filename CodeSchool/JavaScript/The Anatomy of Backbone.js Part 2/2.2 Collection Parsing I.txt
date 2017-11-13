@@ -1,0 +1,2 @@
+2.2 Collection Parsing I
+The server team is at it again, but this time they at least have a good reason: they want to start paginating appointments instead of just returning all of them when we fetch the Appointments collection. No problem. We've been here before. Take a look at the JSON the server is responding with below, and then modify the parse function to set properties on the collection instance for per_page, total, and page.

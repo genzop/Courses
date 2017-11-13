@@ -1,0 +1,6 @@
+3.4 Review Live Preview!
+Display all three parts of the review in the preview blockquote.
+
+	- In the strong tag, before Stars, put in the right expression to display review.stars. Keep the space prior to Stars
+	- On the blank line with no tags put in the right expression to display review.body
+	- In the cite tag, immediately after the -, put in the right expression to display review.author.

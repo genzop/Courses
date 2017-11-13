@@ -1,0 +1,14 @@
+4.2 Create a New Poll
+Create and return a new Poll record from the store service.
+
+	- Add a newPoll() function to the store service. It should return the following new Poll record:
+
+		Poll.create({
+		  options: [
+		    Option.create({ votes: 0 }),
+		    Option.create({ votes: 0 }),
+		    Option.create({ votes: 0 })
+		  ]
+		})
+
+	- Return the store's newPoll() result as the index route's model hook.

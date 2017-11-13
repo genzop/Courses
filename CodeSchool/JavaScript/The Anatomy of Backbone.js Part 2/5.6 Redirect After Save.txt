@@ -1,0 +1,2 @@
+5.6 Redirect After Save
+After submitting the form and saving the model, make sure we navigate the user back to the index route ''. Also, make sure this only happens if the model is saved successfully.

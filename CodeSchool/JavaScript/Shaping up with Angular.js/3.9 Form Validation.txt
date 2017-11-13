@@ -1,0 +1,6 @@
+3.9 Form Validation
+Use the fancy directives you just learned to validate the new review form.
+
+	- Turn off default HTML validation.
+	- Mark stars & author as required fields.
+	- Prevent the submit if not $valid.

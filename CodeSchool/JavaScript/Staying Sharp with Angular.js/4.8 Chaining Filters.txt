@@ -1,0 +1,2 @@
+4.8 Chaining Filters
+The notes tweeted page has a search field so that users can filter notes. Let's take advantage of this: add an additional filter to the displayed notes on our notes tweeted page.

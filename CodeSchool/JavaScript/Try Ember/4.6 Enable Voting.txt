@@ -1,0 +1,6 @@
+4.6 Enable Voting
+Polls can now be created, but the Wilderness Wanderers still need to cast their votes.
+
+	- Add an action handler to the polls.poll route called voteForOption that accepts two parameters: a poll and an option. In it, use incrementProperty() to increase the option votes by 1.
+	- After the option.votes is incremented, transition the user to the polls.results route (passing the poll) to display the voting results.
+	- Map the voteForOption action onto the voting <button> in the polls/poll template. The action should trigger on "click" and remember to pass the Poll and Option records as arguments (order matters!).

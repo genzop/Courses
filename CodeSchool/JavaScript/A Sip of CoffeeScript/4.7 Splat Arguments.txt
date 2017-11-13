@@ -1,0 +1,3 @@
+4.7 Splat Arguments
+
+Change the displayTopPicks function to accept a variable number of suggested coffees by using the splat operator. Use suggested.join(", ") to alert all of the suggested coffees.

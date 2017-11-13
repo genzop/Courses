@@ -1,0 +1,6 @@
+1.3 Parse II
+Great! Now let's take care of that pesky spelling error.
+
+Change 'cankelled' to 'cancelled' and make sure to remove the 'cankelled' property.
+
+Make sure to refer to the JSON below and to the right.

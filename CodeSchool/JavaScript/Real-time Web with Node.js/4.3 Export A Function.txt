@@ -1,0 +1,6 @@
+4.3 Export A Function
+Notice the app.js file with the myRequest function below. Let's refactor myRequest out to its own my_request.js module.
+
+	- Move the myRequest function and the http require into my_request.js
+	- Export the myRequest function.
+	- Require the my_request.js module in app.js.

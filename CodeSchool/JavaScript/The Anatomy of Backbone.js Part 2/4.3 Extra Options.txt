@@ -1,0 +1,3 @@
+4.3 Extra Options
+Update the AppointmentsView class to handle the extra option doctor passed into the constructor, like so: new AppointmentsView({collection: appointments, doctor: drGoodparts}) Assign the extra option to the doctor property on the view instance.
+

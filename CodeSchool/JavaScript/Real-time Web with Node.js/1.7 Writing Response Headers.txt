@@ -1,0 +1,4 @@
+1.7 Writing Response Headers
+Up until now all we've been sending into the response.writeHead() function is the status code. However, it can take additional parameters.
+
+	- Consult the node documentation, and add a 'Content-Type' of 'text/html' to the response.

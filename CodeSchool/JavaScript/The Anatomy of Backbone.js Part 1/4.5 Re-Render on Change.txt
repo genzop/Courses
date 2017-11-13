@@ -1,0 +1,6 @@
+4.5 Re-Render on Change
+Dr. Goodparts pulled a late nighter and decided to make some changes to the app while you slept. He added the cancelled class to the <span> tag when the appointment is cancelled, and then, knowing just enough to be dangerous, called this.render in cancel to re-render the view.
+
+Without gloating too much, update this code to use Model events to always re-render the view whenever the model changes.
+
+Make sure when render is called that the context (this) is the view instance using the third argument to on (if you don't remember what this is referring to check out the API docs over in the references)

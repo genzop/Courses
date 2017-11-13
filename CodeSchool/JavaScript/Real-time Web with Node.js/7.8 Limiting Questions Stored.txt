@@ -1,0 +1,5 @@
+7.8 Limiting Questions Stored
+Great work! One last thing though, since every time a new question comes in we store it in the questions list, we might run into a problem where there are just too many questions stored in that list.
+
+	- Add a callback to lpush that will be used to limit the size of the list down to a max of 20.
+	- Use the ltrim command to limit the size of the list stored within redis to a maximum size of 20.

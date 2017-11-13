@@ -1,0 +1,2 @@
+greet = ->
+  alert 'Hello CoffeeScript'

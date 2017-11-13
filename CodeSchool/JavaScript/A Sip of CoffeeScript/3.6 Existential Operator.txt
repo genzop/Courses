@@ -1,0 +1,3 @@
+3.6 Existential Operator
+
+Make use of CoffeeScript's existential operator (the ?) to rewrite the JavaScript code below using CoffeeScript.

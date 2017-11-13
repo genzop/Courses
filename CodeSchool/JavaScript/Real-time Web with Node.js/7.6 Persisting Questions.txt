@@ -1,0 +1,4 @@
+7.6 Persisting Questions
+Let's go back to our live-moderation app and add some persistence, first to the questions people ask.
+
+	- Use the lpush command to add new questions to the list named questions. Do this inside the listener for the 'question' event.

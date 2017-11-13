@@ -1,0 +1,7 @@
+3.3 Refactoring Classes
+We've gone ahead and split out your components for you, much like we did in the video. However, there are a few more pieces of code we need you to write.
+
+	- Both our app.component.ts and our races.component.ts are missing the export keyword to allow their classes to be imported. Could you add them where they’re needed?
+	- Great! Now, inside our app.component.ts we need to display the RacesComponent by using the selector set in the races.component.ts. Add the tag right under the heading in the AppComponent.
+	- Lastly, we need to tell our AppModule that we’re using the RacesComponent in the template. Add code within main.ts to do this.
+

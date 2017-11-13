@@ -1,0 +1,3 @@
+4.2 Coffee on the Range II
+
+Create an array with numbers 1 through 10 using the exclusive range syntax.

@@ -1,0 +1,2 @@
+3.2 Optional Routes I
+Duplication is Bad. Let's DRY (Don't Repeat Yourself) our routes to make /pp:per_page an optional part of the page route.

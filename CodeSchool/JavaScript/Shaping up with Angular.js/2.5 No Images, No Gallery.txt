@@ -1,0 +1,6 @@
+2.5 No Images, No Gallery
+Many times a product will be ready to sell, but won't have images yet (like our first one). In this case the images array will just be empty. Note the change in our gems array.
+
+We don't want to display the .gallery element if there are no images. Create an expression on our .gallery div to make this happen.
+
+	- Use the ng-show directive to make sure our image gallery is only displayed if a product has images.

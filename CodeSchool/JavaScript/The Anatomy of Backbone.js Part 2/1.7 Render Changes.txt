@@ -1,0 +1,2 @@
+1.7 Render Changes
+Now that we've modified toJSON to return mangled JSON, we need to change our AppointmentView to use attributes instead of toJSON.

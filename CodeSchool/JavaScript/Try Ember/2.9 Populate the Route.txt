@@ -1,0 +1,9 @@
+2.9 Populate the Route
+Now that the polls route is generated, customize it to return some basic data.
+
+	- Add a model hook to the polls route.
+	- Return the following array of data from the polls route's model hook:
+		[
+			{ id: '1', question: 'Which Poisonous Plant Are You?' },
+  			{ id: '2', question: 'Which Is Your Favorite Woodland Wanderer Way? ' }
+		]

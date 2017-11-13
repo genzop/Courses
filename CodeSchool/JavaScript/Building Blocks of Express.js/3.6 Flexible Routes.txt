@@ -1,0 +1,5 @@
+3.6 Flexible Routes 
+Our current route only works when the city name argument matches exactly the properties in the cities object. This is a problem. We need a way to make our code more flexible.
+
+	- Inside our route, call the parseCityName() function passing in the name parameter. Assign the return value to the new variable called cityName.
+	- Now, using the city name returned from the parseCityName() function, lookup the corresponding description using the cities object and store it in the correct variable that will make the rest of the function work as intended.

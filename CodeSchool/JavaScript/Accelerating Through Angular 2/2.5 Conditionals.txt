@@ -1,0 +1,5 @@
+2.5 Conditionals
+We've added a new boolean field called isRacing to each race. If isRacing is true then we've already entered this race, and if it's false we haven’t. Notice in our template we have a button that will eventually allow us to enter the race, and an <h3> we want to display if we're already racing.
+
+	- Add a conditional directive to only display the <button> if we're not racing.
+	- Add a conditional directive to only display the <h3> if we are racing.

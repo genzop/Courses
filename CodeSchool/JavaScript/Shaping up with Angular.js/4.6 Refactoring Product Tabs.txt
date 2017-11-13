@@ -1,0 +1,10 @@
+4.6 Refactoring Product Tabs
+We feel like the Product Tabs section could be better managed if it were a directive.
+
+	- Create an element directive called productTabs.
+	- Tell your new directive to use the product-tabs.html template with the templateUrl attribute.
+	- Give our productTabs directive all the tab functionality that is currently inside our TabController. Make sure that you do not delete the TabController yet. We don't want to break the site.
+	- Add the controllerAs attribute to your directive setting it to tab so the directive knows what all the references to tab in product-tabs.html are.
+	- Put the tabs section inside of the provided product-tabs.html. Remove the ng-controller from the section inside the file once moved.
+	- Now remove the product tabs section from index.html and the TabController from app.js.
+	- Use our new productTabs directive where the tabs section used to be in our index.html.

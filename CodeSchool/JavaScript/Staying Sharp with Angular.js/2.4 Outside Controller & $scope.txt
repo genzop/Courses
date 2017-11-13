@@ -1,0 +1,7 @@
+2.4 Outside Controller & $scope
+Now that you are familiar with $scope, let's practice using it with an outside controller.
+ 
+ 	- Attach notes to $scope instead of the controller ( this).
+ 	- Remove the controllerAs controller alias from routes.js.
+ 	- Update the notes/index.html template to work with $scope.
+ 	

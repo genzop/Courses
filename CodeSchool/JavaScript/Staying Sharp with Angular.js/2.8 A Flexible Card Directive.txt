@@ -1,0 +1,5 @@
+2.8 A Flexible Card Directive
+In order to make the nw-card directive reusable, it needs to accept a few attributes.
+
+	- Give the nw-card directive an isolate scope, and enable it to accept a header and description attribute with two-way bindings.
+	- Now make nw-card.html work for both Notes and Users by accessing the header and description directly from the scope.

@@ -1,0 +1,3 @@
+4.1 Coffee on the Range
+
+Create an array with numbers 1 until 10 using the inclusive (two dot) range syntax.

@@ -1,0 +1,4 @@
+4.2 Existing EL
+Below we have our AppointmentsView instance rendering and then taking the rendered HTML and inserting into the $('#app') element.
+
+Change the code to instead pass in the $('#app') element into the view constructor to make it the appointmentsView.el.

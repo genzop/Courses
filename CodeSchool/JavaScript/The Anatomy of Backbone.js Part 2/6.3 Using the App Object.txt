@@ -1,0 +1,2 @@
+6.3 Using the App Object
+Now that we have our new top-level object, change our class definitions below to use it. Make sure you clean up the names of the views by removing View since it's not needed anymore. Assign the AppRouter right on the AppointmentApp object.

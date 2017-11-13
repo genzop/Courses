@@ -1,0 +1,3 @@
+6.6 Watch those @'s
+
+Fix the bug on the code below, which is causing the @linkClicked variable to not be properly set when a link is clicked.

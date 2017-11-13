@@ -1,0 +1,2 @@
+6.4 App View I
+Turn the AppointmentApp object into a Backbone view instance. That means that you'll have to immediately instantiate the Backbone.View class returned by Backbone.View.extend().

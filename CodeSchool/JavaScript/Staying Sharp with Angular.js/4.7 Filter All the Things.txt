@@ -1,0 +1,4 @@
+4.7 Filter All the Things
+Let's start cleaning up our notes tweeted page using filters.
+
+On the notes tweeted page, within the tweeted.html template, use filter to display only notes that have been tweeted (i.e., having a tweeted property set to true).

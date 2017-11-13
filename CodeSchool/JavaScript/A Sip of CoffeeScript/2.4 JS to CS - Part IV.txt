@@ -1,0 +1,3 @@
+1.4 JS to CS - Part IV
+
+Convert the commented jQuery code below to CoffeeScript. Use @ instead of this.

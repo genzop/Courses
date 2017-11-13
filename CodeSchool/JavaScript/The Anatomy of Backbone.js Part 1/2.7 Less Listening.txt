@@ -1,0 +1,4 @@
+2.7 Less Listening
+Dr. Goodparts browser crashed because of too many alerts.
+
+Instead of listening for all attribute changes, just listen and alert when changes are made to the cancelled attribute.

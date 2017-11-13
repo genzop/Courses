@@ -1,0 +1,4 @@
+4.3 Refactor to the Model
+Whenever you see too much code dealing with the Model in one of your views, it's probably time for a refactor.
+
+Create a cancel function in the Appointment model that sets the model's cancelled attribute to true, and call that function from the view. (Hint: Make sure to put the code in the correct tabs)

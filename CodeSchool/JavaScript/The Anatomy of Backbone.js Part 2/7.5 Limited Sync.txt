@@ -1,0 +1,4 @@
+7.5 Limited Sync
+Dr. Goodparts has instituted a new (possibly controversial) policy: Appointments can not be changed. The office can create appointments, but they will no longer be able to update them or delete them.
+
+To comply with this new policy, modify the Appointment model's sync function below to only work on read and create, but not on delete and update.

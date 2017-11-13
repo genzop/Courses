@@ -1,0 +1,5 @@
+2.4 Express Static
+Change the code in app.js to use the express-static middleware instead of the response.sendFile() function.
+
+	- Remove our app.get() containing the root '/' route.
+	- Mount the static middleware and serve files under the public directory.

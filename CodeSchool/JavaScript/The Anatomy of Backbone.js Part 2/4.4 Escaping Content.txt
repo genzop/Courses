@@ -1,0 +1,4 @@
+4.4 Escaping Content
+Dr. Goodparts recently hired an intern to input appointments and they've been injecting appointments with malicious titles to hack Dr. Goodparts' computer.
+
+The intern was fired but you should probably update the AppointmentView to escape the title content.

@@ -1,0 +1,2 @@
+2.3 Collection Parsing II
+Fantastic work! Now to finish the job, just return the appointments array from the parse function, instead of the entire response.

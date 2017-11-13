@@ -1,0 +1,9 @@
+1.3 Locations
+Let's start coding our Express application.
+
+	- In our app.js, require the express module and assign it to the express variable.
+	- Using the function assigned to express, create an application instance and assign it to the app variable.
+	- Using our application instance, app, create a new route that accepts GET requests on the /locations URL path. Remember to pass a callback function which takes a request and response.
+	- Respond with an array of city names. The city names should be Caspiana, Indigo and Paradise.
+	- Bind our application to port 3001.
+	- When our application is ready to receive requests, print the string "Running Express" to the console.

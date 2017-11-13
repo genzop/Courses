@@ -1,0 +1,4 @@
+7.6 Sync to localStorage I
+Well that was quick. Dr. Goodparts has changed his mind and now wants to be able to update and delete appointments again. Unfortunately, the server team has defected to Dr. Jay Query and so we've had to use HTML5 localStorage to store our appointments.
+
+Below we've started to implement the localStorage strategy, handling the "read" and "create" methods. In this challenge, write the code to handle the "delete" method.

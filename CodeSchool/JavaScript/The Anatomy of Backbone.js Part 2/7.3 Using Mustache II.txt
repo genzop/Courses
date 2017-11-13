@@ -1,0 +1,4 @@
+7.3 Using Mustache II
+As you can see in our Appointment view below, we are rendering the list of possible dates an appointment could occur. possibleDates is an attribute on the Appointment model, and it's value is always an array of strings.
+
+Convert the view below to use Mustache.

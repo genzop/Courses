@@ -1,0 +1,5 @@
+1.7 Look, More Gems!
+Looks like the Flatlanders have discovered more gems for us to sell in the gemStore. That's a relief! Follow the objectives below to add these new gems to the store.
+
+	- In the app.js file we changed things up a little with a new gems array. Assign gems to a products property inside StoreController.
+	- You know how to display all the products, don't you? Use the correct directive to display all the products in product row divs.

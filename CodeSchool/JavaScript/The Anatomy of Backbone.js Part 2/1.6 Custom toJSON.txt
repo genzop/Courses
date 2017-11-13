@@ -1,0 +1,2 @@
+1.6 Custom toJSON
+Dr. Goodparts is not happy. He just tried to create a new Appointment and it crashed the server because the JSON sent up to represent the Appointment was in the wrong format. Update toJSON below to return the JSON the server expects. (Make sure you don't modify the model.attributes object)

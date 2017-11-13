@@ -1,0 +1,5 @@
+1.8 Response End
+Our original Hello server can be shortened since the response.end() function optionally takes data as a parameter. Remove the response.write line altogether, and send the hello string as a parameter on the response.end function. This will send the data, and once finished add the end to the response.
+
+	- Instead of passing the content to response.write(), pass it to response.end().
+	- Now, remove the call to response.write().

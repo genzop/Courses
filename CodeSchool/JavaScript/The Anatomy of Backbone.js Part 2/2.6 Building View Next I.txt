@@ -1,0 +1,4 @@
+2.6 Building View Next I
+Dr. Goodparts has requested that we add a link to the application that will show the next 10 appointments. Luckily we already have the ability to paginate through appointments by passing the per_page and page params to the server when we fetch the collection.
+
+Let's start to implement this feature by adding a template to the AppointmentListView below. The template should have a link that looks like this: <a href="#/appointments/p<%= page %>/pp<%= per_page %>">View Next</a>

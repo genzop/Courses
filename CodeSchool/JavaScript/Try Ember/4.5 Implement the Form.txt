@@ -1,0 +1,6 @@
+4.5 Implement the Form
+Now that a new Poll record is available, it's time to implement the new Poll functionality on the landing page.
+
+	- Update the index template to use an {{input}} helper for the Poll question. Remember, the Poll's question will be model.question in the template.
+	- Update the index template to use {{input}} helpers for the Option values. Remember, the Option's value will be option.value within the iterator.
+	- Add an action to the <form> that triggers a createPoll action, passing the Poll ( model) to the action. Remember to indicate the event type on which the action should trigger!

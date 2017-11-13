@@ -1,0 +1,9 @@
+5.5 Over the Internet
+We've gone ahead and created a races.json file for you — check it out. Let's import and use http to fetch our data.
+
+	- Inside our main.ts, go ahead and import the HttpModule and add it to the imports section of the NgModule decorator.
+	- Now inside our race.service.ts we've already added the libraries you need, but we could use your help adding a constructor() to inject the Http service.
+	- Now let's implement the getRaces() method to get our app/races.json file, and return the racesData array. We should use the map() method to map the response into a JSON object and then return the array of race data within it.
+
+	FYI, calling .data won’t work — you'll need to look inside our json file to find where our array is located.
+	- Inside the races.component.ts it's time to finish implementing the ngOnInit() method of races.component.ts to take the array of races emitted by getRaces() and save it as this.races.

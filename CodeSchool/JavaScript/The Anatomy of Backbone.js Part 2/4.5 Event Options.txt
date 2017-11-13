@@ -1,0 +1,4 @@
+4.5 Event Options
+As you can see in the view code below, whenever the model's title attribute changes, we update the title in the view and highlight it to let the user know that it's been updated. Sometimes we want to be able to change the title without highlighting the view, but with still updating it in the view.
+
+To accomplish this, we are passing in {highlight: false}. Update the changedTitle function below to use this extra option to selectively highlight the view.

@@ -1,0 +1,7 @@
+4.11 Make It Work
+Using the included external library, SlabText, create a wrapper directive nwSlabText so that we can use it in the NoteWrangler app.
+
+	- Create a link function for the nwSlabText directive.
+	- Call the slabText() method on directive's element. Refer to the SlabText docs for the method name.
+	- Add an attribute directive for nwSlabText to the h2 tag in the nw-card.html template.
+	- We have a problem: the link function of the nwSlabText directive is being called before the element has been populated with data. To solve this, inject and use the $timeout service.

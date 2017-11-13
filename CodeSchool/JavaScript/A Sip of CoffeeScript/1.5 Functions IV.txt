@@ -1,0 +1,3 @@
+1.5 Functions IV
+
+Change the greet function so that it uses a default value of 'Stranger' for the name parameter

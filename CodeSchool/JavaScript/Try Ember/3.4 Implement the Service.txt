@@ -1,0 +1,9 @@
+3.4 Implement the Service 
+Now that the Poll and Option models exist, implement the store service to use them. The service has already been updated to create a local, private array of Poll records.
+
+	- Import the Option and Poll models into the store service as Option and Poll, respectively.
+	- Create a getPolls() function in the store to return the polls array.
+	- Add a getPollById() function to the store that accepts an id argument. In it, use findBy() to return the Poll record which contains a matching id property value.
+	- Update the polls and polls/poll routes to add a new store property to each. Use Ember to inject the store service into it.
+	- Update the polls route's model to replace the hard-coded data and instead use the store service to return its getPolls() result.
+	- Update the polls/poll route's model to return the store service's getPollById() result. Remember to pass the params.poll_id property to it.

@@ -1,0 +1,2 @@
+1.7 Set the Title
+Almost there, but before we display anything let's set the title of the appointment instance! Set it to any string, perhaps something you'd like Dr. Goodparts to take a look at (ex. My Backbone Hurts).

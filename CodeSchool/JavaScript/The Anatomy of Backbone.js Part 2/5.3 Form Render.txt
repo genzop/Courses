@@ -1,0 +1,2 @@
+5.3 Form Render
+Now write the render function to render the template and pass in the model attributes. Return this from the render function.

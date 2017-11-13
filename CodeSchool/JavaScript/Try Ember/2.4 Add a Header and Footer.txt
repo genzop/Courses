@@ -1,0 +1,8 @@
+2.4 Add a Header and Footer 
+Add a header and footer to the application template.
+	
+	- Replace the default <h2> tag, including attributes, with an HTML5 <header> tag.
+	- Inside of the new <header> tag, change the text to "Wilderness Safety Quiz".
+	- Wrap the {{outlet}} expression with a <main> tag. The outlet should still be in the template when you're done.
+	- Add the footer to the application template below the {{outlet}} as a <footer> tag with the following content:
+		&copy; Woodland Wanderer Whatchamacallits

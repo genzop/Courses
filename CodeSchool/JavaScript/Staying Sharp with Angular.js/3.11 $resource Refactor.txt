@@ -1,0 +1,7 @@
+3.11 $resource Refactor
+Let's convert our custom Note factory to use Angular resource. Remove all(), find(), and create() methods from our Note service and replace them with the $resource equivalent.
+
+	- Include angular-resource.js in index.html so that we can use it in our app. It is located in the same directory as our angular.js file.
+	- Include ngResource in the NoteWrangler module.
+	- Replace the existing object that is returned from the Note factory with an Angular resource that uses '/notes' as the data source.
+	

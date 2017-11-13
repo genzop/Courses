@@ -1,0 +1,3 @@
+5.1 jQuery & Object Notation
+
+Convert the existing JavaScript code to CoffeeScript.

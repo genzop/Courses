@@ -1,0 +1,2 @@
+5.7 Handle Errors
+It's possible that saving the appointment on the server will fail and the server will respond with error messages. Add an error callback to the save call to handle this case and alert the user with the errors from the response.

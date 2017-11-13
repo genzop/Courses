@@ -1,0 +1,7 @@
+5.7 Implement the Option Tally
+With an option-tally component available, use it to calculate the option percentage for the results page.
+
+	- Create a percentage computed property on the option-tally component. This property will use optionVotes and pollVotes attributes, so ensure that you identify them as dependent properties for the computed function.
+	- Return the computed percentage from the percentage property. The formula for calculating the rounded percentage is shown below:
+
+		Math.round(this.get('optionVotes') * 100 / this.get('pollVotes'));		

@@ -1,0 +1,5 @@
+3.12 Using a $resource-ful Note Service
+Now that our Note factory is using ngResource, we'll need to update how it's used in NotesIndexController.
+
+Replace the existing call to Note.all() with the correct call to the Note Angular resource.
+

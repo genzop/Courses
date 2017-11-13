@@ -1,0 +1,4 @@
+4.6 Removing the View
+Sometimes Dr. Goodparts pretends he's a hacker and starts destroying appointments right there in the console.
+
+Make sure that when an appointment is destroyed, its corresponding view is removed from the DOM.

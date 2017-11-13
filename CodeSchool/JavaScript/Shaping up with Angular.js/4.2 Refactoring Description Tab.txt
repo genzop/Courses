@@ -1,0 +1,5 @@
+4.2 Refactoring Description Tab
+Notice that we have created an empty html file called product-description.html. Separate out the Description Tab's content into the new html file. Include the product-description.html in our index where it belongs.
+
+	- Separate out our description tab into product-description.html.
+	- Include product-description.html inside the description tab.

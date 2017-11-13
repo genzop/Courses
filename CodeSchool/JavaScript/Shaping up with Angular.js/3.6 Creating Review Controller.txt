@@ -1,0 +1,9 @@
+3.6 Creating Review Controller
+Create a ReviewController and inside of it an empty review ripe for the stuffing! Then below that create the functionality to create new reviews.
+
+	- Create a new controller called ReviewController.
+	- Set our review variable to an empty object when the ReviewController is created.
+	- Create an empty function named addReview in your ReviewController.
+	- We'll pass in the product we want to review to our addReview function. Edit your function declaration to accept a product parameter.
+	- When addReview is called with a product, it should add the review from the controller to the passed-in product's reviews array. Implement this functionality in the addReview method.
+	- Reset the review to an empty object after it's been added to product.reviews.

@@ -1,0 +1,2 @@
+3.4 Top-Level JQuery
+Refactor the render function below to use the improved jQuery syntax on the top-level element.

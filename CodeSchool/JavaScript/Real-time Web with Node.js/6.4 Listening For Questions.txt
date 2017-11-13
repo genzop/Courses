@@ -1,0 +1,5 @@
+6.4 Listening For Questions
+In our client below, listen for 'question' events from the server and call the insertQuestion function whenever the event fires.
+
+	- First, listen for 'question' events from the server.
+	- Now, have the event callback function call the insertQuestion function. The insertQuestion function is already created for you, and it's placed in its own file. It expects exactly one argument - the question.

@@ -1,0 +1,2 @@
+6.5 App View II
+In the view constructor function call, pass in document.body as the el option. This will setup what we need for handling click events and rendering our initial HTML.

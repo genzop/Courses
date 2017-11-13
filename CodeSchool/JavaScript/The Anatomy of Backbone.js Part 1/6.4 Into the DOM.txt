@@ -1,0 +1,2 @@
+6.4 Into the DOM
+Wow, you are a hard worker! Let's see it pay off by rendering our collection view and inserting it into the DOM. Using the append or html jQuery methods, insert the top-level element into the #app div.

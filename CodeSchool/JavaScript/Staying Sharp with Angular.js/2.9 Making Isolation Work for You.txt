@@ -1,0 +1,8 @@
+2.9 Making Isolation Work for You
+Now that the nw-card directive has an isolate scope, the note cards no longer have access to the variables in their expressions. Let's fix that and finish making this Directive reusable for both Notes and Users.
+
+	- Add attributes for header and description for the nw-card directive in the notes/index.html template. 
+	The note title should be used for the header, and the note description should be used for the description.
+
+	- Add attributes for header and description for the nw-card directive in the users/index.html template.
+	The user name should be used for the header, and the user bio should be used for the description.

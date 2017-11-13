@@ -1,0 +1,5 @@
+6.8 Answering Question Client
+Now on the client, listen for the 'answer' event and then add the appropriate data to the DOM.
+
+	- Listen for the 'answer' event off of the server.
+	- Call the answerQuestion function, passing in both the question and the answer that was broadcast from the server.

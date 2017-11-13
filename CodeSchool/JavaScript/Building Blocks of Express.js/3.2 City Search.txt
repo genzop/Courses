@@ -1,0 +1,6 @@
+3.2 City Search
+We want to create an endpoint that we can use to filter cities. Follow the tasks below to to create this new route.
+
+	- Create a new route for GET requests to '/cities'. The second argument should be a callback function which takes request and response.
+	- From inside of our route, create an if statement that checks whether a value is set to the query string parameter search.
+	- Inside of the if block, call the citySearch() function, passing in the user submitted parameter for search. Then return the result of the function as a JSON response.

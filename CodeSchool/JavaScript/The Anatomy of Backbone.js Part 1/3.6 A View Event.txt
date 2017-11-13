@@ -1,0 +1,4 @@
+3.6 A View Event
+Dr. Goodparts is just getting the hang of this web thing and thinks it'd be a good idea to alert the user the title of the appointment whenever they click on its view.
+
+See if you can't appease his bad idea and implement this tragic UI interaction using View events.

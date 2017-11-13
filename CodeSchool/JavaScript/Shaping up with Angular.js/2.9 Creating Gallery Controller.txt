@@ -1,0 +1,7 @@
+2.9 Creating Gallery Controller
+Now that you're such a whiz with tabbed tab, can you apply what you've learned to our image gallery, too? Don't worry, we'll start slow… And there's a lot more in common than you might think!
+
+	- Let's start with a Controller, just like last time. Call it GalleryController.
+	- Initialize a current property of GalleryController with a value of 0.
+	- Add a method to GalleryController called setCurrent that accepts a value and assigns it to current. If no value is passed in, set current to 0.
+	

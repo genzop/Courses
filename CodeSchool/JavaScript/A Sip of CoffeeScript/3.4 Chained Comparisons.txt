@@ -1,0 +1,3 @@
+3.4 Chained Comparisons
+
+Rewrite the if below to use CoffeeScript's chained comparisons syntax.

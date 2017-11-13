@@ -1,0 +1,4 @@
+2.2 Using filters
+In the previous challenge we practiced displaying the prices of gems in our index.html. The first gem, Azurite, now costs $110.50 (due to supply shortages) but our current code doesn't display the price correctly.
+
+	- Use an Angular filter to display the price as a currency.

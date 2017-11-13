@@ -1,0 +1,5 @@
+3.2 Create Models 
+Create Poll and Option models. They should both extend from Ember.Object. The model files are already provided for you.
+
+	- Import Ember into the Poll and Option models.
+	- Export an extended Ember.Object as your Poll and Option models.

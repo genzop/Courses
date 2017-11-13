@@ -1,0 +1,5 @@
+5.3 Count the Votes 
+With voting in place, it's time to count the votes and determine a winner.
+
+	- Add an optionVotes property to the Poll model. It should return an array of votes from each option record. Use the Ember.computed.mapBy() macro or create your own to create an array of option votes values.
+	- Add a votes property to the Poll model. This should be the total number (summation) of the optionVotes values. Hint: Use the Ember.computed.sum() macro.

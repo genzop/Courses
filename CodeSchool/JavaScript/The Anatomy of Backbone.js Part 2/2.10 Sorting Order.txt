@@ -1,0 +1,2 @@
+2.10 Sorting Order
+Dr. Goodparts just sent us this email "Love the new sorting, but please flip it and reverse it", Update the comparator below to sort by date in reverse order

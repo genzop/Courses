@@ -1,0 +1,6 @@
+5.4 Rendering
+Instead of just writing out the quote to the response, let's try using an EJS template to render the response.
+
+	- First, render the quote.ejs template to the response.
+	- Next, make the name and the quote data available to the template.
+	- Inside quote.ejs, add the code needed to render the data you passed to the template.

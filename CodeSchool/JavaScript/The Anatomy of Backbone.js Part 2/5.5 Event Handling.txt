@@ -1,0 +1,2 @@
+5.5 Event Handling
+Update the AppointmentForm view to handle the submit event on the form. Also go ahead and implement the function to handle that event. It should save both the title and name attributes on the model with values from their respective inputs. Make sure the event function stops the default event from happening (which would cause the browser to submit the form, instead of us handling it with our Backbone model.)

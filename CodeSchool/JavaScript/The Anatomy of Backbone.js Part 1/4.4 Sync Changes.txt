@@ -1,0 +1,2 @@
+4.4 Sync Changes
+Now we've got the perfect place to synchronize our cancellation to the server. Update Appointment's cancel function to save the model after setting its cancelled attribute.

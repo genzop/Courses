@@ -1,0 +1,4 @@
+5.6 Fetch Silently
+Wouldn't ya know, our users don't like getting alerts every time we fetch new data for our collection.
+
+Update the fetch call below to not fire the reset event.

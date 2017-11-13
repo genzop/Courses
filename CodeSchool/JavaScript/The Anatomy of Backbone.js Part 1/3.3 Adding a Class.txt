@@ -1,0 +1,2 @@
+3.3 Adding a Class
+Make sure every AppointmentView top-level element is created with a class of appointment.

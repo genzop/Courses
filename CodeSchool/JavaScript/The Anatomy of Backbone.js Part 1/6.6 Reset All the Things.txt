@@ -1,0 +1,6 @@
+6.6 Reset All the Things
+It's Monday morning and time to reset all the appointments for the week. You hear a screech from down the hall and seconds later Dr. Goodparts barges red-faced into your office because the DOM didn't update when he reset the collection.
+
+Update the AppointmentListView to listen for the collection's reset event to call the render function.
+
+Make sure you include the context argument to ensure render is called with the correct context.

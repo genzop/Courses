@@ -1,0 +1,2 @@
+1.5 View Instance
+The perfect place to put our display code now exists! Now it's time to create our first AppointmentView instance. When doing so, don't forget to include the appointment model instance we just created. Assign the instance to a variable.

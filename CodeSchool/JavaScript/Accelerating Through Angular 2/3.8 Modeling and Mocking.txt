@@ -1,0 +1,6 @@
+3.8 Modeling and Mocking
+It's time to create a model and a mock file, like we did in the video.
+
+	- We've already started creating a race.ts file and listed its properties, which will contain our model. Please help us finish it by adding property types. FYI, the date should be of type Date, and isRacing should be of type boolean.
+	- We've moved the data into our mocks.ts file. We need you to help export the data using a constant called RACES, which is cast as as an array containing objects of type Race.
+	- Lastly, we need to set the races in our RacesComponent equal to the RACES mock. You know, inside the ngOnInit().

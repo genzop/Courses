@@ -1,0 +1,4 @@
+7.3 Show Router
+Great, but our AppRouter doesn't actually do anything yet, so let's add a route.
+
+Create a route that will match appointments/:id and call the show action, which we've already started to implement below.

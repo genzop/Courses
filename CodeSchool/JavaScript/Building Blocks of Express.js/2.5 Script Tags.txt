@@ -1,0 +1,6 @@
+2.5 Script Tags
+Now we can add some client-side JavaScript by including the jquery.js and client.js files.
+
+	- Within index.html, include jquery.js using a <script> tag.
+	- Within index.html, include client.js using a <script> tag.
+	- Now in the client.js file, complete the code for the $.get function so that it calls the /cities URL path, and then runs the appendToList function.

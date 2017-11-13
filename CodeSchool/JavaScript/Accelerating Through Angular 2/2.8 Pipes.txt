@@ -1,0 +1,5 @@
+2.8 Pipes
+Let’s use some pipes to format our data in a better way.
+
+	- First off, notice that we've added the entryFee of each race next to the title. Use the currency pipe like you saw in the video, but instead of euros, let’s use US dollars, which have the USD code. You should end up with a $ value.
+	- Next, let's use the date pipe to format our date. You'll need to send in the following string as a parameter: 'MMM d, y, h:mm a'.

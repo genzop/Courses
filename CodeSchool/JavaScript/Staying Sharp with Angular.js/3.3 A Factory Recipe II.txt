@@ -1,0 +1,7 @@
+3.3 A Factory Recipe II
+Now that you know about factories, let's clean up the controller a bit by moving that $http() call into its own factory.
+
+	- Return an object from the NoteFactory() function that has a method named all.
+	- Move the $http() call from the controller into the all() function in our Note factory and return the resulting promise. Don't forget to inject the $http service!
+	- Inject the Note factory into the controller and use the new all() method instead of calling $http() directly.
+	

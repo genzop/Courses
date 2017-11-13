@@ -1,0 +1,1 @@
+coffee = new Coffee('Enzo', 4)

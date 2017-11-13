@@ -1,0 +1,11 @@
+5.8 Use the Component
+With the option-tally component in place, use it in the results.
+
+	- Fill out the option-tally component template by displaying the option vote count and percentage. The template should render something like:
+
+		3 votes (33%)
+
+	Where 3 is the component's optionVotes, and 33 is the percentage computed property.
+	- Use the option-tally component in the polls.results template to replace the vote count and percentage placeholders.
+
+	Remember to pass the optionVotes and pollVotes properties to the component.

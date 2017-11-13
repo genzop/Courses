@@ -1,0 +1,2 @@
+3.2 Changing the TAG
+Change the AppointmentView to have a top-level li tag (instead of the default div tag).

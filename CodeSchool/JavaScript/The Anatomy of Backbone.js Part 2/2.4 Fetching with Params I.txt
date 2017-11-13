@@ -1,0 +1,2 @@
+2.4 Fetching with Params I
+The server team has implemented a feature for limiting the appointments pulled down based on the appointment date. In the code below, update the fetch call to pass an extra param so that the URL is like: /appointments?since=2013-01-01

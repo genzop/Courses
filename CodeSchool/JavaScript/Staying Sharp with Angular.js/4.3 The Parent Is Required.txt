@@ -1,0 +1,5 @@
+4.3 The Parent Is Required
+The nwNavItem directive needs to be able to communicate with the parent nwNav directive in order to tell when a nav item should be active. Let's go ahead and set that up.
+
+	- Within the nwNavItem directive, use the require option to gain access to the controller from the parent nwNav directive.
+	- Give the nwNavItem directive a link function. Make sure to fill in all the arguments so that we have access to the controller required from the previous task.

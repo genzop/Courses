@@ -1,0 +1,2 @@
+greet = (message) ->
+  alert message

@@ -1,0 +1,2 @@
+4.6 ListenTo
+Use the new listenTo View function to make the view listen to the model's 'change:title' event, instead of having the model notify the view of the event. This way we can safely call remove() on the view and feel confident all of our events are cleaned up.

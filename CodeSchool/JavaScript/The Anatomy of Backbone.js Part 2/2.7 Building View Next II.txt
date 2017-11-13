@@ -1,0 +1,2 @@
+2.7 Building View Next II
+Great! Now that we have the template, let's add some code in the render function to append the generated HTML from the template into the AppointmentListView $el. Make sure you pass in the page and per_page properties to the template function, getting those values from this.collection.page + 1 and this.collection.per_page respectively.

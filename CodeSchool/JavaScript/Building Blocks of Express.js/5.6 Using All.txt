@@ -1,0 +1,6 @@
+5.6 Using All
+Let's use the app.all() method to handle the name parameter instead of app.param().
+
+	- Add a call to all() for our router's '/:name' route. Pass a callback function that accepts request, response, and next.
+	- Now let's take our logic from the callback function passed to app.param() and move it to our all() callback.
+	- Now remove the original call to app.param().

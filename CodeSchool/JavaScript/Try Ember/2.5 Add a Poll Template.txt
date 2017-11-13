@@ -1,0 +1,7 @@
+2.5 Add a Poll Template 
+Create a new endpoint in the application.
+
+	- We've created a poll template for you. Set the content of app/templates/poll.hbs to:
+		This is a poll.
+	- Add a new 'poll' mapping in app/router.js.
+	- Use a {{#link-to}} expression in the app/templates/index.hbs template to instruct Ember to link from index to the "poll".

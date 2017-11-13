@@ -1,0 +1,6 @@
+3.9 Dynamic Routes III
+The following code has a Dynamic Route that takes a year as an argument and returns the city created in that year. The problem with our current implementation is that it breaks when invalid data is sent on client requests. Let's add some basic validation.
+
+ 	- Call a function that intercepts Dynamic Routes with the 'year' param.
+ 	- Inside of that function, use the isYearFormat() function to check whether the year parameter is in a valid format. If so, then move processing to the next function in the stack.
+ 	- If the year parameter is not in a valid format, then respond with a 400 HTTP status code and a JSON message 'Invalid Format for Year'.

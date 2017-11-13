@@ -1,0 +1,6 @@
+3.8 Dynamic Routes II
+Whenever we use our name parameter we want to parse it a specific way. Let's clean up our existing code so that all routes with a name parameter get the same special handling.
+
+	- Call app.param() to intercept requests that contain an argument called 'name'. Remember app.param() takes a callback function as its second argument, which uses the same signature as a middleware.
+	- Inside the app.param() callback function, call the parseCityName() function with the submitted name parameter. Set the return value to a new property in the request object called cityName.
+	- Finally, call a function that moves processing to the next function in the stack.

@@ -1,0 +1,3 @@
+6.4 Class Inheritance
+
+Make the Coffee class inherit from Drink and override the serve method to return false if @sleeve is false, otherwise invoke the superclass method. (Note: The Drink class is defined below)

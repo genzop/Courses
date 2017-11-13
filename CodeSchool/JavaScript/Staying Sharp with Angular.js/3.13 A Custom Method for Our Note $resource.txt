@@ -1,0 +1,2 @@
+3.13 A Custom Method for Our Note $resource
+Wouldn't it be great to have a custom method on our Note resource to mark it as tweeted?

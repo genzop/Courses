@@ -1,0 +1,6 @@
+3.4 City Information
+Now lets look up some information about the city.
+
+	- Inside of our dynamic route, grab the name submitted by the user, lookup the city information on the cities object and assign it to the cityInfo variable.
+	- Check to see if cityInfo exists and if so, respond with the cityInfo in JSON format.
+	- If cityInfo does not exist, respond with a 404 HTTP status code and a JSON message that says "City not found".

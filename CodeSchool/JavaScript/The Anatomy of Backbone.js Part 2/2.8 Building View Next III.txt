@@ -1,0 +1,2 @@
+2.8 Building View Next III
+Now that we are rendering the link, we need to implement the route to handle appointments/p:page/pp:per_page and have the route function fetch the new appointments based on the parameters. Name this new function page.

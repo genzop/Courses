@@ -1,0 +1,4 @@
+5.2 Collection Class
+Dr. Goodparts is losing a ton of business because his app can only handle one appointment at a time! Who thought that was a good idea?
+
+Let's start improving the situation. Define a new collection class called AppointmentList, and make sure it handles the Appointment model.

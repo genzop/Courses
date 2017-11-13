@@ -1,0 +1,3 @@
+2.2 JS to CS - Part II
+
+Convert the commented jQuery code below to CoffeeScript and use CoffeeScript-style string interpolation.

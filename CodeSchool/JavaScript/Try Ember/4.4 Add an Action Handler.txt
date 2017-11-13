@@ -1,0 +1,9 @@
+4.4 Add an Action Handler
+To prepare for the poll creation, you'll need an action handler to capture the form submission.
+
+	- Add an actions block to the index route.
+	- Within the actions block, add a createPoll() action handler function that accepts one poll parameter and "saves" the given poll using the following code:
+
+		this.get('store').createPoll(poll);
+
+	- Finally, after the poll is saved, transition the user to the "polls.poll" route from within the createPoll action handler. Don't forget to pass along the new model.

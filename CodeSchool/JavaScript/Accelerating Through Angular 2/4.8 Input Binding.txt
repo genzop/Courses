@@ -1,0 +1,6 @@
+4.8 Input Binding
+Let’s add the ability for us to manually increase the cash we can spend on races.
+
+In our races.component.html, we’ve added an input field. Use two-way binding to bind this to the cash component property.
+
+Once you complete the challenge, feel free to play with it in the Preview window.

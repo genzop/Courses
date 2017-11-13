@@ -1,0 +1,2 @@
+2.9 Sorting By Date
+Our appointments are being rendered in a pretty haphazard way. Dr. Goodparts is very chronological, so we need to always have our appointments sorted by the date. Add the code below to accomplish this.
