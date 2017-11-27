@@ -7,11 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WingTipToysD
-{
-
-    public partial class About
-    {
-
+namespace WebSample {
+    
+    
+    public partial class About {
     }
 }

@@ -7,9 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WingTipToysD
-{
-    public partial class Contact
-    {
+namespace WebSample {
+    
+    
+    public partial class Contact {
     }
 }

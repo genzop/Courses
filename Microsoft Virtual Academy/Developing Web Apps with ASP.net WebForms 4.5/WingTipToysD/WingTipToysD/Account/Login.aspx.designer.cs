@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WingTipToysD.Account
-{
-
-
-    public partial class Login
-    {
-
+namespace WebSample.Account {
+    
+    
+    public partial class Login {
+        
         /// <summary>
         /// RegisterHyperLink control.
         /// </summary>
