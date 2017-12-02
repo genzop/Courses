@@ -9,23 +9,23 @@ namespace Vidly.Controllers
 {
     public class CustomersController : Controller
     {
+        private List<Customer> Customers = new List<Customer>
+        {
+            new Customer { Id = 1, Name = "John Smith" },
+            new Customer { Id = 2, Name = "Mary Williams" }
+        };
+
         // GET: Customers
         [Route("Customers")]
         public ActionResult Index()
         {
-            var customers = new List<Customer>
-            {
-                new Customer { Id = 1, Name = "John Smith" },
-                new Customer { Id = 2, Name = "Mary Williams" }
-            };
-
-            return View(customers);
+            return View(Customers);
         }
 
         [Route("Customers/Details/{id}")]
         public ActionResult Details(int id)
         {
-            return View();
+            return View(Customers.Where(c => c.Id == id).FirstOrDefault());
         }
     }
 }
