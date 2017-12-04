@@ -15,7 +15,7 @@ namespace Vidly
 
             routes.MapMvcAttributeRoutes();                                 //Agrega rutas por atributo (van encima de cada action)
 
-            #region Routeo de la manera vieja
+            #region Routeo de la manera convencional
             /*routes.MapRoute(
                 "MoviesByReleaseDate",                                      //Nombre
                 "movies/released/{year}/{month}",                           //Url
@@ -23,6 +23,7 @@ namespace Vidly
                 new { year = @"2015|2016", month = @"\d{2}" }               //Restricciones de los parámetros
             );*/
             #endregion
+
 
             routes.MapRoute(
                 name: "Default",

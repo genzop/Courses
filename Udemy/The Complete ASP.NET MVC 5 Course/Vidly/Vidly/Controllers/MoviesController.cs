@@ -1,10 +1,10 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
-using Vidly.ViewModels;
 
 namespace Vidly.Controllers
 {
@@ -70,22 +70,36 @@ namespace Vidly.Controllers
         }*/
         #endregion
 
-        private List<Movie> Movies = new List<Movie>
+        private ApplicationDbContext _context;
+
+        public MoviesController()
         {
-            new Movie { Id = 1, Name = "Shrek" },
-            new Movie { Id = 2, Name = "Wall-e" }
-        };
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
 
         [Route("Movies")]
         public ActionResult Index()
         {
-            return View(Movies);
+            var movies = _context.Movies.Include(m => m.Genre).ToList();
+            return View(movies);
         }
 
         [Route("Movies/Details/{id}")]
         public ActionResult Details(int id)
         {
-            return View(Movies.Where(m => m.Id == id));
+            var movie = _context.Movies.Include(m => m.Genre).SingleOrDefault(m => m.Id == id);
+
+            if(movie == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(movie);
         }
     }
 }

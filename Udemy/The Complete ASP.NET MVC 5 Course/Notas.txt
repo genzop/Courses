@@ -1,0 +1,22 @@
+Code First
+- Incluir EntityFramework en el proyecto
+- Crear un DbContext
+- Activar las migraciones con el comando 'enable-migrations'
+- Ir agregando los cambios con nuevas migraciones con el comando 'add-migration'
+- Actualizar la base de datos con el comando 'update-database'
+    
+- La tabla _Migration_History guarda un historial de todos los cambios efectuados.
+- Hacer muchas migraciones pequeñas
+
+- Agregar registros a la base de datos:
+    - Agregar una migracion vacia
+    - En el metodo Up de esa migracion:
+        - Ejecutar un comando SQL como el siguiente ejemplo
+            'Sql("INSERT INTO MembershipTypes (Id, SignUpFee, DurationInMonths, DiscountRate) VALUES (1, 0, 0, 0)")'
+
+- Agregar restricciones al modelo
+    - Utilizando la libreria System.ComponentModel.DataAnnotations se agregan metaetiquetas a las propiedades.
+
+Eager Loading
+- Carga los registros y sus asociaciones, esto se logra con el comando:
+    '_context.Customers.Include(c => c.MembershipType).ToList()'
