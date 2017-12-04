@@ -20,3 +20,13 @@ Code First
 Eager Loading
 - Carga los registros y sus asociaciones, esto se logra con el comando:
     '_context.Customers.Include(c => c.MembershipType).ToList()'
+
+
+
+data-val: el campo debe ser validado
+
+label for: El atributo for en un label permite que cuando se clickee en el label, se focusea el control correspondiente
+
+[Display(Name = "Date of Birth")] = Cambia el contenido del label que se muestra junto al control.
+
+
