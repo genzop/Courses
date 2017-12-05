@@ -21,12 +21,16 @@ Eager Loading
 - Carga los registros y sus asociaciones, esto se logra con el comando:
     '_context.Customers.Include(c => c.MembershipType).ToList()'
 
-
-
 data-val: el campo debe ser validado
-
 label for: El atributo for en un label permite que cuando se clickee en el label, se focusea el control correspondiente
-
 [Display(Name = "Date of Birth")] = Cambia el contenido del label que se muestra junto al control.
 
-
+Validaciones
+- .Net utiliza las DataAnnotations para validar el modelo tanto del lado del server como del cliente.
+- Para habilitar las validaciones del lado del cliente hay que ingresar las siguientes lineas debajo del formulario.
+    @section scripts
+    {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+- Las validaciones personalizadas no pueden ser validadas del lado del cliente.
+- Agregar AntiForgeryToken para aumentar la seguridad de la aplicación y prevenir CSFR o Cross-site Request AntiForgeryToken

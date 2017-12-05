@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using Vidly.Models.Validations;
 
 namespace Vidly.Models
 {
@@ -10,12 +11,13 @@ namespace Vidly.Models
     {
         public int Id { get; set; }        
 
-        [Required]
+        [Required(ErrorMessage = "The Name field is required.")]
         [StringLength(255)]
         public string Name { get; set; }
 
         public bool IsSubscribedToNewsletter { get; set; }
-
+                
+        [Min18YearsIfAMember]
         [Display(Name = "Date of Birth")]
         public DateTime? Birthdate { get; set; }
 
