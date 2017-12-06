@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Data.Entity;
 using System.Linq;
-using System.Web;
-using System.Data.Entity;
 using System.Web.Mvc;
 using Vidly.Models;
-using Vidly.ViewModels;
+using Vidly.Models.ViewModels;
 
 namespace Vidly.Controllers
 {
@@ -27,9 +24,8 @@ namespace Vidly.Controllers
         
         [Route("Customers")]
         public ActionResult Index()
-        {
-            var customers = _context.Customers.Include(c => c.MembershipType).ToList();
-            return View(customers);
+        {            
+            return View();
         }
 
         [Route("Customers/Details/{id}")]

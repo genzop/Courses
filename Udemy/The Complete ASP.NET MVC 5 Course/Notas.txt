@@ -50,3 +50,6 @@ Configurar respuesta
     var settings = config.Formatters.JsonFormatter.SerializerSettings;
     settings.ContractResolver = new CamelCasePropertyNamesContractResolver();
     settings.Formatting = Formatting.Indented;
+
+Bootbox
+Es una libreria de javascript que habilita herramientas graficas de forma mas simple y directa que bootstrap.

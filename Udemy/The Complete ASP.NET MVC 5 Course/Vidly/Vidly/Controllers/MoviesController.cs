@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Data.Entity;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
-using Vidly.ViewModels;
+using Vidly.Models.ViewModels;
 
 namespace Vidly.Controllers
 {
@@ -87,9 +85,8 @@ namespace Vidly.Controllers
         
         [Route("Movies")]
         public ActionResult Index()
-        {
-            var movies = _context.Movies.Include(m => m.Genre).ToList();
-            return View(movies);
+        {           
+            return View();
         }
 
         [Route("Movies/Details/{id}")]
