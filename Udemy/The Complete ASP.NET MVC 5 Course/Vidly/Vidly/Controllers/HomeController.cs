@@ -2,6 +2,7 @@
 
 namespace Vidly.Controllers
 {
+    [AllowAnonymous]            //Permite que un usuario no logueado acceda a todas los actions de este controller
     public class HomeController : Controller
     {
         public ActionResult Index()
