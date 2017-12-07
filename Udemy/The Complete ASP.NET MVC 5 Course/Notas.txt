@@ -54,3 +54,40 @@ Configurar respuesta
 Bootbox
 Es una libreria de javascript que habilita herramientas graficas de forma mas simple y directa que bootstrap.
 
+Optimizacion
+- Preferir eager loading a lazy loading
+
+Glipmse
+- Herramienta que ayuda con la optimización de código.
+- Instalacion
+    'install-package glimpse.mvc5' & 'install-package glimpse.ef6'
+
+OutputCache
+Al utilizar esta meta-etiqueta, una vez que se renderice el html, va a ser guardado en cache. Se puede guardar en cache un action o incluso
+todo un controller. Para ello se debe colocar la meta-etiqueta correspondiente.
+    [OutputCache(Duration = 50, Location = OutputCacheLocation.Server, VaryByParam = "genre")]'
+        - Duration: tiempo en que la vista será guardada en cache
+        - OutputCacheLocation: lugar donde será guardada la vista
+        - VaryByParam: crear una nueva version en cache si esta este parametro
+
+    [OutputCache(Duration = 0, VaryByParam = "*", NoStore = true)] = deshabilita completamente el output cache.
+
+DataCache
+Se utilza para guardar datos en cache, similares a las sesiones. Se guarda la información en utilizando una key y cuando se quiera cargar,
+se debe castear a su tipo original.
+    Guardar datos en cache:
+        if(MemoryCache.Default["Genres"] == null)
+        {
+            MemoryCache.Default["Genres"] = _context.Genres.ToList();
+        }
+    Leer datos en cache:
+        var genres = MemoryCache.Default["Genres"] as IEnumerable<Genre>;
+
+Async
+No mejora la performace de la aplicacion pero si la escabilidad.
+
+Sessiones
+Evitar el uso de sesiones, perjudican la escabilidad del proyecto.
+    - Para deshabilitar las sesiones, se debe agregar la siguiente linea en la sección <system.web> del web.Configurar
+        '<sessionState mode="Off"></sessionState>'
+
