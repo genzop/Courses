@@ -91,3 +91,43 @@ Evitar el uso de sesiones, perjudican la escabilidad del proyecto.
     - Para deshabilitar las sesiones, se debe agregar la siguiente linea en la sección <system.web> del web.Configurar
         '<sessionState mode="Off"></sessionState>'
 
+Autocompletacion de controles
+Para la autocompletacion de los controles podemos utilizar Twitter.Typeahead, que se installa con la siguiente linea   
+    'install-package Twitter.Typeahead'
+Una vez incorporada la libreia al proyecto, debemos copiar las clases css de la pagina de ejemplo e incorporarlas manualmente a nuestro proyecto.
+El ejemplo remote hace referencia a una fuente de datos remota como una API.
+
+Notificaciones Toast
+Para poder utilizar notificaciones Toaster, hay que instalar Toastr
+    'install-package toastr'
+
+Validaciones JQuery 
+    - Trabajan con el name del control.
+    - Se pueden crear validaciones personalizadas de la siguiente forma:
+        '$.validator.addMethod("nombre", function () { 
+                return condicionVerdadera;
+            }, "MensajeDeError");'
+    - Y luego implementarse con el siguiente atributo en el controle:
+        'data-rule-nombreValidacion="true"'
+    
+    - Para validar un formulario se hace lo siguiente:
+        $("#newRental").validate({                                                      //Activa las validaciones JQuery en ese formulario
+            submitHandler: function () {                                                //Incluye un handler para cuando se hace submit
+                $.ajax({                                                                //Llamada AJAX para hacer POST con el formulario
+                    url: "/api/Rentals",
+                    method: "POST",
+                    data: vm
+                })
+                .done(function () {                                                     //Funcion que sucede cuando la llamada AJAX fue exitosa
+                    toastr.success("Rentals succefully recorded");                      
+                })
+                .fail(function () {
+                    toastr.error("Something unexpected happened");                      //Funcion que sucede cuando la llamada AJAX falla
+                });
+                return false;                                                           //Prevee que la página haga un postback, mismo funcionamiento que 'e.preventDefault()'
+            }
+        });
+
+
+
+
