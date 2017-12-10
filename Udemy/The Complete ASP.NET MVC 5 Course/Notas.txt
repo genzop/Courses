@@ -128,6 +128,54 @@ Validaciones JQuery
             }
         });
 
+Publicar
+    - Importar: sirve para importar un profile de publicación.
+
+Deploy Base de Datos
+    - Se puede generar un script que va a incluir todas las migraciones ejecutadas hasta el momento con el siguiente comando:
+        'update-database -script'
+
+    - Tambien podemos generar un script a partir de cierta migración:
+        'update-database -script -SourceMigration:nombreMigracion'
+
+    - En la base de datos, en la tabla _Migration_History se guardan todas las migraciones que han sido ejecutadas en esa base de datos.
+
+Configuraciones
+Se pueden general diferentes archivos de configuraciones de la siguiente manera:
+    - Se crea un nuevo perfil desde el "Configuration Manager" en la barra superior de Visual Studio. Generalmente conviene copiar la configuracion de Release ya que Debug se 
+    debe utilizar unicamente en desarrollo.
+    - Click derecho sobre el archivo web.config, 'Add config transform'
+    - Estos archivos sirven para las diferentes etapas del proyecto por lo que pisan el web.config original.
+
+Podemos guardar todo tipo de información sensible en el web.config, dentro de la sección AppSettings de la siguiente forma:
+    '<app key="nombre" value="valor"/>'
+Para luego consumir esta informacion asi:
+    'string valor = ConfigurationManager.AppSettings["nombre"]'
 
 
+Errores Personalizados
+    - Para activar errores personalizados se debe agregar la siguiente linea en la seccion system.web del archivo web.config
+        '<customErrors mode="RemoteOnly">
+            <error statusCode="404" redirect="~/404.html" />
+        </customErrors>'
 
+    - Por defecto la página personalizada de errores se encuentra en '/Views/Shared/Error.cshtml' y es generada por la siguiente lina del archivo FilterConfig.cs
+        'filters.Add(new HandleErrorAttribute())'
+
+    - Para activar la pagina de error personalizada con errores de acceso a archivos estáticos, se deben agregar las siguientes líneas a la sección 'system.webserver' del web.config:
+        '<httpErrors errorMode="DetailedLocalOnly">
+            <remove statusCode="404"/>
+            <error statusCode="404" path="404.html" responseMode="File"/>
+        </httpErrors>'
+
+
+Loguear Unhandled Exceptions
+    - Para esto utilizamos la libreia Elmah, para instalarla ingresamos:
+        'install-package Elmah'
+    - Una vez instalado, podemos observar el log generado con todas las excepciones en la siguiente direccion:
+        '/elmah.axd'
+
+
+Colores
+Para tener una lista de colores que quedan bien juntos un buen lugar es:
+    'color.adobe.com'
