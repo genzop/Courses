@@ -1,0 +1,28 @@
+Database-First 
+    Pasos
+        - Crear la base de datos y sus respectivas tablas.
+        - Crear un proyecto
+        - Instalar Entity Framework ('install-package EntityFramework')
+        - Agregar un archivo ADO.NET Entity Data Model (.edmx) que apuntará a la base de datos creada en el paso anterior.   
+
+Code-First
+    Pasos
+        - Crear un proyecto
+        - Instalar Entity Framework ('install-package EntityFramework')
+        - Crear las clases
+        - Crear un DbContext que herede de DbContext
+        - Agregar un connection string en el config
+        - Habilitar migraciones ('enable-migrations')
+        - Agregar una migración inicial ('add-migration NombreDeLaMigracion')
+        - Actualizar la base de datos ('update-database')
+
+    - Cada migracion cuenta con dos metodos:
+        - Up(): sirve para hacer un upgrade a una base de datos
+        - Down(): sirve para hacer un downgrade a una base de datos
+      Esto permite poder llevar una base de datos a cualquier versión.
+      
+
+
+    
+
+ 
