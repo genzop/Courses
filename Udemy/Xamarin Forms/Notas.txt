@@ -1,0 +1,36 @@
+PCL es mejor que Shared.
+
+Binding
+    - Para vincular o bindear una propiedad de un view a otro view se debe ingresar lo siguiente
+        '{Binding Source={x:Reference slider}, Path=Value, StringFormat='Value is {0:F2}' }'
+            - Source: referencia al control con el que queremos vincular esta propiedad
+            - Path: especifica a que propiedad de ese control queremos vincular
+            - StringFormat: permite darle un formato especifico al valor obtenido del otro control
+
+BindingContext
+    - Se puede hacer lo mismo pero de una manera más limpia de la siguiente forma:
+        - Se declara un BindingContext, que referencia a que control vamos a vincularnos
+            'BindingContext={x:Reference slider}'
+        - Se vinculan las propiedades con el objeto de la siguiente manera
+            '{Binding Value, StringFormat='Value is {0:F2}'}'
+    
+    - El BindingContext puede setearse en cualquier elemento y todos los elementos dentro de el lo heredaran
+
+Property Element Syntax
+    - Se puede especificar un atributo de un elemento como si fuera un elemento más, es decir en vez de hacer lo siguiente:
+        '<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HelloWorld.GreetPage"
+             Padding="0, 20, 0 ,0"></ContentPage>'
+        Se puede hacer de la siguiente manera:
+        '<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HelloWorld.GreetPage">
+            <ContentPage.Padding></ContentPage.Padding>
+         </ContentPage>'
+
+Mostrar errores en tiempo de compilación
+    - Para que el compilador agarre los errores y los muestre en tiempo de compilación, cada clase debe contener esta linea encima de su declaración
+        '[XamlCompilation(XamlCompilationOptions.Compile)]'
+
+    
