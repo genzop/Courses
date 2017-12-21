@@ -18,14 +18,11 @@ BindingContext
 
 Property Element Syntax
     - Se puede especificar un atributo de un elemento como si fuera un elemento más, es decir en vez de hacer lo siguiente:
-        '<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HelloWorld.GreetPage"
-             Padding="0, 20, 0 ,0"></ContentPage>'
+        '<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"x:Class="HelloWorld.GreetPage"
+            Padding="0, 20, 0 ,0"></ContentPage>'
+
         Se puede hacer de la siguiente manera:
-        '<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HelloWorld.GreetPage">
+        '<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HelloWorld.GreetPage">
             <ContentPage.Padding></ContentPage.Padding>
          </ContentPage>'
 
@@ -33,4 +30,31 @@ Mostrar errores en tiempo de compilación
     - Para que el compilador agarre los errores y los muestre en tiempo de compilación, cada clase debe contener esta linea encima de su declaración
         '[XamlCompilation(XamlCompilationOptions.Compile)]'
 
+StackLayout
+    - Spacing: espacio que va a haber entre los elementos del StackLayout
+    - Padding: espacio que va a haber entre el StackLayout y los elementos hijos
+    - Orientation: en que dirección se van a apilar los elementos
     
+    - Por defecto el StackLayout ocupa todo el espacio que tenga disponible, a menos que se le especifiquen HorizontalOptions y/o VerticalOptions.
+    
+Grid
+    - RowSpacing: espacio entre filas
+    - ColumnSpacing: espacio entre columnas
+
+    Elementos del Grid
+        - Grid.RowDefinitions: dentro de este elemento se puede definir el alto de cada fila especificamente, por ejemplo:
+            '<RowDefinition Height="2*"/>'
+            En este caso, el alto ocupara dos partes del espacio disponible, para ocupar una sola parte del espacio disponible se debe ingresar '*'
+        
+        - Grid.ColumnDefinitions. dentro de este elemento se puede definir el ancho de cada columna especificamente, por ejemplo:
+            '<ColumnDefinition Width="Auto"/>'
+            En este caso, el ancho de la columna se ajustará automáticamente
+
+        - Contenido: dentro de un Grid se puede colocar cualquier elemento, pero es necesario especificar la fila y la columna de la siguiente manera:
+            '<Label Grid.Row="0" Grid.Column="0" Text="Label"/>'
+
+            - También es posible que un elemento ocupe más de una fila o más de una columna de la siguiente manera:
+                '<Label Grid.Column="2" Grid.RowSpan="3" Text="RowSpan"/>'
+                '<Label Grid.Row="2" Grid.ColumnSpan="3" Text="ColumnSpan"/>'
+
+                
