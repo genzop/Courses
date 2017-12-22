@@ -1,0 +1,93 @@
+PCL es mejor que Shared.
+
+Binding
+    - Para vincular o bindear una propiedad de un view a otro view se debe ingresar lo siguiente
+        '{Binding Source={x:Reference slider}, Path=Value, StringFormat='Value is {0:F2}' }'
+            - Source: referencia al control con el que queremos vincular esta propiedad
+            - Path: especifica a que propiedad de ese control queremos vincular
+            - StringFormat: permite darle un formato especifico al valor obtenido del otro control
+
+BindingContext
+    - Se puede hacer lo mismo pero de una manera más limpia de la siguiente forma:
+        - Se declara un BindingContext, que referencia a que control vamos a vincularnos
+            'BindingContext={x:Reference slider}'
+        - Se vinculan las propiedades con el objeto de la siguiente manera
+            '{Binding Value, StringFormat='Value is {0:F2}'}'
+    
+    - El BindingContext puede setearse en cualquier elemento y todos los elementos dentro de el lo heredaran
+
+Property Element Syntax
+    - Se puede especificar un atributo de un elemento como si fuera un elemento más, es decir en vez de hacer lo siguiente:
+        '<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"x:Class="HelloWorld.GreetPage"
+            Padding="0, 20, 0 ,0"></ContentPage>'
+
+        Se puede hacer de la siguiente manera:
+        '<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HelloWorld.GreetPage">
+            <ContentPage.Padding></ContentPage.Padding>
+         </ContentPage>'
+
+Mostrar errores en tiempo de compilación
+    - Para que el compilador agarre los errores y los muestre en tiempo de compilación, cada clase debe contener esta linea encima de su declaración
+        '[XamlCompilation(XamlCompilationOptions.Compile)]'
+
+StackLayout
+    - Spacing: espacio que va a haber entre los elementos del StackLayout
+    - Padding: espacio que va a haber entre el StackLayout y los elementos hijos
+    - Orientation: en que dirección se van a apilar los elementos
+    
+    - Por defecto el StackLayout ocupa todo el espacio que tenga disponible, a menos que se le especifiquen HorizontalOptions y/o VerticalOptions.
+    
+Grid
+    - RowSpacing: espacio entre filas
+    - ColumnSpacing: espacio entre columnas
+
+    Elementos del Grid
+        - Grid.RowDefinitions: dentro de este elemento se puede definir el alto de cada fila especificamente, por ejemplo:
+            '<RowDefinition Height="2*"/>'
+            En este caso, el alto ocupara dos partes del espacio disponible, para ocupar una sola parte del espacio disponible se debe ingresar '*'
+        
+        - Grid.ColumnDefinitions. dentro de este elemento se puede definir el ancho de cada columna especificamente, por ejemplo:
+            '<ColumnDefinition Width="Auto"/>'
+            En este caso, el ancho de la columna se ajustará automáticamente
+
+        - Contenido: dentro de un Grid se puede colocar cualquier elemento, pero es necesario especificar la fila y la columna de la siguiente manera:
+            '<Label Grid.Row="0" Grid.Column="0" Text="Label"/>'
+
+            - También es posible que un elemento ocupe más de una fila o más de una columna de la siguiente manera:
+                '<Label Grid.Column="2" Grid.RowSpan="3" Text="RowSpan"/>'
+                '<Label Grid.Row="2" Grid.ColumnSpan="3" Text="ColumnSpan"/>'
+
+AbsoluteLayout
+    - Este tipo de layout sirve especialmente para:
+        - Anclar elementos a los limites de la pantalla.
+        - Sobreposicionar elmentos uno sobre otro.
+    
+    - Para ubicar un elemento dentro de un AbsoluteLayout se debe utilizar el siguiente atributo:
+        'AbsoluteLayout.LayoutBounds="0, 0, 1, 1"' 
+        Donde los valores significan: Posicion X, Posicion Y, Ancho, Alto. Estos pueden ser valores absolutos o proporcionales, por defecto son absolutos.
+
+        - Para utilizar valores proporcionales es necesario agregar el siguiente atributo:
+            'AbsoluteLayout.LayoutFlags=""'
+            Y seleccionar que propiedades queremos que sean proporcionales.
+            
+
+RelativeLayout
+    - Sobreponer elementos encima de ellos
+    - Aplicar restricciones basandose en otros elementos
+    - Más control sobre la posición y tamaño de los Elementos
+
+    - Setear el tamaño de un elemento en relación a su padre:
+        'RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.3}"'
+            - RelativeLayout: propiedad del elemento que vamos a limitar
+            - Type: indica que vamos a compararlo con el padre
+            - Property: propiedad del elemento padre que vamos a tomar como referencia 
+            - Factor: porcentaje que va a ocupar el elemento basandose en que en el padre el valor es de 1
+
+    - Setear la posicion de un elemento en relación a otro elemento:
+        'RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=banner, Property=Height, Factor=1, Constant=20}"'
+            - RelativeLayout: propiedad del elemento que vamos a limitar
+            - Type: indica que vamos a compararlo con otro elemento
+            - ElementName: nombre del elemento con el que vamos a compararlo
+            - Property: propiedad del elemento que vamos a tomar como referencia 
+            - Factor: porcentaje que va a ocupar el elemento basandose en que en el padre el valor es de 1
+            - Constant: cantidad de unidades que queremos utilizar
