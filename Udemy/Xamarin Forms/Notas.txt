@@ -91,3 +91,111 @@ RelativeLayout
             - Property: propiedad del elemento que vamos a tomar como referencia 
             - Factor: porcentaje que va a ocupar el elemento basandose en que en el padre el valor es de 1
             - Constant: cantidad de unidades que queremos utilizar
+
+Imagenes
+    Descargadas
+        - Para cambiar el source de una imagen desde el código se debe hacer lo siguiente:
+            'var imageSource = new UriImageSource { Uri = new Uri("uriDeLaImagen") };'
+
+        - CachingEnabled: habilita o deshabilita el cacheo de imagenes en el dispositivo.
+        - CacheValidity: tiempo que la imagen será guardada en cache, por defecto es 24 horas.
+            'imageSource.CacheValidity = TimeSpan.FromSeconds(10);'
+
+    Aspectos
+        - AspectFit: mantiene el aspecto de la imagen pero deja espacios vacios.
+        - AspectFill: corta la imagen para que se adapte al espacio disponible
+        - Fill: rellena el espacio estirando la imagen sin mantener el aspecto
+
+    ActivityIndicator
+        - Es posible vincular una imagen a un ActivityIndicator para mostrar que se esta descargando de la siguiente manera
+            '<ActivityIndicator IsRunning="{Binding Source={x:Reference nameDeLaImagen}, Path=IsLoading}"/>'
+
+    Embedded Resource
+        - Cuando se agrege una imagen descargada dentro del proyecto setear el Build Action como Embedded Resource
+            'Propiedades->Buid Action->EmbeddedResource'
+          Una vez hecho esto, se puede acceder a ese recurso utilizando la ruta desde la base del proyecto separada por puntos, por ejemplo:
+            'image.Source = ImageSource.FromResource("HelloWorld.Images.background.jpg");'
+
+        - Para hacer esto en XAML es necesario seguir los siguientes pasos:
+            - 1° Crear una Markup Extension personalizada:
+                - Es una clase que hereda de IMarkupExtension.
+                - Tiene una propiedad donde se guardara el ResourceId 
+                - Implementa el metodo ProvideValue, donde se devolvera el ImageSource.
+                - La clase tiene la siguiente metaetiqueta:
+                    '[ContentProperty("ResourceId")]'
+                  Que setea como content por default a la propiedad ResourceId, en este caso.
+            - 2° Agrega al archivo XAML el namespace del Markup Extension   
+                - En la etiqueta ContentPage se agrega la siguiente linea
+                    'xmlns:local="clr-namespace:HelloWorld.MarkupExtensions; assembly=HelloWorld"'
+            - 3° Utilizar el Markup Extension
+                '<Image x:Name="image" Source="{local:EmbeddedImage HelloWorld.Images.background.jpg}" Aspect="AspectFill"/>'
+    
+    Imagenes específicas para cada plataforma
+        Una misma imagen puede ser renderizada en diferentes resoluciones dependiendo del dispositivo, por ello hay que incluir una misma imagen
+        en diferentes resoluciones para cada plataforma.
+            - iOS: Las imagenes van en una misma carpeta de la siguiente manera:
+                clock.png (32x32) - Resolucion Original
+                clock@2x.png (64x64) - Resolucion Original x 2
+                clock@3x.png (96x96) - Resolucion Original x 3
+            - Android: Las imagenes van separadas en carpetas de acuerdo a su resolucion, siguiendo la siguiente convencion:
+                drawable (32x32) - Resolucion Original
+                drawable-hdpi (48x48) - Resolucion Original x 1.5
+                drawable-xhdpi (64x64) - Resolucion Original x 2
+                drawable-xxhdpi (96x96) - Resolucion Original x 3
+        - Los nombres de los archivos solo pueden contener:
+            - Letras minúsculas
+            - Números
+            - Guión bajo
+            - Punto
+
+        Utilizar una imagen local:
+            - XAML
+                - General
+                    '<Button x:Name="btn" Image="clock.png">'
+
+                - Por plataforma
+                    '<Button x:Name="btn">
+                        <Button.Image>
+                            <OnPlatform x:TypeArguments="FileImageSource"
+                                        iOS="clock.png"
+                                        Android="clock.png"
+                                        WinPhone="images/clock.png"/>
+                        </Button.Image>
+                    </Button>'
+
+            - Codigo
+                - General
+                    'btn.Image = (FileImageSource)ImageSource.FromFile("clock.png");'
+
+                - Por plataforma
+                    'btn.Image = (FileImageSource)ImageSource.FromFile(
+                        Device.OnPlatform(
+                        iOS: "clock.png",
+                        Android: "clock.png",
+                        WinPhone: "clock.png"
+                    ));'
+
+    Cambiar ícono de la aplicación
+        - Android:
+            'Proyecto Android->Propiedades->Android Manifest->Application Icon'
+
+    Imagenes redondeadas en Xamarin.forms
+        Para trabajar con imagenes redondeadas en Xamarin.Forms debemos instalar el plugin: ImageCirclePlugin
+            'https://github.com/jamesmontemagno/ImageCirclePlugin'
+
+        1° Instalar el plugin desde el Package Manager en todos los proyectos
+        2° Configurar en cada proyecto agregando la linea 'ImageCircleRenderer.Init();' debajo de la linea 'Xamarin.Forms.Init()' en los archivos:
+            iOS: AppDelegate.cs
+            Android: MainActivity.cs
+        3° Agregar el namespace del plugin en el archivo XAML
+            'xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"'
+        4° Utilizar el plugin de la siguiente manera
+            '<ic:CircleImage WidthRequest="100" HeightRequest="100" Aspect="AspectFill" 
+                             Source="https://placeimg.com/400/300/nature" 
+                             HorizontalOptions="Center" VerticalOptions="Center"/>'
+            
+            Nota: el WidthRequest y el HeightRequest deben ser iguales y el aspect debe ser AspectFill
+
+            
+            
+            

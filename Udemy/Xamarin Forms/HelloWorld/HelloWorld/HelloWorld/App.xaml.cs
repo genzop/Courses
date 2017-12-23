@@ -13,7 +13,7 @@ namespace HelloWorld
 		{
 			InitializeComponent();
 
-            MainPage = new RelativeLayoutExercise();
+            MainPage = new ImageExercise();
 		}
 
 		protected override void OnStart ()
