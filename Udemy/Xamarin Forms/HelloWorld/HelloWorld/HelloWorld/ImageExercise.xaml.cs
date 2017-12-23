@@ -12,23 +12,43 @@ namespace HelloWorld
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ImageExercise : ContentPage
 	{
+        private int ImageNumber;
+        private UriImageSource UriSource;
+
 		public ImageExercise ()
 		{
 			InitializeComponent ();
-            img.Source = new UriImageSource
+
+            ImageNumber = 1;
+            UriSource = new UriImageSource
             {
                 CachingEnabled = false,
-                Uri = new Uri("https://placeimg.com/1920/1080/nature")
-            };            
+                Uri = new Uri("http://lorempixel.com/1920/1080/city/" + ImageNumber  + "/")
+            };
+
+            img.Source = UriSource;
 		}
 
-        private void ChangeImage(object sender, EventArgs e)
+        private void Previous(object sender, EventArgs e)
         {
-            img.Source = new UriImageSource
-            {
-                CachingEnabled = false,
-                Uri = new Uri("https://placeimg.com/1920/1080/nature")
-            };
+            if (ImageNumber == 1)
+                ImageNumber = 11;
+
+            ImageNumber -= 1;
+
+            UriSource.Uri = new Uri("http://lorempixel.com/1920/1080/city/" + ImageNumber + "/");
+            img.Source = UriSource;
+        }
+
+        private void Next(object sender, EventArgs e)
+        {
+            if (ImageNumber == 10)
+                ImageNumber = 0;
+
+            ImageNumber += 1;
+
+            UriSource.Uri = new Uri("http://lorempixel.com/1920/1080/city/" + ImageNumber + "/");
+            img.Source = UriSource;
         }
 	}
 }
