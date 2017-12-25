@@ -196,6 +196,90 @@ Imagenes
             
             Nota: el WidthRequest y el HeightRequest deben ser iguales y el aspect debe ser AspectFill
 
+Listas
+    '<ListView x:Name="listView"/>'
+
+    - Rellenar una lista con información simple
+        - Para rellenar una lista desde el código es necesario setear su propiedad ItemsSource 
+            'listView.ItemsSource = names;'
             
-            
-            
+    - La linea que separa cada item de la lista se llama Separator y podemos ocultarlo o cambiar su color
+
+    - Rellenar una lista con un objeto
+        Cuando la propiedad ItemsSource del ListView es una lista de objetos debemos mostrar sus propiedades de la siguiente manera:
+            - 1° Dentro de la propiedad ItemTemplate: '<ListView.ItemTemplate>'
+            - 2° Dentro del elemento DataTemplate: '<DataTemplate>'        
+            - 3° Podemos utilizar los tipos de celdas que ya vienen por defecto:
+                    - TextCell
+                        '<TextCell Text="{Binding Name}" Detail="{Binding Status}"/>'
+                    - ImageCell
+                        '<ImageCell Text="{Binding Name}" Detail="{Binding Status}" ImageSource="{Binding ImageUrl}"/>'
+            - 4° O podemos crear una celda personalizada, para ello utilzamos la etiqueta ViewCell y dentro de ella podemos armar la estructura 
+            que deseemos.
+                - En caso de que los elementos queden fuera de lugar, hay que setear la propiedad HasUnevenRows del ListView a TypeArguments    
+    
+    - Agrupar lista
+        1° Crear una clase que herede que List<LoQueSea> y que tenga un título
+           'public class ContactGroup : List<Contact>
+            {
+                public string Title { get; set; }
+                public string ShortTitle { get; set; }
+
+                public ContactGroup(string title, string shortTitle)
+                {
+                    Title = title;
+                    ShortTitle = shortTitle;
+                }
+            }'
+        2° En la propiedad ItemsSource del objeto rellenarlo de la siguiente manera
+           'listView.ItemsSource = new List<ContactGroup>
+            {
+                new ContactGroup("M", "M")
+                {
+                    new Contact{ Name = "Mosh", ImageUrl = "http://lorempixel.com/100/100/people/1" },
+                },
+                new ContactGroup("J", "J")
+                {
+                    new Contact{ Name = "John", ImageUrl = "http://lorempixel.com/100/100/people/2", Status = "Hey, let's talk" }
+                }
+            };'
+        3° Agregar al ListView las propiedades IsGroupingEnabled(true), GroupDisplayBinding(titulo del grupo) y GroupShortNameBinding(titulo del grupo para la barra del costado)
+
+    - ItemSelected y ItemTapped
+        Cuando un item se toca por primera vez, se dispara el evento ItemSelected y se pinta de un color, en cambio cada vez que se toca un item se 
+        dispara el evento ItemTapped pero no se pinta de ningun color.
+
+            - Desactivar la seleccion de items: para lograr esto hay que tener un handler para cuando se produzca el evento ItemSelected y dentro de
+            ese handler ingresar el siguiente código:
+                'listView.SelectedItem = null'
+           
+    - Context Actions
+    Las Context Actions nos permite tener un menu de acciones para cada item del listview. Para agregar Context Actions a una celda es necesario:
+        1° Dentro de la celda agregar el elemento <Text/Image/ViewCell.ContextActions>
+        2° Dentro de las Context Actions agregar los diferentes MenuItems como el siguiente:
+            '<MenuItem Text="Call" Clicked="Call_Clicked" CommandParameter="{Binding .}"/>'
+            En este caso, se esta creando un MenuItem llamado "Call" que tiene un handler llamado "Call_Clicked" y que envia al handler el
+            BindingContext a través del atributo CommandParameter. Se utiliza el punto para enviar el BindingContext en general y no una propiedad
+            específica.
+        3° Crear un handler para el evento Clicked del MenuItem
+    
+    - Observable Collection
+    Una Observable Collection funciona de manera muy similar a un List tradicional, pero tiene la ventaja que cuando se actualiza uno o varios de sus
+    elementos, tambien actualiza el ListView al que este vinculado.
+    
+    - Pull To Refresh
+    Para habilitar el Pull To Refresh en una lista, debemos seguir estos pasos:
+        1° Setear la propiedad "IsPullToRefreshEnabled" a True y en la propiedad "Refreshing" ingresar el nombre del handler que se va a encargar de actualizar la lista
+        2° En el handler, actualizar la lista como se crea conveniente
+        3° Finalizar la actualizacion con esta línea: 'listView.EndRefresh();'
+
+    - Search Bar
+    Para utilizar una Search Bar solo hace falta agregarla a la vista asignandole un handler para el evento on "TextChanged" o el evento "SearchButtonPressed":
+        '<SearchBar Placeholder="Search..." TextChanged="TextChanged"/>'
+
+        'private void TextChanged(object sender, TextChangedEventArgs e)
+        {            
+            listView.ItemsSource = GetContacts(e.NewTextValue);
+        }'
+
+    
