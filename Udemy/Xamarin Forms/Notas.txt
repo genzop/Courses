@@ -282,4 +282,87 @@ Listas
             listView.ItemsSource = GetContacts(e.NewTextValue);
         }'
 
+
+- Navegacion
+    - Habilitar la navegación entre páginas: se debe declarar una NavigationPage en el constructor de la App.
+        'MainPage = new NavigationPage(new Pagina());'
+
+    - Agregar titulo para la barra de navegación: se debe agregar el atributo Title en la etiqueta ContentPage:
+        '<ContentPage... Title="Welcome">'
+
+    - Navegar a una nueva página: se utiliza el metodo PushAsync. Debe ir con el atributo await y estar en un método async:
+       'private async void Handle_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new HierarchicalNavigation2());
+        }'
+
+    - Volver a la página anterior: se utiliza el metodo PopAsync. De igual manera, debe ir con el atributo await y estar en un método async:
+       'private async void Handle_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }'
     
+    - Deshabilitar la barra de navegación en una página: se debe agregar el atributo NavigationPage.HasNavigationBar y setearlo a false en la 
+    etiqueta ContentPage:
+        '<ContentPage... NavigationPage.HasNavigationBar="False">'
+
+    - Personalizar la barra de navegación: hay que setear las propiedades que se deseen personalizar en la declaracion de la NavigationPage en 
+    el archivo App:
+       'MainPage = new NavigationPage(new HierarchicalNavigation())
+        {
+            BarBackgroundColor = Color.Gray,
+            BarTextColor = Color.White
+        };'
+
+    - Deshabilitar el boton back de la barra de navegación en una página: se debe setear el atributo NavigationPage.HasBackButton en la etiqueta 
+    ContentPage
+       '<ContentPage... NavigationPage.HasBackButton="False">'
+    
+    - Deshabilitar la funcionalidad del boton back: para esto es necesario sobreescribir el método OnBackButtonPressed:
+       'protected override bool OnBackButtonPressed()
+        {
+            return true;
+        }'
+
+    - Paginas modales
+    Para navegar a una página como si fuera un modal, solo hay que reemplazar PushAsync por PushModalAsync. De la misma forma cuando queramos 
+    volver de una página modal se debe utilizar PopModalAsync y no PopAsync(). Cuando se esta en un modal, se recomiendza deshabilitar la funcionalidad
+    del botón back.
+
+    - MasterDetail Page
+    Un MasterDetail Page esta compuesto por dos partes principales:
+        - Master: Menu que contiene un listado que nos permite accedeter a los details
+        - Detail: Pagina que contiene el detalle
+
+        - La propiedad IsPresented indica que si esa página es la primera en cargarse.
+
+    - Tabbed ContentPage
+    Una Tabbed Page permite agrupar varias pages en una misma pantalla utilizando pestañas. Estas se setean en la propiedad 'Children' del TabbedPage
+    Las páginas pueden ser declaradas dentro del TabbedPage o en archivos externos y ser referenciadas.
+
+        - En caso de que se lean de un archivo externo, es necesario agregar el namespace de esos archivos:
+            'xmlns:local="clr-namespace:HelloWorld.Navigation.TabbedPage"'
+
+    - CarouselPage
+    Funciona de manera similar que un TabbedPage, pero dentro de la propiedad Children solo se pueden agregar ContentPages. No pueden llevar Title
+    ni Icon. Pueden ser declarados en el mismo archivo o en un archivo externo.
+
+    - DisplayAlert
+    DisplayAlert nos permite mostrar notificaciones o confirmaciones al usuario dependiendo de la cantidad de parametros:
+        Notificacion: 'DisplayAlert("Notification", "You are being notified", "OK")'
+        Confirmacion: 'DisplayAlert("Warning", "Are you sure?", "Yes", "No")'
+
+    - ActionSheet
+    Funciona de manera similar a DisplayAlert pero le permite al usuario seleccionar entre una lista de elementos:
+        'DisplayActionSheet("Title", "Cancel", "Delete", "Copy Link", "Message", "Email");'
+    
+    - Toolbar Items
+    Los ToolbarItems se especifican dentro de la propiedad ToolbarItems de la etiqueta ContentPage
+        - Los ToolbarItems que tengan la propiedad "Order" seteada en "Secondary" seran agrupados.
+        - La propiedad "Text" solo se muestra cuando su propiedad "Order" es "Secondary"
+
+        
+
+
+    
+

@@ -1,4 +1,10 @@
 ﻿using HelloWorld.Lists;
+using HelloWorld.Navigation;
+using HelloWorld.Navigation.HierarchicalNavigation;
+using HelloWorld.Navigation.ModalPages;
+using HelloWorld.Navigation.SimpleMasterDetail;
+using HelloWorld.Navigation.MasterDetail;
+using HelloWorld.Navigation.TabbedPage;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +16,11 @@ namespace HelloWorld
 {
 	public partial class App : Application
 	{
-		public App ()
-		{
-			InitializeComponent();
+        public App()
+        {
+            InitializeComponent();
 
-            MainPage = new ListExercise();
+            MainPage = new Navigation.Exercise.MainPage();
 		}
 
 		protected override void OnStart ()
