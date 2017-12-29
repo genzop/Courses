@@ -1,26 +1,15 @@
-﻿using HelloWorld.Lists;
-using HelloWorld.Navigation;
-using HelloWorld.Navigation.HierarchicalNavigation;
-using HelloWorld.Navigation.ModalPages;
-using HelloWorld.Navigation.SimpleMasterDetail;
-using HelloWorld.Navigation.MasterDetail;
-using HelloWorld.Navigation.TabbedPage;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿using HelloWorld.FormsAndSettings.Exercise;
 using Xamarin.Forms;
 
 namespace HelloWorld
 {
-	public partial class App : Application
+    public partial class App : Application
 	{
         public App()
         {
             InitializeComponent();
 
-            MainPage = new Navigation.Exercise.MainPage();
+            MainPage = new NavigationPage(new ContactsPage());
 		}
 
 		protected override void OnStart ()

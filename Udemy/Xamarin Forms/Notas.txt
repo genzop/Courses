@@ -283,7 +283,7 @@ Listas
         }'
 
 
-- Navegacion
+Navegacion
     - Habilitar la navegación entre páginas: se debe declarar una NavigationPage en el constructor de la App.
         'MainPage = new NavigationPage(new Pagina());'
 
@@ -361,6 +361,15 @@ Listas
         - Los ToolbarItems que tengan la propiedad "Order" seteada en "Secondary" seran agrupados.
         - La propiedad "Text" solo se muestra cuando su propiedad "Order" es "Secondary"
 
+TableView
+    - Un TableView es una herramienta muy util para diseñar formularios y paginas de configuraciones. 
+    - Esta compuesto por una o más secciones.
+    - Cada sección puede contener una o más celdas:
+        - TextCell
+        - EntryCell
+        - SwitchCell
+        - CustomCell
+    
         
 
 
