@@ -369,8 +369,41 @@ TableView
         - EntryCell
         - SwitchCell
         - CustomCell
-    
-        
+
+Acceso a datos
+    - Application Properties: nos permite guardar datos primitivos en bajo la propiedad Properties del objeto App. Estos datos seran persistidos sin necesidad de configurar
+    el acceso a datos. Si se desean guardar objetos complejos, se debe serializar y desearilzar con JSON. Es recomendado para:
+        - Configuraciones
+        - Datos temporales que no han sido persistidos aun
+
+        Estos datos se persisten cuando la aplicación entra en se minimiza y cuando se cierra la aplicacion. Si queremos persistir los datos en otro momento tenemos que utilizar
+        esta linea:
+            'Application.Current.SavePropertiesAsync();'
+
+        Para guardar informacion cuando el usuario hace un PopAsync, se debe sobreescribir el metodo OnDisapearing y persistir la información ahí.
+
+        - Se recomienda establecer con que propiedades se va a trabajar en el archivo App.xaml.cs, para mantener un codigo más limpio:
+            - 1° Crear constantes con los nombres de las key que se utilizaran
+            - 2° Crear propiedades que seteen y devuelvan la información
+            - 3° En la página donde se trabaje con esta información, se recomienda setear el BindingContext a Application.Current, para poder vincular directamente los controles
+            a las propiedades de la aplicación.
+
+    - File System: nos permite guardar todo tipo de datos en archivos
+        Como cada plataforma trabaja con el File System de manera diferente, lo que se debe hacer es crear una interfaz en el proyecto compartido y luego implemetar esa interfaz
+        en cada plataforma. Este metodo de trabajo es innecesario ya que actualmente contamos con la librería PCLStorage que hace facilita enormemente las cosas.
+
+    - SQLite: base de datos
+        Instalar:
+            - 1° Agregar la librería sqlite-net-pcl a todos los proyectos de la solucion
+            - 2° Declarar una interface en el proyecto compartido
+            - 3° Implementar la interface en cada plataforma
+
+    - RESTful Services: guardar informacion de forma remota en otro sitio.
+        Instalar en todos los proyectos:
+            - Newtonsoft.Json
+            - Microsoft.Net.Http
+
+
 
 
     
