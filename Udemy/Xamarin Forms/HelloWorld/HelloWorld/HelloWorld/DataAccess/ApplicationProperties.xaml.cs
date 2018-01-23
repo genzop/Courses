@@ -15,7 +15,7 @@ namespace HelloWorld.DataAccess
 		public ApplicationProperties ()
 		{
 			InitializeComponent ();
-            BindingContext = Application.Current;                        
+            BindingContext = Application.Current;            
         }
     }
 }
