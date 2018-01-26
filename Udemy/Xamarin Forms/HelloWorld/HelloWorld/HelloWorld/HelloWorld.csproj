@@ -217,4 +217,8 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="MVVM\Exercise\Views\" />
+  </ItemGroup>
 </Project>

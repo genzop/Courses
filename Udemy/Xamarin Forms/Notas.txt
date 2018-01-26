@@ -402,6 +402,20 @@ Acceso a datos
         Instalar en todos los proyectos:
             - Newtonsoft.Json
             - Microsoft.Net.Http
+            
+
+MVVM
+    - Esta compuesto por tres componentes
+        - Model: modelo
+        - View: vista
+        - ViewModel: modelo especificamente diseñado para la vista
+
+    - Sirve para poder realizar Testeo Unitario
+
+    Pasos para extraer un ViewModel
+        - Reemplazar todas las referencias a objetos de la UI con data binding
+        - Mover los event handlers al ViewModel
+        - No tener x:name en ningun lado
 
 
 
