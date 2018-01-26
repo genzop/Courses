@@ -45,7 +45,7 @@ namespace HelloWorld
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MVVM.Exercise.Views.ContactsPage());
+            MainPage = new NavigationPage(new BeyondBasics.MessagingCenter.Exercise.Views.ContactsPage());
 		}
 
 		protected override void OnStart ()

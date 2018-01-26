@@ -418,7 +418,96 @@ MVVM
         - No tener x:name en ningun lado
 
 
+Resource Dictionary
+    - Permite que podamos guardar valores para el estilo con un nombre y asi poder reutilizarlos en multiples lugares.
+        - Cada page contiene la propiedad Resources, dentro de ella se pueden guardar valores de cualquier tipo de dato de C#
+            - Codigo: 
+                this.Resources = new ResourceDictionary();
+                this.Resources["borderRadius"] = 20;
 
+            - Vista: 
+                <ContentPage.Resources>
+                    <ResourceDictionary>
+                        <x:Int32 x:Key="borderRadius">20</x:Int32>
+                        <Color x:Key="buttonBackgroundColor">Gray</Color>
+                    </ResourceDictionary>
+                </ContentPage.Resources>
+
+        - Tambien se pueden definir a nivel de aplicación en el archivo App.xaml, pero estos se inicializan a cuando se inicializa la aplicación 
+        por lo que si son muchos, puede afectar la performance de la aplicación.
+            <Application.Resources>
+                <ResourceDictionary>
+                    <x:Int32 x:Key="borderRadius">20</x:Int32>
+                    <Color x:Key="buttonBackgroundColor">Gray</Color>
+                </ResourceDictionary>                
+            </Application.Resources>
+
+        - Y por último pueden definirse a nivel de un elemento pero no se recomienda.
+
+    - Static Resources
+        Son establecidos en tiempo de inicialización y no pueden ser modificados
+            <Button Text="Login" BackgroundColor="{StaticResource buttonBackgroundColor}" TextColor="White" FontAttributes="Bold"/>
+
+    - Dynamic Resources
+        Pueden ser modificados durante el uso de la aplicación
+            <Button Text="Login" BackgroundColor="{DynamicResource buttonBackgroundColor}" TextColor="White" FontAttributes="Bold"/>
+
+
+Styles
+    - Permite establecer un conjunto de propiedades a un control de la vista en particular. Key es el nombre que va a tener ese estilo, 
+    y TargetType especifica el tipo de control al que se aplicara este estilo.
+
+
+        <Style x:Key="button" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource buttonBackgroundColor}"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="BorderRadius" Value="20"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+
+        <Button Text="Login" Style="{StaticResource button}"/>
+
+    - Si declaramos un estilo a nivel de aplicación y otro a nivel de page con el mismo nombre, el último sobreescribira completamente al estilo de la aplicacion.
+
+    - Herencia
+        Un estilo puede heredar de otro estilo y agregar o sobreescribir sus propiedades
+
+            <Style x:Key="button" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource buttonBackgroundColor}"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="BorderRadius" Value="20"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+
+            <Style x:Key="primaryButton" TargetType="Button" BasedOn="{StaticResource button}">
+                <Setter Property="BackgroundColor" Value="Pink"/>
+            </Style>
+
+    - Estilos implicitos
+        Si se elimina el atributo key de un estilo, este se aplicara a todos los elementos de ese TargetType. Por lo que no es necesario especificar el campo Style en el elemento.
+        No se puede heredar de este tipo de estilos ya que no tienen un nombre especifico.
+
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource buttonBackgroundColor}"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="BorderRadius" Value="20"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+
+            <Button Text="Register"/>
+
+Messaging Center    
+    Sirve para suscribir y publicar eventos pero sin la necesidad de tener unas instancia del publicador
+        - Publicar (Publicador, nombre del mensaje, valor)
+            MessagingCenter.Send(this, "SliderValueChanged", e.NewValue);   
+
+        - Suscribirse <Publicador, valor>(suscriptor, nombre del mensaje, evento que debe tener una firma igual al generico<publicador, valor>)     
+            MessagingCenter.Subscribe<TargetPage, double>(this, "SliderValueChanged", OnSliderValueChanged);
+
+        - Desuscribirse <Tipo suscriptor>(suscriptor, nombre del mensaje)
+            MessagingCenter.Unsubscribe<MainPage>(this, "SliderValueChanged");
 
     
-
+Acceder a funcionalidades del smartphone
+    Para ello es necesario descargar plugins. Podemos descargarlos desde http://github.com/xamarin/xamarincomponents
+    
