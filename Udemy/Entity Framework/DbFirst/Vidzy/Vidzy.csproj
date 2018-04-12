@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{122D6E2E-C4EB-4565-81CD-2DD4DBC44A2D}</ProjectGuid>
+    <ProjectGuid>{7C3056ED-7E80-49E1-8224-50E54985220A}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>DbFirst</RootNamespace>
-    <AssemblyName>DbFirst</AssemblyName>
+    <RootNamespace>Vidzy</RootNamespace>
+    <AssemblyName>Vidzy</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -51,76 +51,58 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Author.cs">
-      <DependentUpon>PlutoModel.tt</DependentUpon>
+    <Compile Include="Classification.cs">
+      <DependentUpon>VidzyModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Course.cs">
-      <DependentUpon>PlutoModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CourseLevel.cs">
-      <DependentUpon>PlutoModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CourseSection.cs">
-      <DependentUpon>PlutoModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="funcGetAuthorCourses_Result.cs">
-      <DependentUpon>PlutoModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="GetCoursesResult.cs">
-      <DependentUpon>PlutoModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PlutoModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PlutoModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PlutoModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PlutoModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PlutoModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PlutoModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Post.cs">
-      <DependentUpon>PlutoModel.tt</DependentUpon>
+    <Compile Include="Genre.cs">
+      <DependentUpon>VidzyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tag.cs">
-      <DependentUpon>PlutoModel.tt</DependentUpon>
+    <Compile Include="Video.cs">
+      <DependentUpon>VidzyModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="tblUser.cs">
-      <DependentUpon>PlutoModel.tt</DependentUpon>
+    <Compile Include="VidzyModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VidzyModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VidzyModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VidzyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VidzyModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VidzyModel.edmx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="PlutoModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PlutoModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <None Include="packages.config" />
-    <None Include="PlutoModel.edmx.diagram">
-      <DependentUpon>PlutoModel.edmx</DependentUpon>
+    <EntityDeploy Include="VidzyModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>VidzyModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="VidzyModel.edmx.diagram">
+      <DependentUpon>VidzyModel.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="PlutoModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>PlutoModel.Context.cs</LastGenOutput>
-      <DependentUpon>PlutoModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="PlutoModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PlutoModel.edmx</DependentUpon>
-      <LastGenOutput>PlutoModel.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="VidzyModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>VidzyModel.edmx</DependentUpon>
+      <LastGenOutput>VidzyModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="VidzyModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>VidzyModel.edmx</DependentUpon>
+      <LastGenOutput>VidzyModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

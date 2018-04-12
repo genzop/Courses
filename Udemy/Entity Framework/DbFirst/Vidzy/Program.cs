@@ -4,21 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DbFirst
+namespace Vidzy
 {
-    public enum Level : byte
-    {
-        Beginner = 1,
-        Intermediate = 2,
-        Advanced = 3
-    }
-
     class Program
     {
         static void Main(string[] args)
         {
-            var course = new Course();
-            course.Level = Level.Beginner;
+            VidzyDbContext context = new VidzyDbContext();
+            context.AddVideo("Schindler's List", new DateTime(1994, 02, 24), "Thriller", (byte)Classification.Platinum);
         }
     }
 }

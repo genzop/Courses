@@ -1,12 +1,98 @@
-Database-First 
-    Pasos
-        - Crear la base de datos y sus respectivas tablas.
-        - Crear un proyecto
-        - Instalar Entity Framework ('install-package EntityFramework')
-        - Agregar un archivo ADO.NET Entity Data Model (.edmx) que apuntará a la base de datos creada en el paso anterior.   
+Database-First
+    Primeros Pasos    
+        - 1° Crear la base de datos y sus respectivas tablas.
+        - 2° Crear un proyecto
+        - 3° Instalar Entity Framework ('install-package EntityFramework')
+        - 4° Agregar un archivo ADO.NET Entity Data Model (.edmx) que apuntará a la base de datos creada en el paso anterior.   
 
-Code-First
-    Pasos
+        - Es posible instalar Entity Framework en la configuración del archivo .edmx
+
+    Diagrama de Entidades (archivo .edmx)
+        - Ordernar
+            "Click derecho -> Diagram -> Layout Diagram"
+        - Exportar a una imagen
+            "Click derecho -> Diagram -> Export as Image..."
+        - Mostrar tipo de datos
+            "Click derecho -> Scalar Property Format -> Display Name and Type"
+        - Es posible cambiar el nombre de una entidad
+
+        - Navigation Properties: permite navegar de una entidad a otra
+
+        - Una propiedad puede ser configurada para que no sea persistida a  la base de datos, para esto:
+            "Click derecho sobre la entidad -> Table Mapping -> Column Mappings (Columna <-> Propiedad) -> <Delete>"
+
+        Esta compuesto por tres partes
+            Storage model: representa la estructura de la base de datos.
+            Conceptual model: representa la estructura del modelo.
+            Mapping: representa el mapeo entre el storage model y el conceptual model.
+
+    Connection Strings
+        Se encuentran en el archivo App.config o Web.config
+            - Data Source: nombre de la instancia de SQL Server
+            - Initial Catalog: nombre de la Base de datos
+            - Integrated Security: especifica si se utiliza la seguridad integrada de Windows
+        
+    Cambios en la Base de Datos
+        - Agregar tabla
+            - 1° Agregar tabla en la base de datos
+            - 2° En el archivo .edmx 
+                "Click derecho sobre el fondo -> Update Model from Database -> Tables -> Seleccionar las tablas que se deseen agregar -> Finish"
+
+        - Actualizar tabla 
+            - 1° Realizar cambios en la base de datos
+            - 2° En el archivo .edmx 
+                "Click derecho sobre el fondo -> Update Model from Database -> Finish"
+            - 3° En caso de que salte algun error es muy probable que haya que revisar el mapeo del modelo conceptual y modificar o eliminar alguna propiedad.
+                ! Cuando se cambia el tipo de dato de alguna columna, Entity Framework no actualiza el tipo de dato de su propiedad correspondiente, asi que hay que cambiarlo a mano y para ello:
+                    "Click derecho sobre la propiedad -> Properties -> Type -> Seleccionar el nuevo tipo de datos"                    
+
+            - Es posible validar el modelo de la siguiente manera
+                "Click derecho sobre el fondo -> Validate"
+
+        - Eliminar tabla
+            - 1° Eliminar tabla en la base de datos
+            - 2° En el archivo .edmx 
+                "Click derecho sobre el fondo -> Update Model from Database -> Finish"
+            - 3° Eliminar entidad del Conceptual model, ya que Entity Framework no la elimina automaticamente
+
+    Importar Stored Procedures
+        - En el archivo .edmx 
+            "Click derecho sobre el fondo -> Update Model from Database -> Stored Procedures and Functions -> Seleccionar los SP's que se deseen importar -> Finish"
+            !Es muy importante que el checkbox con la etiqueta "Import selected stored procedures and functions into the entity model" este seleccionado
+        
+        - Todos los SP's que se importen son incluidos en el DbContext como funciones
+
+    Function Imports
+        - Function Import Name: nombre que tendra el método
+        - Stored Procedure/Function Name: nombre del SP
+        - Returns a Collection Of: tipo de dato que devolvera el método, puede ser uno de los siguientes:
+            None: no devuelve nada
+            Scalars: tipo de dato primitivo
+            Complex: tipo de dato que puede ser modificado sin alterar la base de datos, funcionamiento similar a un DTO
+                - Para crear un tipo complex:
+                    "Seleccionamos complex -> Get Column Information -> Create New Complex Type -> Cambiar el nombre de la clase de ser necesario -> Finish"
+
+            Entities: entidad de Entity Framework
+
+    Enumeraciones 
+        - Es posible asignar una enum al tipo de dato de una propiedad en el modelo.
+        - Es necesario que el tipo de dato de la columna y el de la enum sean iguales.
+        
+        - Crear enum en el modelo
+            "Model Browser -> Concetual Model -> Enum Types -> Add Enum Type"
+                Enum Type Name: nombre del enum
+                Unerlying Type: tipo de dato del enum, generalmente es Int32
+                Member Name: nombre
+                Value: valor
+
+        - Importar enum 
+            "Model Browser -> Concetual Model -> Enum Types -> Add Enum Type"
+                El nombre de la enum debe ser exactamente igual a la enum externa
+
+        
+        
+Code-First 
+    - Primeros Pasos
         - Crear un proyecto
         - Instalar Entity Framework ('install-package EntityFramework')
         - Crear las clases
@@ -20,6 +106,8 @@ Code-First
         - Up(): sirve para hacer un upgrade a una base de datos
         - Down(): sirve para hacer un downgrade a una base de datos
       Esto permite poder llevar una base de datos a cualquier versión.
+
+    
       
 
 
