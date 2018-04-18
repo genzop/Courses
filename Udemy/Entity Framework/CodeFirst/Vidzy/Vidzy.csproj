@@ -65,9 +65,20 @@
     <Compile Include="Migrations\201804171947118_AddColumnClassificationToVideoTable.Designer.cs">
       <DependentUpon>201804171947118_AddColumnClassificationToVideoTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804181650414_AddedFluentAPIConfigurationToVideosTableAndGenresTable.cs" />
+    <Compile Include="Migrations\201804181650414_AddedFluentAPIConfigurationToVideosTableAndGenresTable.Designer.cs">
+      <DependentUpon>201804181650414_AddedFluentAPIConfigurationToVideosTableAndGenresTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804181704026_AddedTagsTable.cs" />
+    <Compile Include="Migrations\201804181704026_AddedTagsTable.Designer.cs">
+      <DependentUpon>201804181704026_AddedTagsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Configurations\GenreConfiguration.cs" />
+    <Compile Include="Models\Configurations\VideoConfiguration.cs" />
     <Compile Include="Models\Enums.cs" />
     <Compile Include="Models\Genre.cs" />
+    <Compile Include="Models\Tag.cs" />
     <Compile Include="Models\Video.cs" />
     <Compile Include="Models\VidzyContext.cs" />
     <Compile Include="Program.cs" />
@@ -89,6 +100,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804171947118_AddColumnClassificationToVideoTable.resx">
       <DependentUpon>201804171947118_AddColumnClassificationToVideoTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804181650414_AddedFluentAPIConfigurationToVideosTableAndGenresTable.resx">
+      <DependentUpon>201804181650414_AddedFluentAPIConfigurationToVideosTableAndGenresTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804181704026_AddedTagsTable.resx">
+      <DependentUpon>201804181704026_AddedTagsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

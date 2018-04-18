@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Vidzy.Models
 {
-    public class Genre
+    public class Tag
     {
         public int Id { get; set; }
         public string Name { get; set; }
+
         public IList<Video> Videos { get; set; }
     }
 }

@@ -7,10 +7,7 @@ namespace CodeFirstExistingDatabase.Models
 
     public partial class PlutoContext : DbContext
     {
-        public PlutoContext()
-            : base("name=PlutoContext")
-        {
-        }
+        public PlutoContext() : base("name=PlutoContext") { }
 
         public virtual DbSet<Author> Authors { get; set; }
         public virtual DbSet<Course> Courses { get; set; }
@@ -18,6 +15,10 @@ namespace CodeFirstExistingDatabase.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Course>()
+                .Property(x => x.Description)
+                .IsRequired();
+
             modelBuilder.Entity<Author>()
                 .HasMany(e => e.Courses)
                 .WithOptional(e => e.Author)

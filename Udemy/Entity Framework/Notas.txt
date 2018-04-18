@@ -92,7 +92,7 @@ Database-First
         
         
 Code-First 
-    - Primeros pasos creando una base de datos nueva
+    Primeros pasos creando una base de datos nueva
         - 1° Crear un proyecto
         - 2° Instalar Entity Framework ('install-package EntityFramework')
                 Podemos instalar una versión en particular de la siguiente manera
@@ -104,12 +104,12 @@ Code-First
         - 7° Agregar una migración inicial ('add-migration NombreDeLaMigracion')
         - 8° Actualizar la base de datos ('update-database')
 
-    - Cada migracion cuenta con dos metodos:
+    Cada migracion cuenta con dos metodos:
         - Up(): sirve para hacer un upgrade a una base de datos
         - Down(): sirve para hacer un downgrade a una base de datos
       Esto permite poder llevar una base de datos a cualquier versión.
 
-    - Utilizando una base de datos existente
+    Utilizando una base de datos existente
         - 1° Se genera un modelo a partir de la base de datos
             - Agregamos un archivo ADO.NET Entity Data Model
             - Seleccionamos la opcion 'Code First from Database'
@@ -118,18 +118,18 @@ Code-First
             "add-migration InitialModel -IgnoreChanges -Force"
         - 3° Se utilizan migraciones para actualizar la base de datos
 
-    - Migraciones
+    Migraciones
         - !Solo puede haber una sola migración pendiente 
         - !Siempre realizar cambios pequeños en cada migración
         - El comando -Force hace que la nueva migracion pise una migración anterior que tenga el mismo nombre
         - !El tipo de dato Datetime no es nullable por defecto, es necesario agregarle un ?
         - !Siempre que se modifica algo en el metodo Up de la migración, se debe modificar de manera opuesta en el método Down
     
-    - Ejecutar una consulta SQL personalizada en una migracion
+    Ejecutar una consulta SQL personalizada en una migracion
         Se puede ejecutar una consulta SQL personalizada en una migración agregando el comando: 
             "Sql(consulta)"
     
-    - Agregar una clase al modelo
+    Agregar una clase al modelo
         1° Crear la clase
         2° Agregar el DbSet al DbContext
         3° Agregar una migracion
@@ -138,7 +138,7 @@ Code-First
                 - Database Centric: "AddCategoriesTable"
             Se recomienda utilizar nombres Database Centric.
     
-    - Modificar una clase del modelo
+    Modificar una clase del modelo
         - Agregar una propiedad
             1° Agregar la propiedad en la clase                
             2° Agregar una migracion
@@ -160,7 +160,7 @@ Code-First
             2° Agregar una migracion
             3° Actualizar la base de datos
     
-    - Eliminar una clase del modelo 
+    Eliminar una clase del modelo 
         1° Eliminar cualquier asociacion que haya con otras clases
         2° Agregar una migracion
         3° Actualizar la base de datos
@@ -204,3 +204,142 @@ Code-First
             
         Si en cambio, se desea crear un script desde y hasta una migracion en particular se utiliza este comando:
             "Update-Database -Script -SourceMigration:NombreMigracion1 -TargetMigration:NombreMigracion2"
+            
+    Sobreescribir convenciones de Code First
+        El enfoque Code First se basa en convenciones y no tanto en configuracion. Por lo que muchas cosas se establecen de manera automática. 
+        Pero, es posible sobreescribir estas convenciones y personalizar el esquema como uno quiera:
+            - Data Annotations
+                Son meta etiquetas que van sobre una propiedad en una de las clases del modelo.
+                    [Required]                      
+                    public string Description { get; set; }      
+
+                - Cambiar nombre de una tabla
+                    [Table("nombre", Schema = "")]   
+
+                - Cambiar nombre de una columna
+                    [Column("nombre", TypeName = "varchar")]
+
+                - Asignar Primary Key y configurar identidad
+                    [Key]           
+                    [DatabaseGenerated(DatabaseGeneratedOption.None)]
+
+                - Asignar Key compuestas
+                    [Key]
+                    [Column(Order = 1)]
+
+                - Volver propiedad no nullable
+                    [Required]  
+
+                - Configurar el largo de un string
+                    [MaxLength(255)]
+                
+                - Agregar un indice
+                    [Index(IsUnique = true)]
+
+                    Multiple columnas
+                    [Index("nombre"), 1]
+                    
+                    [Index("nombre"), 2]
+                
+                - Asignar Foreing Key
+                    1° Se agrega una propiedad para el ID de la otra clase
+                        public int AuthorId { get; set; }
+                    2° Se agrega una propiedad para la relacion con la otra clase
+                        public Author Author { get; set; }
+                    3° Se debe asociar esa propiedad con el puntero a la otra clase, lo cual puede hacer se de dos maneras, puede ser en el id o en la propiedad misma:
+                        - [ForeignKey("Author")]
+                          public int AuthorId { get; set; }
+
+                        - [ForeignKey("AuthorId")]
+                          public Author Author{ get; set; }
+                    
+            - Fluent API
+                Son instrucciones que se especifican en el método OnModelCreating del DbContext
+                    modelBuilder.Entity<Course>()           //Selecciona la entidad 
+                        .Property(x => x.Description)       //Selecciona una propiedad de la entidad
+                        .IsRequired();                      //Hace que esa columna no pueda ser nullable
+
+                Las instrucciones parten del modelBuilder que es el objeto que recibe este metodo.
+
+                - Cambiar nombre de una tabla
+                    modelBuilder.Entity<Course>()
+                                    .ToTable("nombreTabla", "esquema");
+
+                - Cambiar nombre de una columna
+                    modelBuilder.Entity<Course>
+                                .Property(x => x.Name)
+                                .HasColumnName("nombre");
+
+                - Cambiar el tipo de dato de una columna
+                    modelBuilder.Entity<Course>
+                                .Property(x => x.Name)
+                                .HasColumnType("varchar");
+
+                - Cambiar el orden de las columnas
+                    modelBuilder.Entity<Course>()
+                                .Property(x => x.Name)
+                                .HasColumnOrder(2);
+
+                - Asignar Primary Key
+                    modelBuilder.Entity<Book>()
+                                .HasKey(x => x.ISBN);
+
+                - Configurar identidad de una columna
+                    modelBuilder.Entity<Book>()
+                                .Property(x => x.ISBN)
+                                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.None)
+
+                - Asignar Key compuestas
+                    modelBuilder.Entity<OrderItem>()
+                                .HasKey(x => new { x.OrderId, x.OrderItemId });
+
+                - Volver propiedad no nullable
+                    modelBuilder.Entity<Course>()
+                                .Property(x => x.Name)
+                                .IsRequired();
+
+                - Configurar el largo de un string
+                    modelBuilder.Entity<Course>()
+                                .Property(x => x.Name)
+                                .HasMaxLength(255);
+
+                - Configura el largo de un string al máximo
+                    modelBuilder.Entity<Course>()
+                                .Property(x => x.Name)
+                                .IsMaxLength();
+                
+                - Relaciones
+                    Las relaciones se configuran desde ambas entidades, y existen metodos para cado de la relacion.
+                    Los metodos que comienzan con Has, son aquellos que contienen la Foreign Key:
+                        - HasMany() / WithMany(): cuando hay muchas entidades del otro lado
+                        - HasRequired() / WithRequired(): cuando hay una entidad obligatoria del otro lado
+                        - HasOptional() / WithOptional(): cuando puede haber ninguna o una entidad del otro lado
+
+                    One-to-Many
+                        modelBuilder.Entity<Author>()
+                                    .HasMany(a => a.Courses)
+                                    .WithRequired(c => c.Author)
+                                    .HasForeignKey(c => c.AuthorId); 
+
+                    Many-to-Many
+                        modelBuilder.Entity<Course>()
+                                    .HasMany(c => c.Tags)
+                                    .WithMany(t => t.Courses)
+                                    .Map(m => m.ToTable("CourseTags"));         //Se personaliza el nombre de la tabla intermediaria
+
+                    One-to-Zero/One
+                        modelBuilder.Entity<Course>()
+                                    .HasOptional(c => c.Caption)
+                                    .WithRequired(c => c.Course);
+
+                    One-to-One
+                        modelBuilder.Entity<Course>()
+                                    .HasRequired(c => c.Cover)
+                                    .WithRequiredPrincipal(c => c.Course);                   
+
+                        modelBuilder.Entity<Cover>()
+                                    .HasRequired(c => c.Course)
+                                    .WithRequiredDependent(c => c.Cover);
+
+
+            !No se recomienda mezclar los enfoques, para proyectos de gran escala se recomienda utilizar Fluent API y para proyectos pequeños no deberia haber problemas utilizando Data Annotations.

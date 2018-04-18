@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vidzy.Models
+namespace FluentAPI.Models
 {
-    public class Genre
+    public class Cover
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public IList<Video> Videos { get; set; }
+        public Course Course { get; set; }
     }
 }

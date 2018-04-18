@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1C2D34EC-CF08-473F-9869-2632B97257BB}</ProjectGuid>
+    <ProjectGuid>{319F0075-59DF-4756-91AE-9A8D0FA8F8F2}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ExistingDatabase</RootNamespace>
-    <AssemblyName>ExistingDatabase</AssemblyName>
+    <RootNamespace>DataAnnotations</RootNamespace>
+    <AssemblyName>DataAnnotations</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -41,8 +41,6 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,6 +49,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201804181434495_InitialModel.cs" />
+    <Compile Include="Migrations\201804181434495_InitialModel.Designer.cs">
+      <DependentUpon>201804181434495_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804181439310_AddAnnotationsToCourseTable.cs" />
+    <Compile Include="Migrations\201804181439310_AddAnnotationsToCourseTable.Designer.cs">
+      <DependentUpon>201804181439310_AddAnnotationsToCourseTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\PlutoContext.cs" />
@@ -61,6 +68,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201804181434495_InitialModel.resx">
+      <DependentUpon>201804181434495_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804181439310_AddAnnotationsToCourseTable.resx">
+      <DependentUpon>201804181439310_AddAnnotationsToCourseTable.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,12 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vidzy.Models
+namespace DataAnnotations.Models
 {
-    public class Genre
+    public class Tag
     {
         public int Id { get; set; }
+
         public string Name { get; set; }
-        public IList<Video> Videos { get; set; }
+
+        public virtual ICollection<Course> Courses { get; set; }
+
+        public Tag()
+        {
+            Courses = new HashSet<Course>();     
+        }
     }
 }
