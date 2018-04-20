@@ -453,3 +453,43 @@ LINQ
 
         Esto permite que una consulta pueda ser extendida en más de una sentencia hasta que ocurra una de las situaciones mencionadas.
      
+    Cargando objetos relacionados
+        Lazy Loading
+            Las entidades relacionadas no son cargadas automaticamente, son cargadas bajo demanda cuando intentamos acceder a ellas.            
+
+            Para utilizar lazy loading, se debe poner la palabra "virtual" en la propiedad de navegacion
+            
+            Recomendaciones
+                - Usarlo cuando el objeto que queramos cargar tenga muchas asociaciones a las que no necesitamos acceder.
+                - Usarlo en aplicaciones de escritorio.
+                - Evitarlo en aplicaciones web. 
+
+            Se puede desactivar lazy loading desde el constructor del DbContext:
+                "this.Configuration.LazyLoadingEnabled = false;"
+
+            Problema N+1
+                Si accedemos a una propiedad de navegacion de uno de las entidades dentro de una lista de N elementos, se ejecutaran N consultas a la base de datos para cargar esa propiedad de cada elemento.
+        
+        Eager Loading
+            Las entidades relacionadas son cargadas en la consulta inicial.
+
+            Para hacer esto, utilizamos el método "Include()" ya sea pasandole como parametro el nombre de la propiedad como cadena de texto o pasandole una expresión lambda que apunte a la propiedad.
+                "var eagerLoading1 = context.Courses.Include("Author").ToList();
+            var eagerLoading2 = context.Courses.Include(c => c.Author);" 
+
+            Cargando multiples niveles
+                Para propiedades que no son entidades
+                    "context.Courses.Include(c => c.Author.Address);
+
+                Para propiedades que son entidades
+                    "context.Courses.Include(c => c.Tags.Select(t => t.Moderator))"
+
+        Explicit Loading
+            Las entidades relacionadas son cargadas en tandas. Para ello utilizamos el método "Load()".
+                "var explicitLoading1 = context.Authors.Single(a => a.Id == 1);
+                context.Courses.Where(c => c.AuthorId == explicitLoading1.Id).Load();"
+
+
+
+            
+

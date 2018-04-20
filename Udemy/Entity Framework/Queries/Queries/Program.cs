@@ -1,6 +1,7 @@
 ﻿
 using Queries.Models;
 using System;
+using System.Data.Entity;
 using System.Linq;
 
 namespace Queries
@@ -102,9 +103,19 @@ namespace Queries
             #endregion
 
             #region Deferred Execution
+            /*
             var courses = context.Courses;
             var filtered = courses.Where(c => c.Level == 1);
             var sorted = filtered.OrderBy(c => c.Name);
+            */
+            #endregion
+
+            #region Loading related objects
+            var eagerLoading1 = context.Courses.Include("Author").ToList();
+            var eagerLoading2 = context.Courses.Include(c => c.Author);
+                        
+            var explicitLoading1 = context.Authors.Single(a => a.Id == 1);
+            context.Courses.Where(c => c.AuthorId == explicitLoading1.Id).Load();            
             #endregion
         }
     }
