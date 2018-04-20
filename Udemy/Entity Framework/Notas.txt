@@ -343,3 +343,113 @@ Code-First
 
 
             !No se recomienda mezclar los enfoques, para proyectos de gran escala se recomienda utilizar Fluent API y para proyectos pequeños no deberia haber problemas utilizando Data Annotations.
+
+LINQ
+    Puede ser utilizado con objetos, xml, bases de datos relacionales y bases de datos NoSQL.
+    No esta diseñado para consultas complejas.
+
+    LINQ Syntax
+        var query = from c in context.Courses
+                    where c.Level == 1 && c.Author.Id == 1
+                    orderby c.Level descending, c.Name
+                    select new { Name = c.Name, Author = c.Author.Name };  
+
+        !!Usar el comando equals y no ==
+
+        Origen de los datos: el origen de los datos se especifica en la primer linea de la consulta:
+            "from c in context.Courses"
+        
+        Restricciones: las restricciones van despues de la palabra 'where'
+            "where c.Name == 'C# Course' && c.Level == 1"
+
+        Ordenamiento: las reglas de ordenamiento van despues de la palabra 'orderby', van de más importante a menos importante y pueden ser ascendentes o descendentes
+            "orderby c.Level descending, c.Name" 
+
+        Proyeccion: se puede especificar si se desea cargar en memoria todo el objeto, una propiedad o un objeto anonimo con las propiedades que se desee
+            "select c" / "select c.Name" / "select new { Name = c.Name, }"
+
+        Agrupamiento: se pueden agrupar los resultados en diferentes grupos
+            "group c by c.Level into g"
+
+        Joins
+            Inner Join: se utiliza inner join cuando dos entidades no estan relacionadas
+               "var innerJoin = from c in context.Courses
+                                join a in context.Authors on c.AuthorId equals a.Id
+                                select new { CourseName = c.Name, AuthorName = a.Name };"
+            
+            Group Join: un group join nos permite agrupar los registros de una tabla dependiendo de la asociasion con otra tabla. Similar a cuando hacemos un left join en SQL
+               "var groupJoin = from a in context.Authors
+                                join c in context.Courses on a.Id equals c.AuthorId into g
+                                select new { AuthorName = a.Name, Courses = g.Count() };"
+        
+            Cross Join: un cross join sirve para combinar todos los registros de dos o más tablas que esten asociados          
+               "var crossJoin = from a in context.Authors
+                                from c in context.Courses
+                                select new { AuthorName = a.Name, CourseName = c.Name };"
+
+    LINQ Extension Methods
+        var query = context.Courses.Where(c => c.Name.Contains("c#")).OrderBy(c => c.Name);
+
+        Restricciones: las restricciones se especifican en la funcion 'Where()'
+            "var query = context.Courses.Where(c => c.Level == 1);"
+
+        Ordenamiento: las reglas de ordenamiento dentro de las funciones "OrderBy()/OrderByDescending()" y "ThenBy()/ThenByDescending()".
+            "var query = context.Courses.OrderByDescending(c => c.Name).ThenBy(c => c.Level);"
+
+        Proyeccion: se puede especificar si se desea cargar en memoria todo el objeto, una propiedad o un objeto anonimo con las propiedades que se desee dentro del método "Select()"
+            "var query = context.Courses.Select(c => new { CourseName = c.Name, AuthorName = c.Author.Name });"
+
+            Si se desea cargar una lista de elementos, por ejemplo la lista de tags de un curso se utiliza el método "SelectMany()"
+            "var query = context.Courses.SelectMany(c => c.Tags);"
+
+        Distinct: el metodo "Distinct()" hace que no se pueda repetir ninguno de los resultados
+            "var query = context.Courses.SelectMany(c => c.Tags).Distinct();"
+
+        Agrupamiento: se pueden agrupar los resultados en diferentes grupos utilizando el comando "GroupBy()"
+            "var groupBy = context.Courses.GroupBy(c => c.Level);"
+
+        Joins
+            Inner Join: se utiliza inner join cuando dos entidades no estan relacionadas, para esto se utiliza el comando "Join()"
+                Parametros = con que tabla queremos hacer join, propiedad de la tabla original que queremos comparar, propiedad de la nueva tabla con la que queremos comparar, funcion que crea un objeto anonimo con el resultado.
+                "var innerJoin = context.Courses.Join(context.Authors, c => c.AuthorId, a => a.Id, (course, author) => new { CourseName = course.Name, AuthorName = author.Name });"
+            
+            Group Join: un group join nos permite agrupar los registros de una tabla dependiendo de la asociasion con otra tabla. Similar a cuando hacemos un left join en SQL
+                Parametros = con que tabla queremos hacer join, propiedad de la tabla original que queremos comparar, propiedad de la nueva tabla con la que queremos comparar, funcion que crea un objeto anonimo con el resultado.
+                "var groupJoin = context.Authors.GroupJoin(context.Courses, a => a.Id, c => c.AuthorId, (author, courses) => new { Author = author, Courses = courses });"
+        
+            Cross Join: un cross join sirve para combinar todos los registros de dos o más tablas que esten asociados          
+                var crossJoin = context.Authors.SelectMany(a => context.Courses, (author, course) => new { AuthorName = author.Name, CourseName = course.Name });
+
+        Paginar resultados
+            Para poder paginar los resultados de una consulta, se deben utilizar dos métodos: 
+                Skip(cantidadDeRegistros): se saltea la cantidad de registros especificada
+                Take(cantidadDeRegistros): carga la cantidad de registros especificada
+
+        Operadores
+            First/FirstOrDefault(): carga el primer objeto de la lista de resultados. Puede pasarse una expresión lambda como parámetro para filtrar la lista de resultados.
+
+            Last/LastOrDefault(): carga el ultimo objeto de la lista de resultados.
+
+            Single/SingleOrDefault(): carga un unico objeto. Puede pasarse una expresión lamda como parámetro para asignar una condicion a cumplir.
+
+        Cuantificar
+            All(): comprueba si todos los resultados cumplen con una condicion que debe ser especificada como parámetro.
+
+            Any(): comprueba si alguno de los resultados cumple con una condicion que debe ser especificada como parámetro.
+
+            Count(): devuelve la cantidad de resultados.
+
+            Max(): el maximo de la propiedad que se especifique.
+
+            Min(): el minimo de la propiedad que se especifique.
+
+            Average(): busca el promedio de la propiedad que se especifique.
+    
+    Ejecución Diferida
+        !Las consultas no se ejecutan en  el momento en que son creadas, se ejecutan en estas situaciones:
+            - Cuando se itera sobre la variable 
+            - Cuando se llama a los metodos ToList(), ToArray() o ToDictionary().
+            - Cuando se llama a los metodos First(), Last(), Single(), Count(), Max(), Min(), Average().
+
+        Esto permite que una consulta pueda ser extendida en más de una sentencia hasta que ocurra una de las situaciones mencionadas.
+     
