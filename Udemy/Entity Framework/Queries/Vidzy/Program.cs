@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Queries.Models;
+using System;
 using System.Data.Entity;
 using System.Linq;
 using Vidzy.Models;
@@ -21,7 +22,7 @@ namespace Vidzy
             #endregion
 
             #region Section 7
-            var query7 = context.Videos.Include(x => x.Genre).ToList();
+            //var query7 = context.Videos.Include(x => x.Genre).ToList();
             #endregion
 
             foreach (var x in query7)

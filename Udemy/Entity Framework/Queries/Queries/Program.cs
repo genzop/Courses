@@ -115,7 +115,38 @@ namespace Queries
             var eagerLoading2 = context.Courses.Include(c => c.Author);
                         
             var explicitLoading1 = context.Authors.Single(a => a.Id == 1);
-            context.Courses.Where(c => c.AuthorId == explicitLoading1.Id).Load();            
+            context.Courses.Where(c => c.AuthorId == explicitLoading1.Id).Load();
+            #endregion
+
+            #region Add objects
+            //var authorId = context.Authors.Where(x => x.Name.Contains("Mosh")).Select(x => x.Id).FirstOrDefault();
+
+            //var course = new Course
+            //{
+            //    Name = "New Course",
+            //    Description = "New Description",
+            //    FullPrice = 19.95f,
+            //    Level = 1,
+            //    AuthorId = authorId,
+            //};
+
+            //context.Courses.Add(course);
+            #endregion
+
+            #region Update objects
+            //var course = context.Courses.Find(1);
+            //course.Name = "New Name";
+            //course.AuthorId = 2;
+
+            //context.SaveChanges();
+            #endregion
+
+            #region Delete objects
+            //var author = context.Authors.Include(x => x.Courses).Single(x => x.Id == 2);
+            //context.Courses.RemoveRange(author.Courses);
+            //context.Authors.Remove(author);
+
+            //context.SaveChanges();
             #endregion
         }
     }

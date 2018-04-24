@@ -81,6 +81,10 @@
     <Compile Include="Migrations\201510110433495_AddTags.Designer.cs">
       <DependentUpon>201510110433495_AddTags.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510130257555_DisableCascadeDeleteBetweenGenresAndVideos.cs" />
+    <Compile Include="Migrations\201510130257555_DisableCascadeDeleteBetweenGenresAndVideos.Designer.cs">
+      <DependentUpon>201510130257555_DisableCascadeDeleteBetweenGenresAndVideos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -114,12 +118,9 @@
     <EmbeddedResource Include="Migrations\201510110433495_AddTags.resx">
       <DependentUpon>201510110433495_AddTags.cs</DependentUpon>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Queries\Queries.csproj">
-      <Project>{D1776DED-C59A-4F8A-8C31-96EAE15BDF5A}</Project>
-      <Name>Queries</Name>
-    </ProjectReference>
+    <EmbeddedResource Include="Migrations\201510130257555_DisableCascadeDeleteBetweenGenresAndVideos.resx">
+      <DependentUpon>201510130257555_DisableCascadeDeleteBetweenGenresAndVideos.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

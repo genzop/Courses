@@ -489,7 +489,48 @@ LINQ
                 "var explicitLoading1 = context.Authors.Single(a => a.Id == 1);
                 context.Courses.Where(c => c.AuthorId == explicitLoading1.Id).Load();"
 
+    Agregar, actualizar y eliminar objetos.
+        Change Tracker
+            Es el componente del DbContext que se encarga de llevar un control del estado de los objetos cargados en memoria, ya sea que hayan sido agregados, actualizados, eliminados o que no hayan sufrido ningun cambio.
+
+            Entries
+                Los entries son los objetos que hemos cargado en memoria en el DbContext, se accede a ellos de la siguientes maneras:
+                    "context.ChangeTracker.Entries()"
+                    "context.ChangeTracker.Entries<Courses>()"
+
+                Asi podemos observar el estado actual de cada entry.
 
 
-            
+        Agregar un objeto   
+            1° Se crea un objeto con sus valores correspondientes
+            2° Se agrega el objeto al DbSet del DbContext
+            3° Se guardan los cambios   
+        
+        Actualizando un objeto
+            1° Se carga el objeto en memoria
+            2° Se modifican las propiedades que se crea necesario
+            3° Se guardan los cambios
+        
+        Eliminando un objeto
+            1° Se carga el objeto en memoria
+            2° Se elimina el objeto del DbContext
+            3° Se guardan los cambios
 
+            !Dependendiendo de si esta configurado el cascade delete en sus tablas asociadas, puede que sea necesario eliminar primero los registros asociados con esta tabla antes de poder ser eliminada.
+
+            !Eliminar registros lógicamente a menos que sea necesario realizar eliminaciones fisicas.
+
+            - RemoveRange(): permite eliminar un grupo de elementos de un DbSet 
+
+        Asociando objetos
+            Cuando se quiere asociar un objeto a otro, existen dos alternativas:
+                - Asignar un objeto a la propiedad de navegacion
+                    "course.Author = context.Authors.Single(a => a.Id == 1);"
+                - Asignar el foreign key 
+                    "course.AuthorId = 1"
+
+        Guardar cambios
+            Cuando se agregan, modifican o eliminan objetos del DbContext, los cambios no se ven reflejados en la base de datos hasta que se ejecute el comando "SaveChanges()".
+
+    LINQPad
+        Es una aplicacion que permite interactuar con la base de datos o incluso con el DbContext de una aplicación. Tambien nos permite ver las consultas SQL que ejecuta LINQ.
