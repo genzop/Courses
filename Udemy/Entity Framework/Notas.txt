@@ -534,3 +534,36 @@ LINQ
 
     LINQPad
         Es una aplicacion que permite interactuar con la base de datos o incluso con el DbContext de una aplicación. Tambien nos permite ver las consultas SQL que ejecuta LINQ.
+
+Repository Pattern
+    Un repositorio trabaja como intermediario entre el modelo y la capa de persistencia de datos, actuando como una coleccion de objetos del modelo en memoria.
+        - Permite evitar la repetición de logica de consulta a la base de datos.
+        - Permite que tue aplicación no dependa directamente del framework de persistencia.
+        - En teoría debería tener medotos para las siguientes operaciones:
+            - Add
+            - Remove 
+            - Get
+            - GetAll
+            - Find(condicion)
+
+    Una unidad de trabajo mantiene una lista de objetos afectados por una transaccion del negocio y coordina el guardado de todos los cambios.
+
+    !En EntityFramework podriamos decir que un DbSet trabaja como un repositorio mientras que el DbContext trabaja como unidad de trabajo. Pero en realidad esto se puede mejorar.
+
+    1° Se comienza con una interfaz generica que va a tener los métodos genéricos que pueden aplicarse a la mayoria de las entidades como Add, Remove, Get, Find. Ej: IRepository
+
+    2° Luego se va crear una clase que implemente esa interfaz y especifique los métodos definidos en la interfaz. Ej: Repository
+
+    3° Pero cuando necesitamos métodos específicos asociados a una entidad, debemos crear un repositorio especial para esa entidad, donde se definiran los métodos de manera abstracta. Y luego una clase que implementará esos métodos y que tambíen heredará del repositorio genérico. Ej: ICourseRepository <---- CourseRepository
+
+    4° Para una unidad de trabajo, debemos crear una interfaz específica para nuestra aplicación que contendra una serie de interfaces de repositorios y un metodo de guardado. Por último necesitaremos una clase que implemente esa interfaz.
+
+Estructurando una aplicacion
+    En una estructura de capas, podemos encontrar 3 capas principales:
+        - Presentation Layer o vistas:
+            Forms, ViewModels, Controllers
+        - Business Layer o lógica del negocio
+            Modelo, Servicios, Interfaces de los repositorios o unidades de trabajo, 
+        - Data Access Layer o acceso a datos
+            DbContext, Repositorios genericos o específicos, Unidades de Trabajo
+
