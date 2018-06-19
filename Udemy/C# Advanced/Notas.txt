@@ -1,0 +1,96 @@
+Generics
+    Los genericos permiten especificar como parametro el tipo de dato con el que va a trabajar una parte de codigo, ya sea un método, clase o propiedad. Esto ayuda a prevenir que se duplique código que realiza la misma tarea pero con distintos tipos de datos.
+
+    Si bien, se podria realizar lo mismo utilizando la clase object, esta manera de solucionar el problema afecta de manera negativa la performance del codigo ya que es necesario castear el objeto cada vez que se quiera trabajar con el.
+
+    En cambio con un generic, el objeto se convierte en el tipo especificado en tiempo de ejecucion.
+
+    Restricciones
+        Las restricciones permiten filtrar el tipo de dato que acepta un generic. Se deben especificar en el signature de esa parte del codigo. Por ejemplo:
+            'public T Max<T>(T a, T b) where T : IComparable'
+
+        Tipos de restricciones
+            T : Interfaz
+                Limita el tipo de objetos a aquellos que implementen esa interfaz.
+            T : Clase
+                Limita el tipo de objetos a aquellos que sean o hereden de esa clase.                
+            T : struct
+                Limita el tipo de objetos a aquellos que sean de tipo de valor primitivo
+            T : class
+                Limita el tipo de objetos a aquellos que sean una clase.
+            T : new()
+                Limita el tipo de objetos a aquellos que sean un objeto con un constructor por defecto. Permite instaciar nuevos objetos.
+
+Delegates
+    Un delegate es un objeto que sabe como llamar a un método o a un grupo de métodos. Es decir, es un puntero o referencia a una funcion. Permiten desarrollar aplicaciones extensibles y flexibles.
+    
+    Es posible crear delegates personalizados que permiten acceder a métodos que compartan el mismo signature. Por ejemplo:
+        'public delegate void PhotoFilterHandler(Photo photo);'
+
+    Pero tambien existen delegates ya incorporados en el framework:
+        Action: apunta a un método que no retorna nada
+        Func: apunta a un método que retorna algo        
+    
+Lambda Expressions
+    Las lambda expressions son métodos anónimos, esto significa que no necesitan un modificador de acceso (public, private), un nombre ni especificar un return.
+    
+    La estructura base de un lambda expression es la siguiente
+        0 parámetros: '() => expresion'
+        1 parámetro: 'parametro => expresion'
+        +1 parámetros : '(parametro1, parametro2) => expresion'
+
+    Un predicate es un delegate que recibe una condicion, apunta a un método y retorna un valor booleano que indica si se cumplio la condicion ingresada.
+
+Events
+    - Los eventos son un mecanismo de comunicación entre objetos. Permiten a un objeto notificar a otros objetos que ha ocurrido un cambio.
+    - Permiten construir loosely coupled aplications, es decir aplicaciones en donde sus componentes generalmente no conocen o utilizan a otros componentes.
+
+    Para ello:
+        1° Definir un EventHandler                        
+        2° Publicar el EventHandler   
+        3° Definir los métodos que compartiran el signature con el EventHandler     
+        4° Suscribir esos métodos al EventHandler
+        5° Ejecutar el método que llamará al EventHandler    
+
+Extension Methods
+    Permite agregar métodos a una clase existente sin necesidad de:
+        - Cambiar su código fuente
+        - Crear una nueva clase que herede de esta
+    
+    Para crear un extension method de una clase es necesario crear un metodo que respete el siguiente signature:
+        public static TipoDatoRetonar Nombre(this ClaseExtender, parametros) { }
+
+    ! Los extension methods deben estar al alcance del namespace que los va utilizar por lo que se recomienda cambiar el namespace de los extension methods al de la clase que estan extendiendo.
+
+    ! Los extensions methods pierden prioridad frente a un metodo propio de la clase con el mismo nombre, por lo que se recomienda utilizarlos solo cuando sea la única opcion disponible.
+    
+LINQ
+    LINQ (Language Integrated Query) nos permite consultar objetos ya sean:
+        - En memoria (LINQ to Objects)
+        - Bases de datos (LINQ to Entities)
+        - XML (LINQ to XML)
+        - Sets de datos ADO.NET (LINQ to Data Sets)
+
+Nullable Types
+    A los tipos de dato valor como int, bool, DateTime, etc no se les puede asignar nulo como valor. Por lo que si queremos realizar esto, debemos declararlo como un tipo de dato nullable, para ello es necesario agregar un ? despues del tipo de dato:
+        public int? Numero
+    
+    Convertir a un tipo de dato en nullable permite acceder a propiedades nuevas:
+        - Value: devuelve el valor del objeto.
+        - HasValue(): devuelve true or false dependiendo si contiene un valor
+        - GetValueOrDefault(): si el tipo de dato contiene un valor, lo devuelve, sino devuelve el valor por defecto de ese tipo de dato
+
+    Null Coalescing Operator   
+        El operador ?? permite verificar si un objeto es null, si no es null asigna su valor a una varible y si es null realiza otra operacion. Significa de manera muy similar al operador terminario.
+        
+            if (date != null)                                   date2 = date ?? DateTime.Today;
+                date2 = date;                   =>      
+            else
+                date2 = DateTime.Today;
+
+Dynamic
+
+Exception Handling
+
+Asynchronous Programming with Async/Await
+
