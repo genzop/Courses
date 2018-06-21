@@ -88,9 +88,61 @@ Nullable Types
             else
                 date2 = DateTime.Today;
 
-Dynamic
+Dynamics
+    Existen dos tipos de lenguajes de programación:
+        - Estaticamente tipados (C#, Java): los tipos de datos se definen en tiempo de compilación. 
+            Beneficios:
+               - Permiten un feedback desde el principio 
+        - Dinamicamente tipados (Ruby, Javascript, Python): los tipos de datos se definen en tiempo de ejecución.
+            Beneficios:
+                - Permiten programar más facil y rapidamente.
+
+    Para crear un objeto dinamico solo hace utilizar la palabra dynamic como el tipo de dato:
+        dynamic objetoDinamico = "Enzo";
+
+    ! Todas las operaciones del objeto dinamico seran resueltas en tiempo de ejecucion.
+    ! Los objetos dinamicos utilizan DLR que trabaja por encima del CLR de .NET Framework.
+    ! Es posible castear los objetos dinamicos de manera implicita sin problema.
 
 Exception Handling
+    Cuando ocurre una excepcion, se muestra primero el nombre y namespace de la excepcion, el mensaje de ese tipo de excepcion en particular y el stack trace de esa excepcion, que es una secuencia de los metodos que han sido llamados.
+
+    Para manejar las excepciones utilizamos bloques try-catch.
+        - Try: ejecutamos el código que puede generar una excepcion.
+        - Catch: si ocurre una excepcion pasa a este bloque y se ejecuta el codigo que se encuentra dentro de el. Aqui podemos realizar alguna acción para prevenir que la aplicación se detenga o podemos tirar la excepcion a un bloque try-catch a nivel más general.
+        - Finally: parte de codigo que se ejecutará de todas formas, ya sea que haya ocurrido una excepcion o no. Es utilizado generalmente cuando trabajamos  con unmanaged resources, es decir recursos que no son manejados por el CLR y por lo tanto no son reciclados por el GarbageCollector. Generalmente todas las clases que trabajen con unmanaged resources implementan la interfaz IDisposable por lo que pueden ser desechadas una vez que fueron utilizadas.
+    
+    ! Siempre se recomienda tener un bloque try-catch en el nivel base de la aplicación.
+
+    Una excepcion tiene las siguientes propiedades
+        Message: mensaje del error asociado 
+        Source: nombre del dll o asembly en el que ocurrio la excepcion
+        StackTrace: secuencia de metodos que han sido llamados hasta que ocurrio la excepcion.
+        InnerException: excepcion que puede ocurrir dentro de la excepcion
+        HelpLink: link con información sobre ese tipo de excepcion
+
+    ! Se pueden tener varios bloques catch, pero siempre se debe ir desde lo más especifico a lo más genérico
+
+    ! Es posible crear excepciones personalizadas
 
 Asynchronous Programming with Async/Await
+    Ejecución Sincrónica
+        - El programa es ejecutado linea por linea una a la vez.
+        - Cuando una función es llamada, la ejecución del programa debe esperar a que la función termine.
+
+    Ejecución Asincrónica
+        - Cuando una función es llamada, la ejecución del programa continua sin esperar que la función termine.
+
+    Usar programación asincrónica en estos escenarios:
+        - Accediendo la web
+        - Trabajando con archivos y bases de datos
+        - Trabajando con imágenes
+    
+    ! Se recomienda que un método asincrónico siempre retorne un Task:
+        - Task: se utiliza si el método no retorna nada.
+        - Task<TipoDato>: se utiliza si el método devuelve un valor.
+
+    ! Se recomienda agregar la palabra Async como sufijo a todos los metodos asincrónicos.
+
+    Await: la palabra await le indica al compilador que esa operación va a llevar un tiempo, por lo que puede seguir corriendo código y cuando esta operación se complete volver a la siguiente linea. Solo se puede utilizar en un método async.
 
