@@ -21,8 +21,20 @@ Configuraciones
         4. Archivo JSON (appsettings.json)
     Las configuraciones tienen prioridad respetando ese orden.
 
-    
+    - Tambien podemos crear un servicio que trabaje con la configuracion y luego lo registramos para poder ser inyectado.
 
-    Crear servicio
+Middleware
+    El middleware nos permite controlar como nuestra aplicacion responde a los HTTP request. Tambien nos permite mostrar informacion de error y es una parte vital en la autenticacion y autorizacion de un usuario para realizar diferentes acciones.
 
-         
+    Ejemplo de pipeline:
+        Request --> Logger --> Authorizer --> 
+                                               Router  
+        Response <-- Logger <-- Authorizer <--
+
+    Los diferentes modulos del middleware se configuran en el metodo Configure de la clase Startup. Por ejemplo:
+        app.UseWelcomePage();
+    Los modulos se ejecutaran en el orden en que esten declarados.
+
+Enviroment
+    La interface IHostingEnviroment nos permite ver el ambiente de ejecucion de la aplicacion.
+       
