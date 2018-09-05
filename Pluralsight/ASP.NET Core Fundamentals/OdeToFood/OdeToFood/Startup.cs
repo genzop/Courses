@@ -16,21 +16,21 @@ namespace OdeToFood
         // Registra diferentes servicios al container que luego podran ser injectados 
         public void ConfigureServices(IServiceCollection services)
         {
-            // Se registra la interface como un Singleton, es decir que solo va a haber una instancia de su implementacion durante la vida de la aplicacion.
-            // Cada vez que alguien requiera un metodo que implemente IGreeter, se le injecta la clase Greeter.
+            // Registra la interface IGreeter y su implementacion Greeter como un Singleton, es decir que solo va a haber una instancia de su implementacion durante la vida de la aplicacion.            
             services.AddSingleton<IGreeter, Greeter>();
 
+            // Registra el framework Mvc
             services.AddMvc();
         }
 
-        // Define que componentes van a responder a cada mensaje HTTP que llega
+        // Define que middlewares van a intervenir en la respuesta a cada mensaje HTTP
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, IGreeter greeter, ILogger<Startup> logger)
         {
             #region ExceptionPage Middleware
             // Si es ambiente de desarrollo
             if (env.IsDevelopment())
             {
-                // Registra un Middleware que intercepta todas las excepciones que ocurran durante la ejecucion del pipeline
+                // Intercepta todas las excepciones que ocurran durante la ejecucion del pipeline y lo muestra en una pantalla descriptiva
                 app.UseDeveloperExceptionPage();
             }
             #endregion
@@ -87,6 +87,7 @@ namespace OdeToFood
             */
             #endregion
 
+            // 
             app.UseMvcWithDefaultRoute();
 
             // Escribe en la respuesta un mensaje
