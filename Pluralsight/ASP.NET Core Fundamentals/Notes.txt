@@ -1,0 +1,28 @@
+Comandos de consola
+    dotnet -> Accede a la .NET Core command-line interface o CLI
+    dotnet --version -> Version instalada de .NET Core
+    dotnet --help -> Lista de comandos disponibles
+    dotnet new -> Muestra una lista de los diferentes tipos de proyectos que se pueden crear
+    dotnet new web -> Crea un nuevo proyecto vacio de .NET Core
+    dotnet run -> Ejecuta la aplicacion
+    dotnet run Greeting="Hello World!" -> Ejecuta la aplicacion pasandole como argumento la configuracion para Greeting
+
+    notepad fileName -> Abre el archivo con notepad
+    code . -> Abre el directorio actual con Visual Studio Code
+
+Estructura del proyecto
+    - Se incluyen todos los archivos C# que se encuentren dentro de la carpeta donde esta el proyecto.
+
+Configuraciones
+    - Inyectamos al metodo Configure de la clase Startup, un objeto que implemente IConfiguration. Esta interface permite leer configuraciones desde las siguientes fuentes:
+        1. Argumentos de la linea de comandos 
+        2. Variables de entorno
+        3. Archivo User Secrets
+        4. Archivo JSON (appsettings.json)
+    Las configuraciones tienen prioridad respetando ese orden.
+
+    
+
+    Crear servicio
+
+         
