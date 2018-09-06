@@ -19,7 +19,7 @@ namespace OdeToFood
             // Registra la interface IGreeter y su implementacion Greeter como un Singleton, es decir que solo va a haber una instancia de su implementacion durante la vida de la aplicacion.            
             services.AddSingleton<IGreeter, Greeter>();
 
-            // Registra el framework Mvc
+            // Registra el framework MVC
             services.AddMvc();
         }
 
@@ -87,7 +87,7 @@ namespace OdeToFood
             */
             #endregion
 
-            // 
+            // Configura MVC
             app.UseMvcWithDefaultRoute();
 
             // Escribe en la respuesta un mensaje
