@@ -5,9 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using OdeToFood.Services;
 
 namespace OdeToFood
 {
@@ -18,6 +20,9 @@ namespace OdeToFood
         {
             // Registra la interface IGreeter y su implementacion Greeter como un Singleton, es decir que solo va a haber una instancia de su implementacion durante la vida de la aplicacion.            
             services.AddSingleton<IGreeter, Greeter>();
+
+            // Registra la interface IRestaurantData con su implementacion InMemoryRestaurantData como scoped, es decir que va a crear una instancia de ese objeto por request y reutilizar esa instancia en ese request.            
+            services.AddScoped<IRestaurantData, InMemoryRestaurantData>();
 
             // Registra el framework MVC
             services.AddMvc();
@@ -87,15 +92,23 @@ namespace OdeToFood
             */
             #endregion
 
-            // Configura MVC
-            app.UseMvcWithDefaultRoute();
+            // Configura MVC y las rutas
+            app.UseMvc(ConfigureRoutes);
 
             // Escribe en la respuesta un mensaje
             app.Run(async (context) =>
             {
                 var greeting = greeter.GetMessageOfTheDay();
-                await context.Response.WriteAsync(greeting);
+                context.Response.ContentType = "text/plain";
+                await context.Response.WriteAsync("Not Found");
             });
+        }
+
+        // Configura como se mapearan las rutas de la url a los actions en los controllers
+        private void ConfigureRoutes(IRouteBuilder routeBuilder)
+        {
+            // Ruta por defecto, con Home y Index como controller y action por defecto. El id es opcional.
+            routeBuilder.MapRoute("Default", "{controller=Home}/{action=Index}/{id?}");
         }
     }
 }
