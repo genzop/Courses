@@ -22,7 +22,10 @@ namespace OdeToFood
             services.AddSingleton<IGreeter, Greeter>();
 
             // Registra la interface IRestaurantData con su implementacion InMemoryRestaurantData como scoped, es decir que va a crear una instancia de ese objeto por request y reutilizar esa instancia en ese request.            
-            services.AddScoped<IRestaurantData, InMemoryRestaurantData>();
+            /* services.AddScoped<IRestaurantData, InMemoryRestaurantData>(); */
+
+            // Registra la interface como Singleton ya que estamos trabajando con una colleccion en memoria.
+            services.AddSingleton<IRestaurantData, InMemoryRestaurantData>();
 
             // Registra el framework MVC
             services.AddMvc();

@@ -1,0 +1,12 @@
+﻿@model OdeToFood.Models.Restaurant
+
+<h1>@Model.Name</h1>
+<div>
+    Id: @Model.Id
+</div>
+<div>
+    Cuisine: @Model.Cuisine
+</div>
+
+<!-- Renderiza un link al action Index del controller Home -->
+<a asp-action="Index" asp-controller="Home">Home</a>

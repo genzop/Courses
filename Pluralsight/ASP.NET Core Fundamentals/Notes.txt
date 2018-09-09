@@ -37,4 +37,13 @@ Middleware
 
 Enviroment
     La interface IHostingEnviroment nos permite ver el ambiente de ejecucion de la aplicacion.
-       
+
+Routing
+    .NET Core le da prioridad a un parametro enviado por URL que a un QueryString
+
+Formularios
+    El input con el nombre __RequestVerificationToken le permite al framework validar que el formulario enviado por el usuario sea uno creado por nuestra aplicacion.
+    Es recomendable incluir la meta-etiqueta ValidateAntiForgeryToken en cada metodo POST que reciba un formulario
+
+POST - Redirect - GET Pattern
+    Cuando se postea un formulario a un controller, se debe responder con una URL que llame a un metodo GET. No se debe devolver una vista directamente desde el metodo POST
