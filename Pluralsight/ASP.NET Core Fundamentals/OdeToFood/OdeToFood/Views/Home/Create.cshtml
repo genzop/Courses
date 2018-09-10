@@ -1,10 +1,12 @@
-﻿<!-- Importa el namespace OdeToFood.Models -->
-@using OdeToFood.Models
-@model OdeToFood.Models.Restaurant
+﻿<!-- Indica la clase que recibio del controller -->
+@model Restaurant
+@{
+    // Establece el titulo de la pagina
+    ViewBag.Title = "Create";
+}
 
 <h1>Create</h1>
 <form method="post">
-        
     <div>
         <!-- Muestra la etiqueta especificada en el modelo para la propiedad Name -->
         <label asp-for="Name"></label>
@@ -12,9 +14,7 @@
         <input asp-for="Name" />
         <!-- Muestra los mensajes de validacion para la propiedad Name -->
         <span asp-validation-for="Name"></span>
-    </div>
-
-    
+    </div>    
     <div>
         <!-- Muestra la etiqueta especificada en el modelo para la propiedad Cuisine -->
         <label asp-for="Cuisine"></label>
@@ -23,6 +23,5 @@
         <!-- Muestra los mensajes de validacion para la propiedad Cuisine -->
         <span asp-validation-for="Cuisine"></span>
     </div>
-
     <input type="submit" name="save" value="Save" />
 </form>

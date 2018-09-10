@@ -33,6 +33,11 @@ namespace OdeToFood.Services
             restaurant.Id = _restaurants.Max(x => x.Id) + 1;
             _restaurants.Add(restaurant);
             return _restaurants.Last();
-        }        
+        }
+
+        public Restaurant Update(Restaurant restaurant)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

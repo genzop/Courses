@@ -1,0 +1,27 @@
+﻿<!--
+    Un layout view permite reutilizar codigo en multiples views. 
+    Este puede especificarse en cada view o en general para toda la aplicacion. 
+    Tambien puede ser null para ignorar el layout en una view en particular.
+-->
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div>
+        <!-- Renderiza la view correspondiente -->
+        @RenderBody()
+    </div>
+    <footer>
+        <!-- Renderiza una seccion llamada "footer" que no es obligatoria-->
+        @RenderSection("footer", false)
+
+        <!-- Renderiza el ViewComponent Greeter -->
+        <!-- Se debe respetar la siguiente regla: vc-nombre (minuscula) -->
+        <vc:greeter></vc:greeter>
+    </footer>
+</body>
+</html>

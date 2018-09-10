@@ -1,25 +1,17 @@
-﻿<!-- Indica la clase del modelo que recibio del controller -->
-@model OdeToFood.ViewModels.HomeIndexViewModel 
+﻿<!-- Indica la clase que recibio del controller -->
+@model HomeIndexViewModel
+@{
+    // Establece el titulo de la pagina
+    ViewBag.Title = "Home page";
+}
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title></title>
-</head>
-<body>
-    <h1>@Model.CurrentMessage</h1>
-    <table>
-        @foreach (var restaurant in Model.Restaurants)
-        {
-            <tr>
-                <td>@restaurant.Id</td>
-                <td>@restaurant.Name</td>
-                <td>
-                    <!-- Crea un hipervinculo utilzando un tag helper (asp-action=actionDestino, asp-route-nombreParametro: valorParametro) -->
-                    <a asp-action="Details" asp-route-id="@restaurant.Id">More</a>
-                </td>
-            </tr>
-        }
-    </table>
+<h1>All Restaurants</h1>
+@foreach (var restaurant in Model.Restaurants)
+{
+    // Renderiza un partial view pasandole como modelo un restaurant
+    @Html.Partial("_Summary", restaurant)
+}
+
+<div>
     <a asp-action="Create">Add Restaurant</a>
-</body>
-</html>
+</div>

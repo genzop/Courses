@@ -70,3 +70,7 @@ Entity Framework Core
             <ItemGroup>
                 <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="x"></DotNetCliToolReference>
             </ItemGroup>  
+
+MVC vs Razor Pages
+    MVC -> Es preferible para crear servicios web y api's. Pero tambien se pueden utilizar para generar paginas a traves de controllers y views.
+    Razor Pages -> Es 
