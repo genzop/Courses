@@ -5,12 +5,16 @@ namespace OdeToFood.Models
     public class Restaurant
     {
         public int Id { get; set; }
-        
-        // Indica el texto a mostrar en la etiqueta
+                
+        // Obligatorio
+        [Required]
+        // Puede contener hasta 80 caracteres
+        [MaxLength(80)]
+        // Texto a mostrar
         [Display(Name = "Restaurant Name")]
         public string Name { get; set; }
 
-        // Indica el texto a mostrar en la etiqueta
+        // Texto a mostrar
         [Display(Name = "Cuisine")]
         public CuisineType Cuisine { get; set; }
     }

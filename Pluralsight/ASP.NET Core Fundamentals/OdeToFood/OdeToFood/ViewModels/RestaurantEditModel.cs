@@ -5,9 +5,9 @@ namespace OdeToFood.ViewModels
 {
     public class RestaurantEditModel
     {
-        // Esta propiedad es obligatoria
+        // Obligatoria
         [Required]
-        // Esta propiedad puede contener hasta 80 caracteres
+        // Puede contener hasta 80 caracteres
         [MaxLength(80)]
         public string Name { get; set; }
 

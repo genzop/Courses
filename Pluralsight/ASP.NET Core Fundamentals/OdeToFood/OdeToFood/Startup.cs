@@ -1,31 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using OdeToFood.Data;
 using OdeToFood.Services;
 
 namespace OdeToFood
 {
     public class Startup
-    {
+    {        
+        private IConfiguration _configuration;
+
+        // Inyecta IConfiguration para poder obtener el connection string configurado en appsettings.json
+        public Startup(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+
         // Registra diferentes servicios al container que luego podran ser injectados 
         public void ConfigureServices(IServiceCollection services)
         {
             // Registra la interface IGreeter y su implementacion Greeter como un Singleton, es decir que solo va a haber una instancia de su implementacion durante la vida de la aplicacion.            
             services.AddSingleton<IGreeter, Greeter>();
 
-            // Registra la interface IRestaurantData con su implementacion InMemoryRestaurantData como scoped, es decir que va a crear una instancia de ese objeto por request y reutilizar esa instancia en ese request.            
-            /* services.AddScoped<IRestaurantData, InMemoryRestaurantData>(); */
+            // Registra el DbContext utilizando SqlServer
+            services.AddDbContext<OdeToFoodDbContext>(options => options.UseSqlServer(_configuration.GetConnectionString("OdeToFood")));
 
-            // Registra la interface como Singleton ya que estamos trabajando con una colleccion en memoria.
-            services.AddSingleton<IRestaurantData, InMemoryRestaurantData>();
+            // Registra la interface IRestaurantData con su implementacion SqlRestaurantData como scoped, es decir que va a crear una instancia de ese objeto por request y reutilizar esa instancia en ese request.            
+            services.AddScoped<IRestaurantData, SqlRestaurantData>();
 
             // Registra el framework MVC
             services.AddMvc();
