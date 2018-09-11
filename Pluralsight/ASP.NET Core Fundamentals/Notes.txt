@@ -21,8 +21,6 @@ Comandos de consola
     dotnet ef database --help -> Muestra una guia de como utilizar el comando "dotnet ef database"
     dotnet ef database update -> Ejecuta las migraciones pendientes en la base de datos
     
-    
-
     notepad fileName -> Abre el archivo con notepad
     code . -> Abre el directorio actual con Visual Studio Code
 
@@ -73,4 +71,4 @@ Entity Framework Core
 
 MVC vs Razor Pages
     MVC -> Es preferible para crear servicios web y api's. Pero tambien se pueden utilizar para generar paginas a traves de controllers y views.
-    Razor Pages -> Es 
+    Razor Pages -> Es preferible para crear paginas

@@ -5,7 +5,7 @@ namespace OdeToFood.ViewModels
 {
     public class RestaurantEditModel
     {
-        // Obligatoria
+        // Obligatorio
         [Required]
         // Puede contener hasta 80 caracteres
         [MaxLength(80)]
