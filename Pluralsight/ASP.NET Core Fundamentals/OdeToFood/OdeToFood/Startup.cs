@@ -57,6 +57,9 @@ namespace OdeToFood
             #region StaticFiles Middleware
             // Permite acceso a los archivos que se encuentran en la carpeta wwwroot
             app.UseStaticFiles();
+
+            // Permite acceso a los archivos en node_modules
+            app.UseNodeModules(env.ContentRootPath);
             #endregion
 
             #region FilesServer Middleware
@@ -103,14 +106,6 @@ namespace OdeToFood
 
             // Configura MVC y las rutas
             app.UseMvc(ConfigureRoutes);
-
-            // Escribe en la respuesta un mensaje
-            app.Run(async (context) =>
-            {
-                var greeting = greeter.GetMessageOfTheDay();
-                context.Response.ContentType = "text/plain";
-                await context.Response.WriteAsync("Not Found");
-            });
         }
 
         // Configura como se mapearan las rutas de la url a los actions en los controllers
