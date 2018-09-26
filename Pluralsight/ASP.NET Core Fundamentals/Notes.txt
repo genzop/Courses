@@ -73,19 +73,6 @@ MVC vs Razor Pages
     MVC -> Es preferible para crear servicios web y api's. Pero tambien se pueden utilizar para generar paginas a traves de controllers y views.
     Razor Pages -> Es preferible para crear paginas
 
-NPM
-    1. Agregar a la solucion el archivo "package.json"
-    2. Agregar la seccion "dependencies"
-    3. Agregar las diferentes librerias de la siguiente forma
-        nombre: version
-    4. Los archivos seran instalados dentro de la carpeta node_modules
-
-Validacion en el cliente
-    Se deben instalar los siguientes paquetes:
-        1. JQuery
-        2. JQuery Validation
-        3. JQuery Validation Unobtrusive
-
 Habilitar SSL
     !Se recomienda utilizar SSL en todas las aplicaciones donde el usuario deba autenticarse.
         1. Ir a las 'Properties' del proyecto y a la pestaña 'Debug'
@@ -111,3 +98,17 @@ Utilizar OpenID con Azure
                 "Authority": "https://login.microsoftonline.com/{DirectoryID}"
             },
     
+NPM
+    1. Agregar a la solucion el archivo "package.json"
+    2. Agregar la seccion "dependencies"
+    3. Agregar las diferentes librerias de la siguiente forma
+        nombre: version
+    4. Los archivos seran instalados dentro de la carpeta node_modules
+
+Validacion en el cliente
+    Se deben instalar los siguientes paquetes:
+        1. JQuery
+        2. JQuery Validation
+        3. JQuery Validation Unobtrusive
+
+
