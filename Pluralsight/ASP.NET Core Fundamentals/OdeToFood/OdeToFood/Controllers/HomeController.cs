@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using OdeToFood.Models;
 using OdeToFood.Services;
 using OdeToFood.ViewModels;
 
 namespace OdeToFood.Controllers
 {
+    // Verifica que el usuario este autenticado
+    [Authorize]
     public class HomeController : Controller
     {
         private IRestaurantData _restaurantData;
@@ -16,6 +19,8 @@ namespace OdeToFood.Controllers
             _greeter = greeter;
         }
 
+        // Permite el acceso a un usuario no autenticado
+        [AllowAnonymous]
         public IActionResult Index()
         {
             var model = new HomeIndexViewModel
@@ -38,7 +43,7 @@ namespace OdeToFood.Controllers
             return View(model);
         }
 
-        [HttpGet]
+        [HttpGet]        
         public IActionResult Create()
         {
             return View();

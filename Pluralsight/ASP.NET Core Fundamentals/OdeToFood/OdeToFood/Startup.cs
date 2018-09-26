@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Rewrite;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -24,6 +27,22 @@ namespace OdeToFood
         // Registra diferentes servicios al container que luego podran ser injectados 
         public void ConfigureServices(IServiceCollection services)
         {
+            // Registra un servicio de autenticacion
+            services.AddAuthentication(options =>
+            {
+                // Especifica el esquema de autenticacion por defecto, en este caso el de OpenId
+                options.DefaultChallengeScheme = OpenIdConnectDefaults.AuthenticationScheme;
+
+                // Especifica el nombre del esquema por defecto, en este caso Cookies
+                options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;                
+            })  
+            .AddOpenIdConnect(options => 
+            {
+                // Especifica con que proveedor de identidad se va a trabajar, cargando los datos del appsettings
+                _configuration.Bind("AzureAd", options);
+            })
+            .AddCookie();            
+
             // Registra la interface IGreeter y su implementacion Greeter como un Singleton, es decir que solo va a haber una instancia de su implementacion durante la vida de la aplicacion.            
             services.AddSingleton<IGreeter, Greeter>();
 
@@ -40,27 +59,25 @@ namespace OdeToFood
         // Define que middlewares van a intervenir en la respuesta a cada mensaje HTTP
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, IGreeter greeter, ILogger<Startup> logger)
         {
-            #region ExceptionPage Middleware
-            // Si es ambiente de desarrollo
             if (env.IsDevelopment())
             {
-                // Intercepta todas las excepciones que ocurran durante la ejecucion del pipeline y lo muestra en una pantalla descriptiva
+                // Si es ambiente de desarrollo, intercepta todas las excepciones que ocurran durante la ejecucion del pipeline y lo muestra en una pantalla descriptiva
                 app.UseDeveloperExceptionPage();
             }
-            #endregion
+
+            // Redirecciona todos los request que vengan por HTTP a HTTPS
+            app.UseRewriter(new RewriteOptions().AddRedirectToHttpsPermanent());
 
             #region DefaultFiles Middleware
             // Establece como pagina por defecto a archivos con nombres estandard como index.html
             /* app.UseDefaultFiles(); */
             #endregion
 
-            #region StaticFiles Middleware
             // Permite acceso a los archivos que se encuentran en la carpeta wwwroot
             app.UseStaticFiles();
 
             // Permite acceso a los archivos en node_modules
             app.UseNodeModules(env.ContentRootPath);
-            #endregion
 
             #region FilesServer Middleware
             // Cumple con la funcion de DefaultFiles y StaticFiles
@@ -103,6 +120,9 @@ namespace OdeToFood
             });
             */
             #endregion
+
+            // Habilita la autenticacion 
+            app.UseAuthentication();
 
             // Configura MVC y las rutas
             app.UseMvc(ConfigureRoutes);

@@ -85,3 +85,29 @@ Validacion en el cliente
         1. JQuery
         2. JQuery Validation
         3. JQuery Validation Unobtrusive
+
+Habilitar SSL
+    !Se recomienda utilizar SSL en todas las aplicaciones donde el usuario deba autenticarse.
+        1. Ir a las 'Properties' del proyecto y a la pestaña 'Debug'
+        2. Seleccionar la opcion 'Enable SSL' y pegar la url nueva en la App URL.
+
+    Es posible configurar un middleware que redireccione todos request que vengan por HTTP para que utilicen HTTPS.
+
+Utilizar OpenID con Azure
+    1. Registrar nuestra aplicacion en Azure Active Directory
+        a. Ir al sitio web 'https://portal.azure.com/', es necesario poseer una cuenta de azure.
+        b. Ir a la pestaña de 'Azure Active Directory' y luego a 'App registrations'
+        c. Seleccionar 'New application registration' y completar los siguientes campos
+            - Name: nombre de la aplicacion.
+            - Application Type: tipo de aplicacion.
+            - Sign-on URL: url de la aplicacion.
+        d. Entrar en la aplicacion recien registrar e ir a 'Settings' y 'Reply URLs' para configurar la direccion a la cual Azure debe enviar el token de autenticacion.
+            - En .NET Core es la siguiente: 'https://localhost:44356/signin-oidc'
+
+    2. Configurar el ClientId y el Authority en nuestra aplicacion 
+        - En el appsettings.json agregar los siguientes valores:
+            "AzureAd": {
+                "ClientId": "{ClientID}",
+                "Authority": "https://login.microsoftonline.com/{DirectoryID}"
+            },
+    
