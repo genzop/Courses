@@ -1,0 +1,157 @@
+/* Section 2 - ES6 */
+    /* Part 1: var vs let vs const */
+        var -> Variable accesible desde toda la funcion en la que es declarada.
+        let -> Variable accesible desde el bloque donde es declarada.
+        const -> Variable accesible desde el bloque donde es declarada y que su contenido no puede ser modificado.  
+    
+    /* Part 2: Objects */ 
+        Objeto -> Es un conjunto de parejas (Key, Value)
+
+        Metodos -> Toda funcion que sea parte de un objeto es llamada método, y puede definirse de dos maneras:
+            const person = {
+                name: 'Enzo',
+                walk: function() {},
+                talk() {}
+            };
+        
+        Acceder a propiedades/metodos de un objeto:
+            person.talk();
+            person['name'] = 'Gino';
+
+    /* Part 3: The 'this' keyword */
+        this -> Hace referencia al objecto actual.
+        
+         Si es utilzada desde una funcion que no pertenece a ningun objeto, la palabra this va a hacer referencia al objecto 'window'. Si se esta utilizando 'use strict' en cambio, la palabra 'this' devolvera undefined.
+
+        'use strict' -> habilita el 'modo estricto' que utiliza reglas mas rigurosas para la ejecucion del codigo.        
+
+    /* Part 4: Binding 'this' */
+        En JS toda funcion tambien es un objeto, por lo que tiene propiedades/metodos a los que se puede acceder. 
+
+        Para vincular la propiedad 'this' de una funcion con un objeto se utiliza el metodo 'bind()' de la siguiente manera:
+            const person = { name: 'Enzo', walk() { console.log(this); }};
+            const walk = person.walk.bind(person);
+
+    /* Part 5: Arrow Functions */ 
+        1 linea:
+            0 parametros: const square = () => number * number;
+            1 parametro: const square = number => number * number;
+            n parametros: const square = (number1, number2) => number1 * number2;
+        n lineas: 
+            const square = (number1, number2) => {
+                return number1 * number1;
+            }
+
+    /* Part 6: Arrow Functions and 'this' */
+        Las arrow function no hacen rebind del this, por lo que se recomienda utilizarlas para llamar a funciones globales que si lo hacen. Por ejemplo la funcion setTimeout:
+            const person = {
+                talk() {
+                    setTimeout(() => {
+                        console.log('this', this);
+                    }, 1000);
+                }
+            };
+        
+    /* Part 7: Array.map() */
+        El metodo map permite ejecutar una funcion para modificar cada elemento de un array y devolver la lista de los resultados. Este metodo es utilizado por ejemplo para renderizar listas.
+
+        Template Literals => Sirven para simplificar la concatenacion de strings variables/propiedades. Se envuelve el string en backticks `` y se envuelve la variable/propiedad con llaves y un simbolo $ delante ${};
+
+        const color = [ 'red', 'green', 'blue' ];
+        const items = colors.map(color => `<li>${color}</li>`);
+
+    /* Part 8: Object Destructuring */
+        Es posible extraer las propiedades de un objeto en variables, es necesario que las variables (que van entre las llaves) tengan el mismo nombre que las propiedades. 
+            const address = {
+                street: '',
+                city: '',
+                country: ''
+            }
+
+            const { street, city, country } = address;
+
+        Si queremos que la variable se llame diferente utilizamos la siguiente sintaxis:
+            const { street: st } = address;
+
+    /* Part 9: Spread Operator */
+        El spread operator se simboliza con tres puntos (...) y permite clonar un array o combinar los elementos de dos o mas arrays. Tambien es posible agregar elementos individuales de la misma manera:
+            const first = [1, 2, 3];
+            const second = [4, 5, 6];
+
+            const combined = [...first, 3.5, ...second, 7];
+
+        Tambien permite clonar un objeto o combinar dos o mas objetos y agregar propiedades individuales:
+            const first = { name: 'Enzo' };
+            const second = { job: 'Developer' };
+            
+            const combined = {...first, ...second, location: 'Argentina' };
+
+    /* Part 10: Classes */
+        Permiten crear objetos que compartan los mismos metodos. Las clases tienen un 'constructor' y sus nombres empiezan con mayusculas. Pueden ser instanciadas utilizando la palabra 'new'.            
+            class Person {
+                constructor(name) {
+                    this.name = name;
+                }
+
+                walk() {
+                    console.log('walk')
+                }
+            }
+
+            const person = new Person('Enzo');
+
+    /* Part 11: Inheritance */
+        Permite reutilizar los metodos de una clase en otra. Para ello se utiliza la palabra 'extends'. 
+        
+        Por defecto se utiliza el constructor de la clase superior pero si creamos uno especifico para la clase inferior, es necesario llamar a la funcion 'super()' y pasarle los valores de las propieades de la clase superior, esto llamara al constructor de dicha clase y luego establecer los valores de la clase inferior.
+
+            class Teacher extends Person{
+                constructor(name, degree) {
+                    super(name);
+                    this.degree = degree;
+                }
+
+                teach() {
+                    console.log('Teach');
+                }
+            }
+
+            const teacher = new Teacher('Enzo', 'Associate');
+
+    /* Part 12: Modules */
+        Para no tener que tener todo el codigo en un solo archivo, podemos aplicar 'modulos' y separar el codigo en diferentes archivos. Pero, el codigo dentro de cada archivo es privado por defecto, es decir, no puede ser accedido por otros archivos. Para solucionar esto es necesario 'exportar' el codigo del archivo para volverlo publico.
+            export class Person {
+                constructor(name) {
+                    this.name = name;
+                }
+
+                walk() {
+                    console.log('walk')
+                }
+            }
+
+        Y para poder utilizarlo debemos 'importarlo'.
+            import { Person } from './person';
+
+            export class Teacher extends Person{
+                constructor(name, degree) {
+                    super(name);
+                    this.degree = degree;
+                }
+
+                teach() {
+                    console.log('Teach');
+                }
+            }
+
+    /* Part 13: Named and Default Exports */
+        Named Export => Importar un objeto de un modulo utilizando el nombre entre llaves. Esto permite exportar uno o mas objetos de un modulo siempre que se utilice la palabra export.
+            export class Person {}        
+            import { Person } from './person';
+
+        Default Export => Importar un objeto por defecto de un modulo. Para ello es necesario exportarlo como 'default' e importarlo sin las llaves.
+            export default Teacher {}
+            import Teacher from './teacher';
+
+        Es posible importar multiples objetos de un mismo modulo sin importar el tipo.
+            import Teacher, { promote } from './teacher';
