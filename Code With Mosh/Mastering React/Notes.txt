@@ -1,10 +1,10 @@
 /* Section 2 - ES6 */
-    /* Part 1: var vs let vs const */
+    /* Part 2: var vs let vs const */
         var -> Variable accesible desde toda la funcion en la que es declarada.
         let -> Variable accesible desde el bloque donde es declarada.
         const -> Variable accesible desde el bloque donde es declarada y que su contenido no puede ser modificado.  
     
-    /* Part 2: Objects */ 
+    /* Part 3: Objects */ 
         Objeto -> Es un conjunto de parejas (Key, Value)
 
         Metodos -> Toda funcion que sea parte de un objeto es llamada método, y puede definirse de dos maneras:
@@ -18,21 +18,21 @@
             person.talk();
             person['name'] = 'Gino';
 
-    /* Part 3: The 'this' keyword */
+    /* Part 4: The 'this' keyword */
         this -> Hace referencia al objecto actual.
         
          Si es utilzada desde una funcion que no pertenece a ningun objeto, la palabra this va a hacer referencia al objecto 'window'. Si se esta utilizando 'use strict' en cambio, la palabra 'this' devolvera undefined.
 
         'use strict' -> habilita el 'modo estricto' que utiliza reglas mas rigurosas para la ejecucion del codigo.        
 
-    /* Part 4: Binding 'this' */
+    /* Part 5: Binding 'this' */
         En JS toda funcion tambien es un objeto, por lo que tiene propiedades/metodos a los que se puede acceder. 
 
         Para vincular la propiedad 'this' de una funcion con un objeto se utiliza el metodo 'bind()' de la siguiente manera:
             const person = { name: 'Enzo', walk() { console.log(this); }};
             const walk = person.walk.bind(person);
 
-    /* Part 5: Arrow Functions */ 
+    /* Part 6: Arrow Functions */ 
         1 linea:
             0 parametros: const square = () => number * number;
             1 parametro: const square = number => number * number;
@@ -42,7 +42,7 @@
                 return number1 * number1;
             }
 
-    /* Part 6: Arrow Functions and 'this' */
+    /* Part 7: Arrow Functions and 'this' */
         Las arrow function no hacen rebind del this, por lo que se recomienda utilizarlas para llamar a funciones globales que si lo hacen. Por ejemplo la funcion setTimeout:
             const person = {
                 talk() {
@@ -52,7 +52,7 @@
                 }
             };
         
-    /* Part 7: Array.map() */
+    /* Part 8: Array.map() */
         El metodo map permite ejecutar una funcion para modificar cada elemento de un array y devolver la lista de los resultados. Este metodo es utilizado por ejemplo para renderizar listas.
 
         Template Literals => Sirven para simplificar la concatenacion de strings variables/propiedades. Se envuelve el string en backticks `` y se envuelve la variable/propiedad con llaves y un simbolo $ delante ${};
@@ -60,7 +60,7 @@
         const color = [ 'red', 'green', 'blue' ];
         const items = colors.map(color => `<li>${color}</li>`);
 
-    /* Part 8: Object Destructuring */
+    /* Part 9: Object Destructuring */
         Es posible extraer las propiedades de un objeto en variables, es necesario que las variables (que van entre las llaves) tengan el mismo nombre que las propiedades. 
             const address = {
                 street: '',
@@ -73,7 +73,7 @@
         Si queremos que la variable se llame diferente utilizamos la siguiente sintaxis:
             const { street: st } = address;
 
-    /* Part 9: Spread Operator */
+    /* Part 10: Spread Operator */
         El spread operator se simboliza con tres puntos (...) y permite clonar un array o combinar los elementos de dos o mas arrays. Tambien es posible agregar elementos individuales de la misma manera:
             const first = [1, 2, 3];
             const second = [4, 5, 6];
@@ -86,7 +86,7 @@
             
             const combined = {...first, ...second, location: 'Argentina' };
 
-    /* Part 10: Classes */
+    /* Part 11: Classes */
         Permiten crear objetos que compartan los mismos metodos. Las clases tienen un 'constructor' y sus nombres empiezan con mayusculas. Pueden ser instanciadas utilizando la palabra 'new'.            
             class Person {
                 constructor(name) {
@@ -100,7 +100,7 @@
 
             const person = new Person('Enzo');
 
-    /* Part 11: Inheritance */
+    /* Part 12: Inheritance */
         Permite reutilizar los metodos de una clase en otra. Para ello se utiliza la palabra 'extends'. 
         
         Por defecto se utiliza el constructor de la clase superior pero si creamos uno especifico para la clase inferior, es necesario llamar a la funcion 'super()' y pasarle los valores de las propieades de la clase superior, esto llamara al constructor de dicha clase y luego establecer los valores de la clase inferior.
@@ -118,7 +118,7 @@
 
             const teacher = new Teacher('Enzo', 'Associate');
 
-    /* Part 12: Modules */
+    /* Part 13: Modules */
         Para no tener que tener todo el codigo en un solo archivo, podemos aplicar 'modulos' y separar el codigo en diferentes archivos. Pero, el codigo dentro de cada archivo es privado por defecto, es decir, no puede ser accedido por otros archivos. Para solucionar esto es necesario 'exportar' el codigo del archivo para volverlo publico.
             export class Person {
                 constructor(name) {
@@ -144,7 +144,7 @@
                 }
             }
 
-    /* Part 13: Named and Default Exports */
+    /* Part 14: Named and Default Exports */
         Named Export => Importar un objeto de un modulo utilizando el nombre entre llaves. Esto permite exportar uno o mas objetos de un modulo siempre que se utilice la palabra export.
             export class Person {}        
             import { Person } from './person';
@@ -155,3 +155,57 @@
 
         Es posible importar multiples objetos de un mismo modulo sin importar el tipo.
             import Teacher, { promote } from './teacher';
+
+/* Section 3 - Components */ 
+    /* Part 2 - Setting up the project */
+        Crear proyecto -> create-react-app nombre
+        Iniciar aplicacion -> npm start
+        Instalar bootstrap -> npm i bootstrap@4.1.1
+        Importar boostrap en el proyecto -> index.js (Agregar la linea 'import "bootstrap/dist/css/bootstrap.css";')
+
+    /* Part 4 - Specifying Children */
+        Para renderizar un componente con varios elementos se los debe envolver en un '<div>' o en un '<React.Fragment>' sino queremos agregar un div innecesario.
+            <React.Fragment>
+                <h1>Hello World!</h1>
+                <button>Increment</button>
+            </React.Fragment>
+    /* Part 5 - Embedding Expressions */
+        State -> es un objeto que incluye toda la informacion que este componente necesita. Esta informacion de utiliza de la siguiente manera:
+            state = {
+                imgUrl: 'https://picsum.photos/200'
+            }
+
+            ...<img src={this.state.imgUrl}>/img>...
+
+        Classes -> para asignar clases a un elemento se utiliza el atributo className.
+            ...<spam className="badge badge-primary m-2">...
+
+        Styles -> se puede crear una propiedad llamada 'styles' que tenga las propiedades escritas como un JSON en camel case y luego pasarselas al atributo style de un elemento.
+            styles = {
+                fontSize: 50,
+                fontWeight: "bold"
+            };
+
+            ...<spam style={ this.styles }>...
+
+        Tambien se pueden aplicar en linea de la siguiente manera:
+            <spam style={{ fontSize: 30 }} className="badge badge-primary m-2">
+
+    /* Part 8 - Rendering Lists */
+        Para renderizar listas se utiliza la funcion Array.map(). Todo elemento de una lista debe tener un key unico para facilitar su actualizacion en el Virtual DOM.
+
+            state = {
+                tags: ["tag1", "tag2", "tag3"]
+            };
+            
+            <ul>
+                {this.state.tags.map(tag => (<li key={tag}>{tag}</li>))}
+            </ul>
+    /* Part 9 - Conditional Rendering */
+        En JS es posible utilizar el operador && entre variables no booleanas
+            string -> Si esta vacio se considera false y si tiene al menos un caracter se considera true.
+            number -> El 0 se considera false y cualquier otro numero se considera true.
+
+        Cuando comparamos valores no booleanos y dan igual, se devuelve el ultimo elemento de la sentencia. Por ejemplo la siguiente comparacion, si no hay ningun tag, va a devolver el string.
+            {this.state.tags.length === 0 && "Please create a new tag!"}
+            
