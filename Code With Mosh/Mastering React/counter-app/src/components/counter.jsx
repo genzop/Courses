@@ -12,12 +12,21 @@ class Counter extends Component {
     return (
       <React.Fragment>
         <spam className={this.getBadgeClasses()}>{this.formatCount()}</spam>
-        <button className="btn btn-sm btn-secondary">Increment</button>
+        <button
+          onClick={() => this.handleIncrement({ id: 1 })}
+          className="btn btn-sm btn-secondary"
+        >
+          Increment
+        </button>
         {this.state.tags.length === 0 && "Please create a new tag!"}
         {this.renderTags()}
       </React.Fragment>
     );
   }
+
+  handleIncrement = () => {
+    this.setState({ count: this.state.count + 1 });
+  };
 
   renderTags() {
     if (this.state.tags.length === 0) {

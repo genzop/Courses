@@ -209,3 +209,26 @@
         Cuando comparamos valores no booleanos y dan igual, se devuelve el ultimo elemento de la sentencia. Por ejemplo la siguiente comparacion, si no hay ningun tag, va a devolver el string.
             {this.state.tags.length === 0 && "Please create a new tag!"}
             
+    /* Part 10 - Handling Events */
+        Los handlers de eventos de un componente se declaran de la siguiente manera:
+            <button onClick={this.handleIncrement}> 
+
+        Generalmente comienzan con la palabra 'handle'. En caso de querer utilizar la keyword 'this' en el event handler, se debe:
+            1. Utilizar un arrow function en el handler (RECOMENDADO)
+                handleIncrement = () => {
+                    console.log("Increment Clicked", this);
+                };
+            2. Bindear el objeto this al metodo en el constructor
+                constructor() {
+                    super();
+                    this.handleIncrement = this.handleIncrement.bind(this);
+                }
+    /* Part 12 - Updating the State */
+        Para actualizar una propiedad del objeto state es necesario hacerlo a traves del metodo 'setState()'. Eso le notifica a react que debe actualizarse.
+            this.setState({ count: this.state.count + 1 });
+    /* Part 13 - Passing Event Arguments */
+        Para pasarle algun argumento a un event handler se debe envolver la llamada a la funcion en un arrow function.
+            <button onClick={() => this.handleIncrement({ id: 1 })}>
+
+
+        
