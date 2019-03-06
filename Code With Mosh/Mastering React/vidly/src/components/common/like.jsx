@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 const Like = props => {
   let classes = "fa fa-heart";
@@ -10,7 +10,7 @@ const Like = props => {
     <i
       className={classes}
       style={{ cursor: "pointer" }}
-      onClick={() => props.onLiked(props.movie)}
+      onClick={() => props.onLike(props.movie)}
     />
   );
 };
