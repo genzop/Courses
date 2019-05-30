@@ -1,0 +1,4 @@
+.reverse!
+    Ejecuta el metodo reverse! en todo lo que este antes del punto
+
+
