@@ -1,4 +1,64 @@
-.reverse!
-    Ejecuta el metodo reverse! en todo lo que este antes del punto
+Section 2 - The Ruby Programming Language
+    Todo en ruby devuelve algo, por lo que funciones que no devuelvan nada devolver nil que es como "null"
 
+    Comentarios
+        Toda linea que comience con # es un comentario
 
+    Invertir orden de array
+        .reverse!
+
+    Imprimir texto sin devolver nada    
+        puts "Texto"
+    Imprimir texto y devolver su contenido
+        p "Texto"
+    Imprimir texto sin hacer un salto de linea al final
+        print "Texto"
+        
+    Ejecutar el codigo de un archivo de Ruby
+        ruby "archivoRuby.rb"
+        
+    Declarar variable
+        greeting = "Hello World!"
+
+    Declarar un metodo
+        def nombreMetodo(parametros)
+            # Hacer cosas
+        end
+
+    Consola interactiva
+        Se puede utilizar una consola interactiva que permite ejecutar codigo en tiempo real. El comando irb arranca esta consola interactiva y exit la cierra.
+
+    Strings
+        Definicion
+            Se definen utilizado comillas dobles "" y simples ''. 
+                nombre "Enzo"
+                apellido 'Panettieri'
+
+        Concatenacion
+            Se pueden concatenar dos strings con el simbolo +
+                puts nombre + apellido
+
+        Interpolacion
+            Permite inyectar variables dentro de un string. Solo se puede realizar con variables con comillas dobles.
+                "My first name is #{nombre} and my last name is #{apellido}"
+
+    Tipo de dato
+        Al ejecutar el comando .class luego de un valor o una variable ruby muestra el tipo de dato de esa variable
+
+    Metodos disponibles
+        Para ver todos los metodos disponibles para una variable o valor se utiliza el sufijo .methods
+        
+    Encadenar metodos   
+        10.to_s.class
+    
+    Leer datos ingresados por el usuario
+        Para capturar datos ingresados por el usuario se usa el comando gets.chomp
+
+    Numeros
+
+        Multiplicar strings
+            Es posible multiplicar strings por numeros para imprimir varias veces una cadena
+                puts "-" * 20
+            El metodo .times nos permite realizar lo mismo pero con mayor flexibilidad
+                20.times { print "-" }
+        
