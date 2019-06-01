@@ -62,3 +62,174 @@ Section 2 - The Ruby Programming Language
             El metodo .times nos permite realizar lo mismo pero con mayor flexibilidad
                 20.times { print "-" }
         
+    Metodos
+        En los metodos la ultima linea tiene el return implicito, pero tambien te puede utilizar la palabra return
+
+    Condicionales
+        if 
+        elsif 
+        else
+        end
+
+        Si tienen una sola instruccion se pueden hacer todo en una sola linea
+            instruccion if condicion
+
+    Arrays
+        Crear array en base a un rango
+            x = 1..100.to_a
+
+        Mezclar elementos de un array
+            (1..100).to_a.shuffle
+
+        Pisar el objeto original
+            Se utiliza el simbolo ! despues de la expresion para la expresion mute al objeto
+                x = (1..100).to_a
+                x.reverse!
+
+        Agregar elemento al final del array
+            a = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            a << 10
+            a.append(11)
+            a.push(12)
+
+        Agregar elemento al comienzo del array
+            a.unshift(-1)
+
+        Eliminar elementos repetidos de un array    
+            a.uniq!
+
+        Revisar si array esta vacio
+            a.empty?
+        
+        Revisar si array contiene a elemento
+            a.include?(1)
+
+        Extrer el ultimo elemento de un array
+            x = a.pop
+
+        Unir todos los elementos de un array en un string
+            a.join  
+            b = a.join("-")
+
+        Separar un string en un array   
+            a = b.split("-")
+            c = %w(Mi nombre es Enzo y esto es genial Ruby es increible)
+        
+        Repetir ultima expresion
+            d = _
+
+    Iteradores
+        For
+            for i in a
+                print i
+            end
+
+        Each
+            Una instruccion
+                a.each {|item| print item + " "} 
+                
+            Multiples instrucciones
+                a.each do |item|
+                    print item + " "
+                end
+
+        Select
+            Devuelve los elementos que cumplan con la condicion especificada. En el ejemplo se va a guardar en a todos los numeros impares del array z
+                z = (1..100).to_a.shuffle
+                a = z.select {|item| number.odd?}
+    Hash (Dictionaries)
+        Es una lista de parejas clave-valor
+            hash_ejemplo = { 'a' => 1, 'b' => 2, 'c' => 3  }
+            p hash_ejemplo['b'] 
+        
+        La clave tambien puede tratarse como una propiedad llamada symbol  
+            hash_simbolos = { a: 1, b: 2, c: 3 }
+            p hash_simbolos[:a] 
+
+        Obtener claves o valores
+            hash_ejemplo.keys   
+            hash_ejemplo.values
+
+        Iterar un hash
+            hash_ejemplo.each { |key, value| puts "The key is #{key} and the value is #{value}" }
+
+            hash_ejemplo.each do |key, value|
+                puts "The class for the key is #{key.class} and the value is #{value.class}"
+            end        
+
+        Agregar elemento o modificar un elemento
+            hash_ejemplo['d'] = 4
+
+        Filtrar elementos
+            hash_ejemplo.select { |k, v| v.is_a?(String) }
+
+        Eliminar elementos
+            Para eliminar un elemento solo hace falta eliminar la clave
+            hash_ejemplo.each { |k, v| hash_ejemplo.delete(k) if v.is_a?(String) }
+
+    Estilos
+        Indentacion
+            En Ruby se utilizan dos espacios de indentacion
+
+        Snake Case: todo en minuscula separado por guiones bajos. Se utilizan en variables, metodos y en los archivos
+            this_is_a_variable = 1
+            def this_is_a_method
+            end
+            file_number_one.rb
+
+        Camel Case: todo junto con palabras comenzadas con mayusculas. Se utiliza en las clases
+            class ClaseImportante
+            end
+
+        Mas informacion: https://github.com/rubocop-hq/ruby-style-guide
+    Clases
+        Las propiedades de una clase deben comenzar con un @
+            class Student
+                @first_name
+                @last_name
+            end
+
+        Para poder acceder a las propiedades de un objeto es necesario utilizar las siguientes propiedades
+            class Student
+                # Permite obtener y setear la propiedad
+                attr_accessor :first_name, :last_name, :email
+
+                # Permite obtener la propiedad
+                attr_reader :username
+                
+                @first_name
+                @last_name
+                @email
+                @username
+                @password
+
+                # Constructor que permite setear las propiedades en el momento de inicializacion
+                def initialize(firstname, lastname, username, email, password)
+                    @first_name = firstname
+                    @last_name = lastname
+                    @email = email
+                    @username = username
+                    @password = password
+                end
+
+                # Sobreescribe el metodo to_s que se llama cuando se quiere imprimir el objeto
+                def to_s
+                    "First name: #{@first_name}, Last name: #{@last_name}, Username: #{@username}, Email: #{@email}"
+                end
+            end
+    Modulos
+        Exportar modulo
+            Encapsular metodos dentro de una clase en un Modulo. 
+                module Encrypt
+                    def Method1
+                    end
+                end
+            Estos metodos se pueden volver estaticos insertandoles el prefijo .self en el nombre
+                module Encrypt
+                    def self.Method1
+                    end
+                end
+        Importar modulo
+            Si esta en el mismo directorio
+                require_relative 'Encrypt'
+                Encrypt.Method1
