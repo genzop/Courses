@@ -288,6 +288,26 @@ Section 3 - Introduction to Ruby on Rails
                 <%= link_to 'Text', path %>
             El path se obtiene al utilizar el comando rails routes
 
+        Generar scaffold de una entidad
+            En Rails es posible generar todo el ABM de una entidad utilizando un comando
+                rails g scaffold Clase propiedad1:tipo1 propiedad2:tipo2
+
+        Correr migraciones pendientes
+            rails db:migrate
+
+    Heroku
+        Para deployar un projecto de Rails en Heroku es necesario:
+            1° Instalar el Heroku Toolbelt
+            2° Ingresar nuestras credenciales con el siguiente comando
+                heroku login
+            3° Crear el proyecto
+                heroku create
+            4° Agregar nuestra clave ssh de git
+                heroku keys:add
+            5° Deployar en Heroku
+                git push heroku master
+            6° Cambiar nombre de aplicacion
+                heroku rename nombre
 
 
         
