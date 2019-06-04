@@ -233,3 +233,61 @@ Section 2 - The Ruby Programming Language
             Si esta en el mismo directorio
                 require_relative 'Encrypt'
                 Encrypt.Method1
+
+Section 3 - Introduction to Ruby on Rails
+    Rails
+        Crear un projecto
+            rails new nombre_projecto
+
+        Arracar server
+            En la carpeta del proyecto utilizar uno de los siguientes comandos
+                rails server
+                rails s
+
+        Instalar gems faltantes
+            bundler install
+
+        Estructura projecto
+            /app/                   => Aplicacion
+            /app/assets/            => Recursos estaticos (js, css, images)
+            /app/controllers/       => Controladores
+            /app/helpers/           => Logica comun utilizada en las vistas
+            /app/mailers/           => Configuracion de envio de emails
+            /app/models/            => Modelos
+            /app/views/             => Vistas
+            /config/environment/    => Configuraciones de los diferentes entornos
+            /config/database.yml    => Configuracion de la base de datos
+            /config/routes.rb       => Configuracion de las rutas
+            /db/                    => Migraciones a la base de datos
+            /log/                   => Logs del servidor
+            /public/                => Contenido publico que puede accederse directamente
+            /test/                  => Pruebas automaticas
+            /Gemfile                => Lista de gems que tenemos instaladas
+            /Gemfile.lock           => Lista de dependencias de cada gems       
+
+        Ver rutas configuradas
+            rails routes
+
+        Configurar una ruta
+            # MetodoHTTP 'Ruta', to: 'controller#action'
+                get 'welcome/home', to: 'welcome#home'
+            La ruta base de la aplicacion se configura utilizando el verbo 'root'
+                root 'pages#home'
+
+        Controller con action
+            Un controller es una clase que extiende de 'ApplicationController' y que dentro tiene definidos los actions.
+            Por cada controller debe haber una carpeta con el mismo nombre dentro de la carpeta views. y que dentro contendra un archivo .html.erb por cada action
+
+            class WelcomeController < ApplicationController
+                def home  
+                end
+            end
+        
+        Hypervinculo
+            Para declarar un hipervinculo a otra accion de un controller se utiliza la siguiente Estructura.          
+                <%= link_to 'Text', path %>
+            El path se obtiene al utilizar el comando rails routes
+
+
+
+        
