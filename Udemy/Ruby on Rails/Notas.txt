@@ -309,5 +309,12 @@ Section 3 - Introduction to Ruby on Rails
             6° Cambiar nombre de aplicacion
                 heroku rename nombre
 
+Section 4 - CRUD Operations in Ruby on Rails
+    Convenciones de nombres para tablas
+        Modelo: singular, primera letra mayuscula, 
+        Tabla: plural, minuscula
+        Controllador: plural _controller
 
-        
+    Crear migracion
+        rails generate migration create_tabla
+    
