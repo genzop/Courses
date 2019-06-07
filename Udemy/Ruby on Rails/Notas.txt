@@ -315,6 +315,84 @@ Section 4 - CRUD Operations in Ruby on Rails
         Tabla: plural, minuscula
         Controllador: plural _controller
 
-    Crear migracion
-        rails generate migration create_tabla
-    
+    Migraciones
+        Crea una migracion para crear tabla sin propiedades
+            rails g migration create_tabla
+        
+            Agregar propiedad
+                Cuando se agrega una propiedad se utiliza la siguiente estructura
+                  def change
+                    create_table :articles do |t|
+                      # t.Tipo :nombre    
+                      t.string :title
+                    end
+                  end
+
+        Crear migracion para agregar propiedades a tabla
+            rails g migration agregar_propiedad_a_tabla
+
+            Modificar tabla
+              def change
+                # Comando tabla, propiedad, tipo
+                add-column :articles, :description, :text
+              end
+
+        Ejecutar migraciones
+            rails db:migrate    
+
+        Revertir migraciones 
+            rails db:rollback
+
+        Toda tabla debe tener timestamps de creacion y actualizacion, puede ser agregadas en la creacion de la tabla o despues
+            add-column :articles, :created_at, :datetime
+            add-column :articles, :updated_at, :datetime
+
+        Consola de Rails
+            Da acceso directo a la base de datos. Se debe reiniciar si se realizo algun cambio en el modelo
+                rails console
+            
+                Modelo  ->  lista todas las columnas de esa tabla
+                Modelo.all  ->  lista todos los registros de esa tabla
+                objeto = Modelo.find(id)  ->  Busca un registro en base al id
+              
+                objeto = Modelo.new  ->  crea un nuevo objeto de ese modelo
+                objeto.propiedad = valor  ->  asigna un valor a una propiedad de ese objeto
+                objeto = Modelo.new (propiedad: valor, propiedad: valor)  ->  crea un objeto con las propiedades en una sola linea                
+                Modelo.create(propiedad: valor, propiedad: valor)  ->  crea un registro directamente en la base de datos
+
+                article.destroy  -> elimina el registro de la base de datos
+
+                objeto.save  ->  guarda ese objeto en la base de datos
+
+                objeto.errors.any?  ->  revisa que se cumplan todas las validaciones del modelo
+                objeto.errors.full_messages  ->  obtiene todos los mensajes de error
+
+        Validar modelo
+            Propiedad requerida
+                validates propiedad, presence :true
+
+            Largo minimo y maximo
+                validates propiedad, length: {minimum:1, maximum:10}  
+
+        Rutas
+            Mapear todas las rutas asociadas a un ABM
+                resources :tabla
+
+        Form helpers
+            Formulario para modelo
+                <%= form_for @modelo do |m| %>
+                <% end %>
+
+            Label
+                <%= m.label :propiedad %>
+            
+            Texto
+                <%= m.text_field :propiedad %>
+
+            Area de texto
+                <%= m.text_area :propiedad %>
+
+            Boton submit
+                <%= m.submit %>
+
+      
