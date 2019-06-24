@@ -395,4 +395,8 @@ Section 4 - CRUD Operations in Ruby on Rails
             Boton submit
                 <%= m.submit %>
 
-      
+Section 5 - The Complete Ruby on Rails Developer Course
+    Pagina base 
+        Todas las paginas son rederizadas a partir del archivo /views/layouts/application.html.erb
+
+    

@@ -21,7 +21,7 @@ class ArticlesController < ApplicationController
     # Si se puede persisitir el articulo, lo hace
     if @article.save
       # Muestra una notificacion al usuario
-      flash[:notice] = "Articulo creado exitosamente"
+      flash[:success] = "Articulo creado exitosamente"
       # Redirecciona a la ruta article (GET)
       redirect_to article_path(@article)
     # Si no se pasan las validacions o ocurre un error
@@ -38,7 +38,7 @@ class ArticlesController < ApplicationController
     # Si el articulo pudo ser actualizado
     if @article.update(article_params)
       # Muestra una notificacion al usuario
-      flash[:notice] = "Articulo modificado exitosamente"
+      flash[:success] = "Articulo modificado exitosamente"
       # Redirecciona a la lista de articulos
       redirect_to article_path(@article)
     # Si alguna de las validaciones no se cumplio o ocurrio un error
@@ -52,7 +52,7 @@ class ArticlesController < ApplicationController
       # Elimina el articulo      
       @article.destroy
       # Muestra una notificacion al usuario
-      flash[:notice] = "Articulo eliminado exitosamente"
+      flash[:danger] = "Articulo eliminado exitosamente"
       # Redirecciona a la lista de articulos
       redirect_to articles_path
   end
