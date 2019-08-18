@@ -1,0 +1,128 @@
+Section 01 - Getting Started 
+    Instalar Vue.js
+        Para instalar Vue.js en una pagina solo hace falta incluir el script principal.
+    
+    Crear una instancia de Vue
+        Se crea una nueva instancia de Vue que recibe como parametro un objeto de javascript con las siguientes propiedades:
+            - el: string selector del elemento que sera manejado por Vue, utiliza selectores de css.
+            - data: objeto que contiene toda la informacion y datos que se quieran utilizar
+            - methods: objeto que contiene todos los metodos que se quieran utilizar
+                new Vue({
+                    el: '#app',
+                    data: {
+                        title: 'Hello World!'
+                    },
+                    methods: {
+                        sayHello: function() { }
+                    }
+                })
+            - computed: objeto que almacena propiedades que son calculadas por una funcion
+            - watch: objeto que almacena metodos que son ejecutados cuando una propiedad cambia su valor
+
+    Mostrar datos dentro de un elemento html
+        Para mostrar alguna propiedad del objeto data por pantalla:
+            <p>{{ title }}</p>
+        Tambien se puede mostrar el resultado de algun metodo:
+            <p>{{ getTitle() }}</p>
+
+    Directivas
+        Una directiva es un comando que funciona como un atributo de un elemento html y que permite agregar funcionalidades de Vue a ese elemento.
+
+        - Asociar metodo a un evento del elemento
+            <input type="text" v-on:input="changeTitle">
+            changeTitle: function(event) {
+                this.title = event.target.value;
+            }
+
+Section 02 - Using Vue.js to Interact  with the DOM
+    Acceder a los datos desde una misma instancia
+        Vue.js permite acceder a las propiedades del objeto data y a los metodos utilizando solamente la palabra 'this'
+            sayHello: function() {
+                return this.title;
+            }
+
+    Vincular atributos de un elemento   
+        Para vincular el contenido de un atributo de un elemento html a alguna de las propiedades del objeto data o metodo, es necesario utilizar la directiva bind:
+            <a v-bind:href="link"><a/>
+
+    Ignorar cambios en data
+        Para ignorar todos los cambios que ocurran en el objeto data y no actualizar el contenido del elemento se utiliza la directiva 'v-once'
+            <h1 v-once>{{ title }}</h1>
+
+    Mostrar Html puro
+        Para imprimir contenido html y no solamente texto pelado se utiliza la directiva v-html.
+            <p v-html="finishedLink"></p>
+
+    Capturar eventos
+        Para capturar un evento se utiliza la directiva 'v-on:evento="metodo"' que recibe el evento y como valor contiene el metodo que debe ejecutarse. Cuando se llama al metodo se le pasan todos los atributos que normalmente recibiria el handler.
+            <p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} / {{ y }}</p>
+            updateCoordinates: function(event) {
+                this.x = event.clientX;
+                this.y = event.clientY;
+            }
+
+    Pasar argumentos propios a un handler   
+        Para pasarle al metodo argumentos adicionales solo es necesario agregarlos en la directiva v-on.
+            <button v-on:click="increase($event, 2)">Click me</button>
+            increase: function(event, step) {
+                this.count += step;
+            }
+
+    Modificar eventos  
+        Es posible modificar un evento sin la necesidad de escribir un metodo para ello. Esto sirve para cuando para comandos como preventDefault o stopPropagation. Estos tambien se pueden encandenar
+            <span v-on:mousemove.stop.prevent=""></span>
+
+    Eventos del teclado
+        Existe una manera rapida de capturar eventos asociados con ciertas teclas:
+            <input type="text" v-on:keyup.enter="alertMe">
+
+    Directivas con javascript
+        Es posible escribir expresiones de javascript en cualquier lugar donde se acceda a la instancia de Vue
+            <button v-on:click="counter++">Click me</button>
+
+    Vinculacion bidireccional
+        Para establecer una vinculacion bidireccional con una propiedad se utiliza la directiva 'v-model'
+            <input type="text" v-model="name">
+		    <p>{{ name }}</p>
+
+    Propiedad computada 
+        Todas las propiedades que se encuentran dentro del objeto computed, son analizadas para evitar ser ejecutadas nuevamente al pedo
+            computed: {
+				output: function() {
+					return this.counter > 5 ? 'Greater 5' : 'Smaller 5';
+				}
+			},
+
+    Propiedad observadora
+        Contiene un conjunto de propiedades (que deben existir en el objeto data) a las que se les asocia una funcion que se ejecutara cuando dicha propiedad cambie. Estos metodos pueden funcionar de manera asincrona.
+            watch: {
+				counter: function(value) {
+					var vm = this;
+					setTimeout(function() {
+						vm.counter = 0;
+					}, 2000);
+				}
+			}
+
+    Abreviaciones
+        <button v-on:click="increase($event, 2)">Click me</button>
+        <button @click="increase($event, 2)">Click me</button>
+
+        <a v-bind:href="link">Google</a>
+        <a :href="link">Google</a>
+
+    Clases dinamicos
+        Se puede agregar/quitar una clase a un elemento utilizando utilizando la vinculacion con la propiedad ':class'.
+        La primer forma de vincular o no una clase es especificando en un objeto la clase en cuestion y la condicion de javascript que va a definir si debe o no activarse dicha clase:
+            <div class="demo" :class="{red: attachRed}"></div>
+
+        Tambien es posible vincular las clases a traves de una propiedad, ya sea computada o comun, que debe contener un objeto:
+            <div class="demo" @click="attachRed = !attachRed" :class="divClasses"></div>			
+        
+        Y por ultimo tambien se puede vincular un array de clases donde se puede especificar el nombre de la clase o tambien la pareja clase-condicion:
+			<div class="demo" :class="[color, {red: attachRed}]"></div>
+
+    Estilos dinamicos
+        Tambien es posible actualizar el estilo de un elemento dinamicamente. Las diferentes propiedades deben pertenecer a un objeto, no incluir comillas y con camelCase.
+            <div class="demo" :style="{backgroundColor: color}"></div>
+			<div class="demo" :style="myStyle"></div>
