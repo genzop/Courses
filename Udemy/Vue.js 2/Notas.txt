@@ -177,3 +177,45 @@ Section 03 - Using Conditionals and Rendering Lists
 					{{ person.name }}
 					<div v-for="(value, key, index) in person">{{ key }}: {{ value }} ({{ index }})</div>
 				</li>
+Section 05 - Understanding the Vue.js Instance
+    Una pagina puede contener multiples instancias de Vue. 
+
+    Para poder acceder a las propiedades y metodos de una instancia desde afuera solo hace falta guardar la instancia en una variable.
+        var vm1 = new Vue({...});
+        vm1.title = 'New title';
+        vm1.$data.title = 'Other title';
+
+    Es posible registrar los elementos html para poder controlarlos desde la instancia de Vue:
+        <button ref="myButton">Show Paragraph</button> 
+        this.$refs.myButton.innerText = 'Test';
+
+    Asignar elemento html a la instancia    
+        Cuando no se especifica el elemento html al que va a controlar la instancia con la propiedad 'el', es posible asignarle el elemento posteriormente con el siguiente metodo:
+            vm1.$mount('#app1');
+
+    Crear template en la instancia  
+        Es posible crear el contenido del elemento html desde Vue utilizando la propiedad 'template':
+            var vm3 = new Vue({
+                template: '<h1>Hello!</h1>'
+            });
+             vm3.$mount('#app3');
+
+    Componentes
+        Para poder reutilizar una instancia de Vue, debemos crear un componente:
+            Vue.component('hello', {
+                template: '<h1>Hello!</h1>'
+            });
+            <hello></hello>
+
+    Ciclo de vida
+        Una instancia de Vue posee los siguientes metodos para realizar acciones en diferentes puntos de su ciclo de vida
+            - beforeCreate()
+            - created()
+            - beforeMount()
+            - mounted()
+            - beforeUpdated()
+            - updated()
+            - beforeDestroy()
+            - destroyed()
+        Estos pueden especificarse en la creacion de la instancia.
+         
