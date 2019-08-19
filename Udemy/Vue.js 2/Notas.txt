@@ -126,3 +126,54 @@ Section 02 - Using Vue.js to Interact  with the DOM
         Tambien es posible actualizar el estilo de un elemento dinamicamente. Las diferentes propiedades deben pertenecer a un objeto, no incluir comillas y con camelCase.
             <div class="demo" :style="{backgroundColor: color}"></div>
 			<div class="demo" :style="myStyle"></div>
+Section 03 - Using Conditionals and Rendering Lists
+    Condicionales
+        Se puede añadir o eliminar un elemento basandose en una condicion de javascript con el comando 'v-if="condicion"':
+            <p v-if="show">You can see me!<span>Hello!</span></p>
+
+        Asi mismo tambien existe la directiva 'v-else-if':
+            <p v-else-if="!show">See me!</p>
+
+        Tambien se puede mostrar una alternativa en caso de que no se cumpla el if anterior:
+            <p v-else>Now yo see me!</p>
+
+        En caso de que no se quiera eliminar el elemento y solo se quiera ocultar, se utiliza la directiva 'v-show'
+
+    Template
+        La etiqueta template no se renderiza pero su contenido si, por lo que son muy utiles para contener las directivas condicionales y para listas.
+
+    Listas
+        Renderizar
+            Para renderizar una lista de elementos, se utiliza la directiva 'v-for', que funciona como un foreach
+                ingredients: ['meat', 'fruit', 'cookies']
+                <ul>
+                    <li v-for="ingredient in ingredients">
+                        {{ ingredient }}
+                    </li>
+                </ul>
+        
+        Obtener posicion en una lista
+            Tambien es posible obtener la posicion de cada elemento en el array, agregandolo como parametro en la directiva siempre y cuando primero vaya el elemento.
+
+                <li v-for="(ingredient, i) in ingredients">
+					{{ ingredient }} ({{ i }})
+				</li>
+        
+        Objetos
+            Se puede iterar sobre las propiedades de un objeto de la siguiente manera:
+                <li v-for="person in persons">
+					{{ person.name }}
+					<span v-for="value in person">{{ value }}</span>
+				</li>
+            
+            Y si queremos obtener el nombre de cada propiedad
+                <li v-for="person in persons">
+					{{ person.name }}
+					<span v-for="(value, key) in person">{{ value }}</span>
+				</li>
+
+            Y si necesitamos la posicion de la propiedad
+                <li v-for="person in persons">
+					{{ person.name }}
+					<div v-for="(value, key, index) in person">{{ key }}: {{ value }} ({{ index }})</div>
+				</li>
