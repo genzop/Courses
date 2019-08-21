@@ -201,7 +201,7 @@ Section 05 - Understanding the Vue.js Instance
              vm3.$mount('#app3');
 
     Componentes
-        Para poder reutilizar una instancia de Vue, debemos crear un componente:
+        Para poder reutilizar una instancia d e Vue, debemos crear un componente:
             Vue.component('hello', {
                 template: '<h1>Hello!</h1>'
             });
@@ -218,4 +218,29 @@ Section 05 - Understanding the Vue.js Instance
             - beforeDestroy()
             - destroyed()
         Estos pueden especificarse en la creacion de la instancia.
-         
+
+Section 06 - Moving to a Real Development Workflow with Webpack and Vue CLI
+    Crear proyecto con Vue CLI
+        vue init <template> <nombre>
+
+    Instalar dependencias
+        npm install
+
+    Ejecutar aplicación
+        npm run dev
+
+    Compilar para producción
+        npm run build
+
+    Estructura del projecto
+        - src\: carpeta que va a contener todo el código
+        - src\assets\: imagenes y recursos
+        - src\App.vue: template inicial
+        - src\main.js: declara la instancia principal de Vue en el archivo index.html
+        - index.html: archivo inicial 
+
+    Archivo .vue
+        Los archivos .vue contienen cada template de una aplicación y respetan la siguiente estructura:
+            - <template>: template html con string interpolation
+            - <script>: script que exporta la instancia de vue de este template (no es obligatorio)
+            - <style>: estilos propios para este template (no es obligatorio)
