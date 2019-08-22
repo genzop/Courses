@@ -244,3 +244,50 @@ Section 06 - Moving to a Real Development Workflow with Webpack and Vue CLI
             - <template>: template html con string interpolation
             - <script>: script que exporta la instancia de vue de este template (no es obligatorio)
             - <style>: estilos propios para este template (no es obligatorio)
+
+Section 07 - An Introduction to Components
+    Crear un componente a nivel global
+        Para crear un componente a nivel global es necesario declarar su selector (pseudo etiqueta html que hara referencia a dicho componente) y un objeto similar al que se utiliza para crear una instancia base de Vue. La unica diferencia es que la propiedad data debe contener una funcion que devuelva el objeto que usabamos en una instancia base.
+            Vue.component('my-cmp', {
+                data: function() {
+                    return {
+                        status: 'Critical'
+                    } 
+                },
+                template: '<p>Server Status: {{ status }}</p>'
+            }); 
+
+    Crear un componente a nivel local 
+        En caso de que queramos declarar un componente exclusivamente dentro de una instancia de Vue en particular, se debe declarar el objeto componente en una variable y luego resgistrarlo en la instancia de Vue a la que queremos que pertenezca. En esa instancia 
+            var cmp = {
+                template: '<p>Server Status: {{ status }}</p>',
+                data: function() {
+                    return {
+                        status: 'Critical'
+                    } 
+                }
+            };
+            
+            new Vue({
+                el: '#app',
+                components: {
+                    'my-cmp': cmp
+                }
+            });
+
+    Importar componente desde otro archivo
+        Para importar un componente que se encuentra en otro archivo, se debe utilizar la siguiente linea al principio del archivo:
+            import Home from './Home.vue'
+
+    Ordenar archivos de Componentes
+        Se recomienda crear una carpeta 'components' dentro de la carpeta 'src' que contenga todos los componentes.
+    
+        En caso de que sea una aplicación con muchos componentes, tambien se recomienda agrupar componentes asociados en carpetas separadas como asi tambien tener una carpeta 'Shared' que contenga todos los componentes que se utilicen en diferentes lugares
+
+    Nombrando etiquetas de componentes
+        Al nombrar etiquetas de componentes se recomienda utilizar todas letras minusculas y palatras separadas por guion.
+            'app-footer': Footer
+    
+    Estilos exclusivos para cada componente
+        Para que los estilos no se vuelvan globales es necesario colocar el atributo 'scoped' a la etiqueta 'style'
+            <style scoped>
