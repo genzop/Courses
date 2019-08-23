@@ -291,3 +291,96 @@ Section 07 - An Introduction to Components
     Estilos exclusivos para cada componente
         Para que los estilos no se vuelvan globales es necesario colocar el atributo 'scoped' a la etiqueta 'style'
             <style scoped>
+
+Section 08 - Communicating between Components
+    Props
+        Son propiedades establecidas desde el exterior del componente, es decir, valores que se recibieron del componente padre. 
+        Es un array con los nombres de las propiedades, estas pueden ser utilizadas como si fueran propiedades del objeto data.
+            <script>
+                export default {
+                    props: ['name']
+                }
+            </script>
+
+    Props estaticas
+        <app-detail name="Enzo"></app-detail>
+        
+    Props dinamicas
+        <app-detail :name="name"></app-detail>
+        
+    Validar props   
+        Para validar las props que se reciben, es necesario declararlas como un objeto en el que cada key es un prop y su valor es el tipo de dato.
+            props: {
+                age: Number,
+                name: [String, Array]               
+            },
+        
+        Cada key tambien puede contener un objeto en caso de que se necesite validar mas que el tipo:
+            props: {
+                name: {
+                    type: String,
+                    required: true
+                }
+            }
+        
+        En caso de que una prop no sea obligatoria, podemos asignarle un valor por defecto. En caso de un objeto, tiene que devolver una funcion que retorne el tipo de ese objeto
+            props: {
+                name: {
+                    type: String,
+                    default: 'Enzo'
+                }
+            }
+
+    Eventos personalizados
+        Cuando cambiamos el valor de algun prop y este no se ve reflejado en el componente padre, es necesario disparar un evento para notificar al padre de dicho cambio.
+        Esto se realiza con el metodo $emit, que recibe dos parametros: el nombre del evento y el dato que queramos pasar.
+            methods: {
+                resetName(){
+                    this.name = 'Max';
+                    this.$emit('nameWasReset', this.name);
+                }
+            }
+
+        Y en el padre capturamos el evento y realizamos la accion correspondiente
+            <app-user-detail :name="name" @nameWasReset="name = $event.name" ></app-user-detail>
+
+    Funciones como props
+        Es posible pasar como prop una funcion, esto permite que desde el hijo se dispare una funcion del padre y asi evitar tener que disparar un evento personalizado
+
+    Event Bus
+        Es una instancia extra de Vue que se crea para que va a contener los metodos que dispararan los eventos.
+            export const eventBus = new Vue({
+                methods: {
+                    changeAge(age) {
+                        this.$emit('ageWasEdited', age);
+                    }
+                }
+            });
+
+        Luego, en algun componente, se disparan eventos a esa instancia.
+            <script>
+                import { eventBus } from '../main.js';
+
+                export default {
+                    methods: {
+                        editAge() {
+                            this.userAge = 30;
+                            eventBus.changeAge(this.userAge);
+                        }
+                    },
+                }
+            </script>
+
+        Y por ultimo, en otro componente se capturan dichos eventos. Se capturar los metodos en el metodo 'created()' de un componente.
+            <script>
+                import { eventBus } from '../main.js';
+
+                export default {
+                    props: ['userAge'],
+                    created() {
+                        eventBus.$on('ageWasEdited', (data) => {
+                            this.userAge = data;
+                        })
+                    }
+                }
+            </script>
