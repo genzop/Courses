@@ -384,3 +384,61 @@ Section 08 - Communicating between Components
                     }
                 }
             </script>
+
+Section 09 - Advanced Component Usage
+    Slots
+        La etiqueta '<slot>' permite imprimir html recibido del componente padre. El codigo es procesado por el padre pero los estilos son procesados por el hijo.
+            <app-quote>
+                <h2>The Quote</h2>
+                <p>A wonderful Quote</p>
+            </app-quote>
+
+            <template>
+                <div>
+                    <slot></slot>
+                </div>
+            </template>
+
+        Multiples slots
+            Es posible tener multiples etiquetas slot, por lo que para diferenciar una seccion de otra y que no se repita el mismo contendo, es necesario darle un nombre a cada etiqueta
+                <app-quote>
+                    <h2 slot="title">{{ quoteTitle }}</h2>
+                    <p slot="content">A wonderful Quote</p>
+                </app-quote>
+
+                <template>
+                    <div>
+                        <slot name="title"></slot>
+                        <hr>    
+                        <slot name="content"></slot>
+                    </div>
+                </template> 
+
+        Contenido por defecto
+            En caso de que necesitemos asignarle un contenido por defecto a un slot, solo hace falta ingresar el codigo en el hijo.
+                <span><slot name="subtitle" style="color: #ccc">The Subtitle</slot></span>
+
+    Componentes dinamicos
+        Para renderizar un componente dinamicamente existe la etiqueta 'component', esta se vincula con alguna propiedad que contendra el selector del componente a renderizar
+            <component :is="selectedComponent">
+                <p>Default Content</p>
+            </component>
+
+            data: function() {
+                return {
+                    selectedComponent: 'app-quote'
+                }
+            },
+
+        Mantener componente dinamico vivo
+            Cada vez que la propiedad es actualizada se destruye el componente anterior y se crea una nueva instancia del nuevo componente. 
+            Para mantener la instancia del componente anterior viva es necesario envolver la etiqueta 'component' en la etiqueta 'keep-alive'
+                <keep-alive>
+                    <component>
+                    </component>
+                </keep-alive>
+                
+            Ciclo de vida
+                Un componente dinamico que no es destruido agrega dos eventos mas a su ciclo de vida,
+                    - activated(): cuando el componente vuelve a ser renderizado
+                    - deactivated(): cuando el componente deja de ser renderizado
