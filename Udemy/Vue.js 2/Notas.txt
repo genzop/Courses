@@ -440,5 +440,5 @@ Section 09 - Advanced Component Usage
                 
             Ciclo de vida
                 Un componente dinamico que no es destruido agrega dos eventos mas a su ciclo de vida,
-                    - activated(): cuando el componente vuelve a ser renderizado
+                    - activated(): cuando el componente es renderizado
                     - deactivated(): cuando el componente deja de ser renderizado
